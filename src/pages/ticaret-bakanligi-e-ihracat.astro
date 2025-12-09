@@ -1,0 +1,385 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="İhracat Destekleri - Ticaret Bakanlığı">
+
+  <section class="py-5">
+    <div class="container">
+
+      <!-- Navigasyon Menu -->
+      <nav aria-label="breadcrumb" class="mb-4">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/" class="text-decoration-none">
+        <i class="bi bi-house-fill"></i> Ana Sayfa
+      </a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/ticaret-bakanligi-destekler" class="text-decoration-none">Ticaret Bakanlığı Destekleri</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">E-İhracat Destekleri</li>
+  </ol>
+</nav>
+
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h1 class="display-4 text-center mb-4">E-İhracat Destekleri</h1>
+          <p class="lead text-center text-muted mb-5">
+            Ticaret Bakanlığınca sunulan ihracat desteklerine yönelik mevzuat ve detaylı bilgilere buradan erişebilirsiniz.
+            <br>Türk ihracatçılarının rekabet gücünü artırmak için kapsamlı destek programları sunulmaktadır.
+          </p>
+
+          <!-- Kapsamlı Açıklama -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="alert alert-primary">
+                <h5 class="alert-heading">🌍 İhracat Destek Programları</h5>
+                <p class="mb-0">
+                  Ticaret Bakanlığı, ihracatçılarımızın uluslararası pazarlarda daha güçlü bir konuma gelmelerini sağlamak 
+                  amacıyla çeşitli finansal ve teknik destekler sağlamaktadır. Bu destekler pazarlara erişim, 
+                  markalaşma, kalite iyileştirme ve rekabet gücünün artırılması alanlarında sunulmaktadır.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- KEP ve E-İmza Uyarısı -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <div class="alert alert-warning">
+                <h6 class="alert-heading">⚠️ KEP ve E-İmza Uyarısı</h6>
+                <p class="mb-0">
+                  <strong>Belgeler sadece mevzuatta belirtilen başvuru mercii kuruluşun KEP adresine iletilmelidir!</strong><br>
+                  KEP ve elektronik imza ile ilgili sorunlarınızı bu hizmetleri aldığınız kuruluşlara bildiriniz.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Destek Türleri Listesi -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <h3 class="mb-4 text-center">Mevcut Destek Türleri</h3>
+              <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                  <thead class="table-primary">
+                    <tr>
+                      <th width="60%">Destek Türü</th>
+                      <th width="40%">Erişim</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">Yeni Nesil İhracat Destekleri ve Prefinansman Modeli Lansmanı Tanıtım Filmi</td>
+                      <td>
+                        <a href="#video" class="btn btn-sm btn-outline-primary">
+                          Video İzle
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">İhracat Destekleri Sunumları ve Eğitim Videoları</td>
+                      <td>
+                        <a href="#sunumlar" class="btn btn-sm btn-outline-info">
+                          Eğitim Materyalleri
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">5973 Sayılı İhracat Destekleri Hakkında Karar</td>
+                      <td>
+                        <a href="#5973" class="btn btn-sm btn-outline-success">
+                          Mevzuatı İncele
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">5973 Sayılı İhracat Destekleri Hakkında Karara İlişkin Genelgeler</td>
+                      <td>
+                        <a href="#genelgeler" class="btn btn-sm btn-outline-secondary">
+                          Genelgeler
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">5973 Sayılı İhracat Destekleri Hakkında Karar Destek Üst Limitleri</td>
+                      <td>
+                        <a href="#limitler" class="btn btn-sm btn-outline-warning">
+                          Limitler
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">2018/12 Sayılı Tarımsal Ürünlerde İhracat İadesi Yardımları</td>
+                      <td>
+                        <a href="#tarimsal" class="btn btn-sm btn-outline-danger">
+                          Tarımsal Destekler
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">Özel Statülü Şirketler</td>
+                      <td>
+                        <a href="#ozel-statu" class="btn btn-sm btn-outline-dark">
+                          Özel Statüler
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">Fuarlar</td>
+                      <td>
+                        <a href="#fuarlar" class="btn btn-sm btn-outline-info">
+                          Fuar Destekleri
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">Prefinansman Modeli ve İGE</td>
+                      <td>
+                        <a href="#prefinansman" class="btn btn-sm btn-outline-success">
+                          Prefinansman Bilgileri
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">(Mülga) Karar/Tebliğ Bazında Destek Mevzuatı</td>
+                      <td>
+                        <a href="#mulgali" class="btn btn-sm btn-outline-secondary">
+                          Mülga Mevzuat
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">KEP ve E-İmza Usulü Hakkında</td>
+                      <td>
+                        <a href="#kep-imza" class="btn btn-sm btn-outline-warning">
+                          KEP ve E-İmza
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Detaylı Bilgi Bölümleri -->
+          <div class="row g-4">
+            
+            <!-- Video ve Eğitim Bölümü -->
+            <div class="col-12">
+              <div class="card border-primary">
+                <div class="card-body">
+                  <h5 class="card-title text-primary" id="video">Yeni Nesil İhracat Destekleri Tanıtım</h5>
+                  <p class="card-text">
+                    İhracat desteklerimizde yapılan son güncellemeler ve yeni nesil prefinansman modelimiz hakkında detaylı bilgi için 
+                    tanıtım filmimizi izleyebilirsiniz. Ayrıca çeşitli destek türleri hakkında hazırlanan sunumlar ve eğitim videoları 
+                    ile süreçleri adım adım öğrenebilirsiniz.
+                  </p>
+                  <div class="d-grid gap-2 d-md-flex">
+                    <button class="btn btn-primary me-md-2" type="button">
+                      Tanıtım Filmi
+                    </button>
+                    <button class="btn btn-outline-primary" type="button">
+                      Eğitim Videoları
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mevzuat Bölümü -->
+            <div class="col-12">
+              <div class="card border-success">
+                <div class="card-body">
+                  <h5 class="card-title text-success" id="5973">İhracat Destekleri Mevzuatı</h5>
+                  <p class="card-text">
+                    5973 Sayılı İhracat Destekleri Hakkında Karar ve ilgili genelgeler ile destek üst limitlerine yönelik 
+                    tüm mevzuat dokümanlarına buradan erişebilirsiniz. Güncel mevzuat değişikliklerini takip etmek 
+                    için düzenli olarak kontrol ediniz.
+                  </p>
+                  <div class="d-grid gap-2 d-md-flex">
+                    <button class="btn btn-success me-md-2" type="button">
+                      Ana Karar
+                    </button>
+                    <button class="btn btn-outline-success me-md-2" type="button">
+                      Genelgeler
+                    </button>
+                    <button class="btn btn-outline-success" type="button">
+                      Destek Limitleri
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Özel Programlar -->
+            <div class="col-12 col-md-6">
+              <div class="card border-info h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-info" id="tarimsal">Tarımsal Ürün İhracat Desteği</h5>
+                  <p class="card-text">
+                    Tarımsal ürünlerde ihracat iadesi yardımları kapsamında sunulan desteklere ilişkin 2018/12 
+                    sayılı tebliğ kapsamında detaylı bilgilere buradan erişebilirsiniz.
+                  </p>
+                  <button class="btn btn-info w-100" type="button">
+                    Detaylı Bilgi
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="card border-warning h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-warning" id="prefinansman">Prefinansman Modeli</h5>
+                  <p class="card-text">
+                    Yeni nesil prefinansman modelimiz ve İhracat Gelişme Endeksi (İGE) ile ilgili tüm detaylara 
+                    buradan ulaşabilirsiniz. İhracat finansmanı süreçlerini optimize ediyoruz.
+                  </p>
+                  <button class="btn btn-warning w-100 text-dark" type="button">
+                    Prefinansman Bilgileri
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Ana Kaynak Linki -->
+          <div class="row mt-5">
+            <div class="col-12 text-center">
+              <div class="card border-primary">
+                <div class="card-body">
+                  <h4 class="card-title text-primary">Resmi Kaynak</h4>
+                  <p class="card-text">
+                    İhracat destekleri hakkında en güncel bilgilere ve resmi dokümanlara <br>
+                    Ticaret Bakanlığı resmi web sitesinden erişebilirsiniz.
+                  </p>
+                  <a 
+                    href="https://ticaret.gov.tr/destekler/ihracat-destekleri" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="btn btn-primary btn-lg"
+                  >
+                    Resmi Kaynağa Git
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- İstatistikler -->
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="alert alert-info">
+                <h6 class="alert-heading">📊 Destek İstatistikleri</h6>
+                <p class="mb-0">
+                  <strong>11 farklı destek türü</strong> ile ihracatçılarımıza kapsamlı destek sağlanmaktadır. 
+                  Güncel mevzuat değişikliklerini ve yeni destek programlarını düzenli olarak takip ediniz.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- İletişim Bölümü -->
+          <div class="row mt-5">
+            <div class="col-12 text-center">
+              <div class="card border-secondary">
+                <div class="card-body">
+                  <h4 class="card-title text-secondary">Destek Almak İçin İletişime Geçin</h4>
+                  <p class="card-text">
+                    İhracat destekleri hakkında detaylı bilgi almak veya başvuru sürecinde yardıma ihtiyacınız olması 
+                    durumunda <br>İhracat Genel Müdürlüğü'ne başvurabilir veya uzman desteği alabilirsiniz.
+                  </p>
+                  <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <button class="btn btn-secondary">
+                      İhracat GM
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                      Destek Helplini
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                      SSS
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .table th {
+      background-color: #0d6efd;
+      color: white;
+      font-weight: 600;
+    }
+    .btn-sm {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.875rem;
+    }
+    .table-responsive {
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .card {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .card-text {
+      color: #6c757d;
+      line-height: 1.6;
+    }
+    .btn {
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+    .alert {
+      border-radius: 8px;
+    }
+    .display-4 {
+      color: #2c3e50;
+      font-weight: 700;
+    }
+    .table td {
+      vertical-align: middle;
+    }
+    .table-hover tbody tr:hover {
+      background-color: rgba(13, 110, 253, 0.1);
+    }
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, 0.025);
+    }
+    @media (max-width: 768px) {
+      .display-4 {
+        font-size: 2.5rem;
+      }
+      .card-title {
+        font-size: 1.25rem;
+      }
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+</BaseLayout>

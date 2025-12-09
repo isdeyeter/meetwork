@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CompanyProfile from '../../../components/company/CompanyProfile.astro';
+
+
+const company = {
+  title: 'İş de Yeter',
+  description: 'Teknoloji, çözüm ve güvenilirlik — işinizi geleceğe taşıyın.',
+  slug: 'is-de-yeter',
+  sector: 'teknoloji-yazilim',
+  color: '#0a84ff',
+  heroIcon: '/images/icons/teknoloji-yazilim.svg',
+  location: 'İstanbul, Türkiye',
+  services: [
+    { title: 'Web Paketleri', description: 'Profesyonel site ve e-ticaret çözümleri' },
+    { title: 'Muhasebe Paketleri', description: 'Ön muhasebe ve finansal süreç çözümleri' },
+    { title: 'ERP & CRM', description: 'İş süreçleri için entegrasyon ve yazılım' },
+    { title: '👩‍🔬 Sağlık: Psikolog, Diyetisyen' },
+    { title: '🧵 Tadilat: Boya & Yenileme İşleri' },
+    { title: '🏢 Şirket Kurulumu & Hibe Danışmanlığı' },
+    { title: '🛒 E-ticaret & Ön Muhasebe Çözümleri' },
+    { title: '📲 Dijital İşler: Yazılım & Tasarım' },
+    { title: '🪣 Temizlik: Profesyonel Hizmetler' },
+    { title: '⚒️ Tamirat: Arıza & Onarım' },
+    { title: '🚚 Nakliyat: Hızlı Taşımacılık' },
+    { title: '👩‍💼 Özel Ders: Çeşitli Eğitim Alanları' },
+    { title: '💃 Organizasyon: Etkinlik Planlama' },
+    { title: '🐱🐶 Veteriner Hizmetleri' }
+  ],
+  products: [
+    { title: 'Web Paketleri', description: 'Web Paketleri ile kendi web siteni kolayca oluştur. Hazır şablonlar, mobil uyum ve e-ticaret desteği.' },
+    { title: 'E-Ticaret Paketleri', description: 'Online mağaza kurulumundan ödeme entegrasyonlarına kadar tam e-ticaret çözümleri.' },
+    { title: 'Mağazacılık / ERP / CRM ve Muhasebe Paketleri', description: 'İş de Yeter Mağazacılık çözümleri; ERP, CRM ve ön muhasebe entegrasyonları ile işletmenizi yönetin.' },
+    { title: 'SEO & Pazarlama Paketleri', description: 'Arama motoru optimizasyonu, dijital pazarlama ve performans artırıcı kampanya hizmetleri.' },
+    { title: 'Yazılım Geliştirme', description: 'İşletmenizin ihtiyaçlarına özel masaüstü ve web tabanlı yazılım çözümleri. Modern teknolojiler ve agile metodoloji ile geliştirme.' },
+    { title: 'Mobil Uygulamalar', description: 'iOS ve Android platformları için native ve cross-platform mobil uygulamalar. Kullanıcı deneyimi odaklı tasarım ve geliştirme.' },
+    { title: 'Web Tasarım & Geliştirme', description: 'SEO uyumlu, responsive ve modern web siteleri. E-ticaret, CRM sistemleri, kurumsal site ve portal çözümleri.' },
+    { title: 'IT Altyapı & Server', description: 'Server kurulumu, ağ yönetimi ve sistem entegrasyonu. Güvenilir IT altyapısı ile işletmenizin teknoloji ihtiyaçlarını karşılıyoruz.' },
+    { title: 'Siber Güvenlik', description: 'EDR çözümleri, firewall yönetimi ve güvenlik danışmanlığı. Dijital varlıklarınızı siber tehditlere karşı koruyoruz.' },
+    { title: 'Bulut Hizmetleri', description: 'Cloud migrasyonu, bulut altyapı yönetimi ve SaaS çözümleri. Ölçeklenebilir ve güvenli bulut teknolojileri ile modernleşin.' },
+    { title: 'Yapay Zeka & Machine Learning', description: 'Makine öğrenmesi algoritmaları, doğal dil işleme ve öngörücü analitik çözümleri.' },
+    { title: 'Görüntü İşleme & Computer Vision', description: 'Nesne tanıma, yüz tanıma, kalite kontrol sistemleri ve görüntü analizi.' },
+    { title: 'İş Zekası & Veri Analitiği', description: 'Power BI, Tableau ile dashboard geliştirme, veri madenciliği ve raporlama sistemleri.' }
+  ],
+  expertise: ['Web Tasarım', 'E-Ticaret', 'ERP', 'CRM', 'Ön Muhasebe', 'Yazılım Geliştirme'],
+  contact: {
+    phone: '+905325000999',
+    email: '',
+    website: 'https://isdeyeter.com'
+  },
+  longDescription: `İş de Yeter, 1999 yılından bu yana bilişim sektöründe faaliyet göstermektedir. Kurucumuz Mehmet Fatih Akgün önderliğinde, müşterilere özel çözümler sunarak dijital işlerinizi hızlandırmayı hedefliyoruz. Hizmet platformumuz üzerinde dijital işler, e-ticaret, pazaryeri entegrasyonları, yazılım geliştirme ve 500+ hizmet kategorisinde ücretsiz teklif alma imkanı sağlıyoruz.`,
+  seo: { title: 'İş de Yeter | Teknoloji ve Dijital Çözümler', description: 'İş de Yeter — web paketleri, e-ticaret, ERP/CRM ve dijital hizmetler.' }
+};
+---
+
+<BaseLayout title={`${company.title} - Firma Profili`} description={company.seo?.description ?? company.description}>
+  <CompanyProfile company={company} />
+</BaseLayout>

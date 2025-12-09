@@ -1,0 +1,359 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const pageTitle = "Altın Hesaplama";
+const pageDescription = "Güncel altın fiyatları ile gram, çeyrek, cumhuriyet altını ve diğer altın türlerinin hesaplaması. Güvenilir altın fiyat hesaplama aracı.";
+const canonicalURL = "https://finansal-hesaplama.com/hesaplama/altin";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonical={canonicalURL}>
+  <main class="container py-5">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Ana Sayfa</a></li>
+        <li class="breadcrumb-item"><a href="/hesaplama">Hesaplamalar</a></li>
+        <li class="breadcrumb-item"><a href="/hesap">Finansal Hesaplamalar</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{pageTitle}</li>
+      </ol>
+    </nav>
+
+    <section class="text-center mb-5">
+      <h1 class="display-5 fw-bold text-primary mb-3">
+        <i class="fas fa-coins me-2"></i>
+        {pageTitle}
+      </h1>
+      <p class="lead text-muted mb-4">
+        Güncel altın fiyatları ile tüm altın türlerinin hesaplamasını yapın
+      </p>
+      <div class="alert alert-info d-inline-block">
+        <small><i class="fas fa-info-circle me-1"></i>
+        Son güncelleme: <span id="lastUpdate"></span> - Fiyatlar referans amaçlıdır</small>
+      </div>
+    </section>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <h2 class="h4 text-primary mb-4">Altın Hesaplama Aracı</h2>
+            
+            <form id="altinHesaplamaForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">Altın Türü *</label>
+                  <select id="altinTuru" class="form-select" required>
+                    <option value="">Seçiniz</option>
+                    <option value="gram-altin">Gram Altın</option>
+                    <option value="cumhuriyet-altini">Cumhuriyet Altını</option>
+                    <option value="yarim-altin">Yarım Altın</option>
+                    <option value="ceyrek-altin">Çeyrek Altın</option>
+                    <option value="tam-altin">Tam Altın</option>
+                    <option value="resat-altini">Reşat Altını</option>
+                    <option value="hamit-altini">Hamit Altını</option>
+                    <option value=" Gremse Altını">Gremse Altını</option>
+                    <option value="beşli-altin">Beşli Altın</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">İşlem Türü *</label>
+                  <select id="islemTuru" class="form-select" required>
+                    <option value="">Seçiniz</option>
+                    <option value="satin-alma">Satın Alma</option>
+                    <option value="satis">Satış</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">Miktar</label>
+                  <input type="number" id="miktar" class="form-control" 
+                         placeholder="örn. 10" min="0" step="0.01" value="1">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">Gram Altın Fiyatı (TL)</label>
+                  <input type="number" id="gramFiyati" class="form-control" 
+                         placeholder="örn. 2500,50" min="0" step="0.01" 
+                         value="2500.50">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">İşlem Ücreti (%)</label>
+                  <input type="number" id="islemUcreti" class="form-control" 
+                         placeholder="örn. 0.5" min="0" step="0.1" value="0.5">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label fw-bold">KDV (%)</label>
+                  <input type="number" id="kdv" class="form-control" 
+                         placeholder="örn. 18" min="0" step="0.1" value="18">
+                </div>
+              </div>
+
+              <div class="alert alert-info mb-3">
+                <small><strong>Bilgi:</strong> 
+                  • Satın alma fiyatı genellikle satış fiyatından yüksektir<br>
+                  • İşlem ücreti genellikle %0.3-1 arasındadır<br>
+                  • KDV genellikle altın için %18'dir
+                </small>
+              </div>
+
+              <div class="d-flex gap-2 mb-3">
+                <button type="button" id="btnHesapla" class="btn btn-primary">
+                  <i class="fas fa-calculator me-1"></i>
+                  Hesapla
+                </button>
+                <button type="button" id="btnSifirla" class="btn btn-outline-secondary">
+                  <i class="fas fa-refresh me-1"></i>
+                  Sıfırla
+                </button>
+                <button type="button" id="btnGuncelleFiyatlar" class="btn btn-outline-info">
+                  <i class="fas fa-sync me-1"></i>
+                  Güncel Fiyatlar
+                </button>
+              </div>
+            </form>
+
+            <div id="sonuc" class="mt-4" style="display:none;">
+              <div class="result-box">
+                <h5 class="fw-bold text-success mb-3">
+                  <i class="fas fa-chart-line me-2"></i>
+                  Altın Hesaplama Sonucu
+                </h5>
+                <div id="sonucText"></div>
+              </div>
+            </div>
+
+            <div id="fiyatTablosu" class="mt-4">
+              <h5 class="fw-bold text-primary mb-3">Güncel Altın Fiyatları</h5>
+              <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                  <thead>
+                    <tr>
+                      <th>Altın Türü</th>
+                      <th>Alış Fiyatı</th>
+                      <th>Satış Fiyatı</th>
+                    </tr>
+                  </thead>
+                  <tbody id="fiyatTablosuBody">
+                    <!-- JavaScript ile doldurulacak -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="row mt-5">
+      <div class="col-lg-8 mx-auto">
+        <h2 class="h3 text-primary mb-3">Altın Hakkında Bilgiler</h2>
+        <div class="alert alert-light">
+          <h6><strong>Altın Türleri:</strong></h6>
+          <ul class="mb-3">
+            <li><strong>Gram Altın:</strong> Saf altın, genellikle 999.9 saflıkta</li>
+            <li><strong>Cumhuriyet Altını:</strong> Türkiye Cumhuriyeti tarafından basılan standart altın</li>
+            <li><strong>Çeyrek Altın:</strong> 1.75 gram ağırlığında altın</li>
+            <li><strong>Yarım Altın:</strong> 3.5 gram ağırlığında altın</li>
+            <li><strong>Tam Altın:</strong> 7.216 gram ağırlığında altın</li>
+          </ul>
+          
+          <h6><strong>Yatırım İpuçları:</strong></h6>
+          <ul class="mb-0">
+            <li>Altın fiyatları döviz kurları ve enflasyon ile yakından ilişkilidir</li>
+            <li>Uzun vadede altın enflasyon karşısında değer koruma sağlayabilir</li>
+            <li>Altın yatırımı portföy çeşitlendirmesi için önemlidir</li>
+            <li>İşlem maliyetlerini göz önünde bulundurun</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  // Altın türlerinin ağırlıkları (gram)
+  const altinTurleri = {
+    'gram-altin': { agirlik: 1, ad: 'Gram Altın' },
+    'cumhuriyet-altini': { agirlik: 7.216, ad: 'Cumhuriyet Altını' },
+    'yarim-altin': { agirlik: 3.5, ad: 'Yarım Altın' },
+    'ceyrek-altin': { agirlik: 1.75, ad: 'Çeyrek Altın' },
+    'tam-altin': { agirlik: 7.216, ad: 'Tam Altın' },
+    'resat-altini': { agirlik: 7.216, ad: 'Reşat Altını' },
+    'hamit-altini': { agirlik: 7.216, ad: 'Hamit Altını' },
+    ' gremse Altını': { agirlik: 15.0, ad: 'Gremse Altını' },
+    'besli-altin': { agirlik: 35.0, ad: 'Beşli Altın' }
+  };
+
+  // Güncel altın fiyatları (günlük güncellenecek)
+  const guncelFiyatlar = {
+    'gram-altin': { alis: 2480, satis: 2520 },
+    'cumhuriyet-altini': { alis: 17800, satis: 18200 },
+    'yarim-altin': { alis: 8900, satis: 9100 },
+    'ceyrek-altin': { alis: 4450, satis: 4550 },
+    'tam-altin': { alis: 17800, satis: 18200 },
+    'resat-altini': { alis: 18500, satis: 19000 },
+    'hamit-altini': { alis: 18000, satis: 18500 },
+    ' gremse Altını': { alis: 37200, satis: 38000 },
+    'besli-altin': { alis: 89000, satis: 91000 }
+  };
+
+  // Sayfa yüklendiğinde
+  document.addEventListener('DOMContentLoaded', function() {
+    // Son güncelleme tarihi
+    const now = new Date();
+    document.getElementById('lastUpdate').textContent = 
+      now.toLocaleDateString('tr-TR') + ' ' + now.toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'});
+    
+    // Fiyat tablosunu doldur
+    fiyatTablosuDoldur();
+    
+    // Otomatik fiyat güncellemesi
+    gramFiyatiGuncelle();
+  });
+
+  function fiyatTablosuDoldur() {
+    const tbody = document.getElementById('fiyatTablosuBody');
+    tbody.innerHTML = '';
+    
+    Object.keys(guncelFiyatlar).forEach(tur => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${altinTurleri[tur].ad}</td>
+        <td>${guncelFiyatlar[tur].alis.toLocaleString('tr-TR')} TL</td>
+        <td>${guncelFiyatlar[tur].satis.toLocaleString('tr-TR')} TL</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function gramFiyatiGuncelle() {
+    const altinTuru = document.getElementById('altinTuru').value;
+    if (altinTuru && guncelFiyatlar[altinTuru]) {
+      const islemTuru = document.getElementById('islemTuru').value;
+      const fiyat = islemTuru === 'satis' ? guncelFiyatlar[altinTuru].satis : guncelFiyatlar[altinTuru].alis;
+      document.getElementById('gramFiyati').value = fiyat;
+    }
+  }
+
+  function altinHesapla() {
+    const altinTuru = document.getElementById('altinTuru').value;
+    const islemTuru = document.getElementById('islemTuru').value;
+    const miktar = parseFloat(document.getElementById('miktar').value) || 0;
+    const gramFiyati = parseFloat(document.getElementById('gramFiyati').value) || 0;
+    const islemUcreti = parseFloat(document.getElementById('islemUcreti').value) || 0;
+    const kdv = parseFloat(document.getElementById('kdv').value) || 0;
+
+    if (!altinTuru || !islemTuru) {
+      alert('Lütfen altın türü ve işlem türünü seçin');
+      return;
+    }
+
+    if (miktar <= 0) {
+      alert('Lütfen geçerli bir miktar girin');
+      return;
+    }
+
+    if (gramFiyati <= 0) {
+      alert('Lütfen geçerli bir gram fiyatı girin');
+      return;
+    }
+
+    const altinBilgi = altinTurleri[altinTuru];
+    const toplamGram = altinBilgi.agirlik * miktar;
+    const anaTutar = toplamGram * gramFiyati;
+    const ucretTutari = anaTutar * (islemUcreti / 100);
+    const kdvTutari = anaTutar * (kdv / 100);
+    const toplamTutar = anaTutar + ucretTutari + kdvTutari;
+
+    // Tek bir altının fiyatı
+    const tekAltinFiyati = altinBilgi.agirlik * gramFiyati;
+
+    sonuc.innerHTML = `
+      <div class="row">
+        <div class="col-md-6">
+          <strong>Altın Türü:</strong><br>
+          <span class="h6">${altinBilgi.ad}</span>
+        </div>
+        <div class="col-md-6">
+          <strong>İşlem Türü:</strong><br>
+          <span class="h6">${islemTuru === 'satin-alma' ? 'Satın Alma' : 'Satış'}</span>
+        </div>
+      </div>
+      <hr class="my-2">
+      <div class="row">
+        <div class="col-md-6">
+          <strong>Miktar:</strong><br>
+          <span class="h6">${miktar.toLocaleString('tr-TR')} adet</span>
+        </div>
+        <div class="col-md-6">
+          <strong>Toplam Ağırlık:</strong><br>
+          <span class="h6">${toplamGram.toLocaleString('tr-TR', {minimumFractionDigits: 3})} gram</span>
+        </div>
+      </div>
+      <hr class="my-2">
+      <div class="row">
+        <div class="col-md-6">
+          <strong>Gram Fiyatı:</strong><br>
+          <span class="h6">${gramFiyati.toLocaleString('tr-TR', {minimumFractionDigits: 2})} TL</span>
+        </div>
+        <div class="col-md-6">
+          <strong>Tek Altın Fiyatı:</strong><br>
+          <span class="h6">${tekAltinFiyati.toLocaleString('tr-TR', {minimumFractionDigits: 2})} TL</span>
+        </div>
+      </div>
+      <hr class="my-2">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Ana Tutar:</strong><br>
+          <span class="h5 text-primary">${anaTutar.toLocaleString('tr-TR', {minimumFractionDigits: 2})} TL</span>
+        </div>
+      </div>
+      <hr class="my-2">
+      <div class="row">
+        <div class="col-md-6">
+          <strong>İşlem Ücreti (${islemUcreti}%):</strong><br>
+          <span class="h6">${ucretTutari.toLocaleString('tr-TR', {minimumFractionDigits: 2})} TL</span>
+        </div>
+        <div class="col-md-6">
+          <strong>KDV (${kdv}%):</strong><br>
+          <span class="h6">${kdvTutari.toLocaleString('tr-TR', {minimumFractionDigits: 2})} TL</span>
+        </div>
+      </div>
+      <hr class="my-2">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Toplam Ödenecek Tutar:</strong><br>
+          <span class="h4 text-success">${toplamTutar.toLocaleString('tr-TR', {minimumFractionDigits: 2})} TL</span>
+        </div>
+      </div>
+    `;
+    sonuc.style.display = 'block';
+  }
+
+  // Event listeners
+  document.getElementById('btnHesapla').addEventListener('click', altinHesapla);
+  
+  document.getElementById('btnSifirla').addEventListener('click', function() {
+    document.getElementById('altinHesaplamaForm').reset();
+    document.getElementById('sonuc').style.display = 'none';
+  });
+  
+  document.getElementById('btnGuncelleFiyatlar').addEventListener('click', function() {
+    // Gerçek API entegrasyonu burada yapılabilir
+    alert('Fiyatlar güncellendi! (Demo)');
+    gramFiyatiGuncelle();
+    fiyatTablosuDoldur();
+    
+    // Son güncelleme tarihini güncelle
+    const now = new Date();
+    document.getElementById('lastUpdate').textContent = 
+      now.toLocaleDateString('tr-TR') + ' ' + now.toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'});
+  });
+
+  // Altın türü değiştiğinde fiyatı otomatik güncelle
+  document.getElementById('altinTuru').addEventListener('change', gramFiyatiGuncelle);
+  document.getElementById('islemTuru').addEventListener('change', gramFiyatiGuncelle);
+</script>

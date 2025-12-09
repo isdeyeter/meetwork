@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CompanyProfile from '../../../components/company/CompanyProfile.astro';
+
+
+const company = {
+  title: 'Ahsen Mali Müşavirlik',
+  description: 'SMMM Süleyman DAŞTAN - Vergi, muhasebe ve SGK mevzuatında profesyonel danışmanlık hizmetleri',
+  slug: 'ahsen-mali-musavirlik',
+  sector: 'mali-musavirlik',
+  color: '#1e40af',
+  heroIcon: '/images/icons/muhasebe.svg',
+  location: 'Ümraniye / İstanbul',
+  services: [
+    { title: '📊 Muhasebe Hizmetleri', description: 'Vergi ve Tek Düzen muhasebe standartlarına uygun defter tutma ve raporlama' },
+    { title: '📑 Beyanname Hazırlama', description: 'KDV, Muhtasar, Geçici Vergi, Gelir ve Kurumlar Vergisi beyannameleri' },
+    { title: '👥 SGK ve Personel Hizmetleri', description: 'Bordro, prime esas kazanç, işe giriş/çıkış işlemleri' },
+    { title: '🏢 Şirket Kuruluş Hizmetleri', description: 'Şirket ana sözleşmeleri, ticaret sicil işlemleri, mükellefiyet tesisleri' },
+    { title: '🎓 Personel Eğitimi', description: 'Ön muhasebe personeli eğitimi ve süreç kontrolü' },
+    { title: '📋 Mevzuat Danışmanlığı', description: 'Vergi, SGK ve iş mevzuatı konularında sürekli danışmanlık' },
+    { title: '🔍 Muhasebe Kontrolü', description: 'Muhasebe kayıtlarının TMS uygunluk kontrolü' },
+    { title: '💼 Sistem Kurulumu', description: 'Bilgisayarlı muhasebe yazılım seçimi ve altyapı oluşturma' }
+  ],
+  products: [
+    { title: 'Muhasebe ve Defter Tutma', description: 'Tek Düzen Muhasebe Standartlarına uygun defter tutma ve raporlama hizmetleri' },
+    { title: 'Vergi Beyannameleri', description: 'Aylık ve yıllık tüm vergi beyannamelerinin hazırlanması' },
+    { title: 'SGK İşlemleri', description: 'Personel bordroları, prime esas kazanç bildirimleri, işe giriş/çıkış işlemleri' },
+    { title: 'Şirket Kuruluş Danışmanlığı', description: 'Şirket kuruluş, şube açılış ve mükellefiyet işlemleri' },
+    { title: 'Mevzuat Danışmanlığı', description: 'Vergi, SGK ve iş mevzuatı konularında sürekli danışmanlık hizmeti' },
+    { title: 'Muhasebe Sistemi Kurulumu', description: 'Bilgisayarlı muhasebe yazılım seçimi ve sistem altyapısı oluşturma' }
+  ],
+  expertise: ['Vergi Mevzuatı', 'Muhasebe Standartları', 'SGK İşlemleri', 'Şirket Kuruluş', 'Mali Danışmanlık', 'Personel Bordroları'],
+  contact: {
+    phone: '+90 216 508 26 34',
+    mobile: '+90 530 380 26 95',
+    whatsapp: '+90 507 238 34 69',
+    email: 'info@ahsenmusavirlik.com',
+    website: 'http://www.ahsenmusavirlik.com',
+    address: 'Çamlık Mah.Turgut Özal Bulvarı Cad No:37 Kat.12 D.144 34774 Ümraniye / İstanbul - TÜRKİYE'
+  },
+  features: [
+    { title: 'Hızlı İletişim', description: 'Günü gününe mevzuat takibi ve hızlı iletişim anlayışı' },
+    { title: 'Kaliteli Hizmet', description: 'Müşteri beklentilerinin üzerinde kalitede hizmet sunumu' },
+    { title: 'Sürekli Eğitim', description: 'Kendini sürekli yenileme ve geliştirme çabası' },
+    { title: 'Danışmanlık Desteği', description: 'Tüm süreçlerde eksiksiz bilgilendirme ve danışmanlık' }
+  ],
+  brands: ['SMMM', 'Vergi Danışmanlığı', 'SGK Mevzuatı', 'Muhasebe Hizmetleri'],
+  longDescription: `Ahsen Mali Müşavirlik bürosu, SMMM Süleyman DAŞTAN liderliğinde mali müşavirlik hizmetleri sunmaktadır. 2010 yılından bu yana sektörde faaliyet gösteren köklü bir kuruluş olarak, müşteri memnuniyetini en yüksek düzeyde tutma anlayışıyla hareket etmektedir.
+
+Büromuz farklı ve kaliteli hizmet sunarak, müşteri ihtiyaç ve beklentilerini en iyi şekilde analiz eder ve yararlanabilecekleri hizmetleri sunar. Müşterilerinin beklentilerinin üzerinde kalitede hizmet sunabilmek için kendini sürekli yenileme eğitim ve geliştirme çabası içerisindedir.`,
+  mission: `Müşterilerimizin talep ve beklentilerine en iyi şekilde cevap verecek bir mükemmellik anlayışını benimseyerek; fark yaratan, kaliteli, güvenilir mali müşavirlik hizmetleri sunmak.`,
+  vision: `Müşterilerimizin mali mevzuattaki ve faaliyet konularındaki gelişmeleri takip ederek, tedbir alabilmelerini ve faaliyetlerini yönlendirebilmelerini sağlamak.`,
+  externalLinks: [
+    { title: 'Hakkımızda', url: 'http://www.ahsenmusavirlik.com/hakkimizda' },
+    { title: 'Hizmetlerimiz', url: 'http://www.ahsenmusavirlik.com/hizmetlerimiz' },
+    { title: 'Mükellef Bilgi Panosu', url: 'http://www.ahsenmusavirlik.com/mukellef-panosu' },
+    { title: 'Güncel Mevzuat', url: 'http://www.ahsenmusavirlik.com/mevzuat' },
+    { title: 'Basından Yazılar', url: 'http://www.ahsenmusavirlik.com/basindan-yazilar' },
+    { title: 'Muhasebe Standartları', url: 'http://www.ahsenmusavirlik.com/muhasebe-standartlari' },
+    { title: 'SMMM Odaları', url: 'http://www.ahsenmusavirlik.com/smmm-odalari' },
+    { title: 'Ticaret Sicil Gazetesi', url: 'http://www.ahsenmusavirlik.com/ticaret-sicil' },
+    { title: 'Mortgage', url: 'http://www.ahsenmusavirlik.com/mortgage' },
+    { title: 'KOSGEB Mevzuatı', url: 'http://www.ahsenmusavirlik.com/kosgeb' },
+    { title: 'Tek Düzen Hesap Planı', url: 'http://www.ahsenmusavirlik.com/hesap-plani' },
+    { title: 'Basel II', url: 'http://www.ahsenmusavirlik.com/basel' },
+    { title: 'Ücretsiz Programlar', url: 'http://www.ahsenmusavirlik.com/uruncretsiz-programlar' },
+    { title: 'Ekonomi Haberleri', url: 'http://www.ahsenmusavirlik.com/ekonomi' },
+    { title: 'Dış Ticaret Mevzuatı', url: 'http://www.ahsenmusavirlik.com/dis-ticaret' },
+    { title: 'Danıştay Kararları', url: 'http://www.ahsenmusavirlik.com/danistay' },
+    { title: 'Yargıtay Kararları', url: 'http://www.ahsenmusavirlik.com/yargitay' },
+    { title: 'Dilekçematik', url: 'http://www.ahsenmusavirlik.com/dilekcematik' }
+  ],
+  seo: { 
+    title: 'Ahsen Mali Müşavirlik | SMMM Süleyman DAŞTAN', 
+    description: 'Ahsen Mali Müşavirlik - Vergi, muhasebe, SGK mevzuatı ve şirket kuruluş danışmanlığı. Profesyonel mali müşavirlik hizmetleri.' 
+  }
+};
+---
+
+<BaseLayout title={company.seo.title} description={company.seo.description}>
+  <CompanyProfile company={company} />
+</BaseLayout>

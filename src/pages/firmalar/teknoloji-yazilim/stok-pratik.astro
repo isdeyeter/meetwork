@@ -1,0 +1,191 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CompanyProfile from '@components/company/CompanyProfile.astro';
+---
+
+<BaseLayout title="Stok Pratik - Bulut Tabanlı Stok ve Muhasebe Yazılımı">
+  
+  <section class="py-5">
+    <div class="container">
+      
+      <!-- Hero Bölümü -->
+      <div class="text-center mb-5">
+        <div class="d-flex justify-content-center mb-3">
+          <div class="bg-primary rounded-circle p-4">
+            <span class="display-4 text-white">📦</span>
+          </div>
+        </div>
+        <h1 class="display-5 fw-bold text-primary mb-3">Stok Pratik</h1>
+        <h2 class="text-muted mb-4">
+          Bulut Tabanlı En Hızlı Stok & Muhasebe Yazılımı
+        </h2>
+        <p class="lead">
+          <span class="badge bg-warning text-dark">Stok Pratik İştep İştirakidir</span>
+        </p>
+      </div>
+
+      <!-- Hızlı Erişim Butonları -->
+      <div class="row mb-5">
+        <div class="col-md-4 mb-3">
+          <a href="/firmalar/teknoloji-yazilim/stok-pratik/ozellikler" 
+             class="btn btn-outline-primary w-100 py-3">
+            <span class="fs-4 d-block mb-2">🚀</span>
+            <strong>Özellikler</strong>
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <a href="/firmalar/teknoloji-yazilim/stok-pratik/pazaryerleri" 
+             class="btn btn-outline-success w-100 py-3">
+            <span class="fs-4 d-block mb-2">🛍️</span>
+            <strong>Pazaryerleri</strong>
+          </a>
+        </div>
+        <div class="col-md-4 mb-3">
+          <a href="/firmalar/teknoloji-yazilim/stok-pratik/referanslar" 
+             class="btn btn-outline-warning w-100 py-3">
+            <span class="fs-4 d-block mb-2">🏢</span>
+            <strong>Referanslar</strong>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ana Tanıtım Kartı -->
+      <div class="card border-0 shadow-lg mb-5">
+        <div class="card-body p-4">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h3 class="text-primary fw-bold mb-3">Ön Muhasebe</h3>
+              <h5 class="text-muted mb-4">Bulut Tabanlı En Hızlı Stok & Mağazacılık Yazılımı</h5>
+              
+              <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                  <div class="d-flex align-items-center">
+                    <span class="fs-4 text-warning me-3">🏢</span>
+                    <div>
+                      <h6 class="mb-1 fw-bold">Stok Pratik İştep İştirakidir</h6>
+                      <small class="text-muted">Güvenilir ve profesyonel çözüm</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <div class="d-flex align-items-center">
+                    <span class="fs-4 text-warning me-3">🎁</span>
+                    <div>
+                      <h6 class="mb-1 fw-bold">Tüm Paketler Ücretsiz</h6>
+                      <small class="text-muted">MeetWork Pro üyelerine özel</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-bold mb-3">🎯 Güçlü Özellikler</h6>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-primary text-white">🏪 Mağazacılık</span>
+                  <span class="badge bg-success text-white">🛍️ Pazaryeri</span>
+                  <span class="badge bg-info text-white">🧾 E-Fatura</span>
+                  <span class="badge bg-warning text-dark">🔄 ERP</span>
+                  <span class="badge bg-danger text-white">🛒 E-Ticaret</span>
+                  <span class="badge bg-secondary text-white">☁️ Bulut</span>
+                  <span class="badge bg-dark text-white">📱 Mobil</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-4">
+              <div class="card bg-dark text-white">
+                <div class="card-body text-center p-4">
+                  <h5 class="text-warning mb-3">🚀 Stok Pratik'in Paketlerinin PRO Üyeler Ücretsiz Kullanırlar</h5>
+                  <p class="small mb-3">
+                    Üretim süreçlerinizi dijitalleştirin, verimliliğinizi katlayın.
+                  </p>
+                  <a href="/dijital-donusum/on-muhasebe-magazacilik-edonusum-erp" 
+                     class="btn btn-warning w-100 mb-2">
+                    <span class="me-2">📦</span>
+                    Tüm Paketleri İncele
+                  </a>
+                  <small class="text-muted">Tüm paketler Pro üyelere ÜCRETSİZ</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Önemli Linkler -->
+      <div class="row mb-5">
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-body text-center p-4">
+              <span class="fs-1 d-block mb-3">🌐</span>
+              <h5 class="card-title">Resmi Web Sitesi</h5>
+              <p class="card-text text-muted mb-3">Detaylı bilgi için resmi web sitesini ziyaret edin</p>
+              <a href="https://stokpratik.com.tr/" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="btn btn-primary w-100">
+                stokpratik.com.tr'yi Ziyaret Et
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 mb-3">
+          <div class="card h-100">
+            <div class="card-body text-center p-4">
+              <span class="fs-1 d-block mb-3">💬</span>
+              <h5 class="card-title">WhatsApp Destek</h5>
+              <p class="card-text text-muted mb-3">Anında destek almak için WhatsApp'tan yazın</p>
+              <a href="https://wa.me/905412465429?text=Merhaba,%20Stok%20Pratik%20Hakkında%20Bilgi%20Almak%20İstiyorum" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="btn btn-success w-100">
+                📱 WhatsApp İletişim
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kısa Bilgiler -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="text-center p-3">
+            <span class="fs-1 d-block mb-3">⚡</span>
+            <h5>Türkiye'nin En Hızlı ERP'si</h5>
+            <p class="text-muted">Gerçek zamanlı takip ve kontrol imkanı</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="text-center p-3">
+            <span class="fs-1 d-block mb-3">🎯</span>
+            <h5>Fiziksel Mağaza + Pazaryeri</h5>
+            <p class="text-muted">Tüm kanallarınız tek platformda</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="text-center p-3">
+            <span class="fs-1 d-block mb-3">💰</span>
+            <h5>Finansal Özgürlük</h5>
+            <p class="text-muted">Ek maliyet olmadan bulut çözümü</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style is:global>
+  .btn {
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+</style>

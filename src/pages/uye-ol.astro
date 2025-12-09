@@ -1,0 +1,523 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Üye Ol - MeetWork">
+
+  <section class="py-5">
+
+
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4 text-dark">Üyelik</h2>
+        
+        <!-- Yeni Butonlar -->
+        <div class="d-flex justify-content-center gap-3 mb-4">
+          <a href="https://panel.meetwork.net/register" target="_blank" class="btn btn-outline-danger btn-lg">
+            <i class="bi bi-person-plus-fill me-2"></i> Ücretsiz Üye Ol
+          </a>
+          <a href="https://panel.meetwork.net/" target="_blank" class="btn btn-outline-primary btn-lg">
+            <i class="bi bi-box-arrow-in-right me-2"></i> Giriş Yap
+          </a>
+        </div>
+        
+      <p class="lead text-muted">
+  MeetWork platformuna üye olabilmek için bazı şartları karşılamalısınız.
+</p>
+
+<!-- Yeni Bilgilendirme Kartı -->
+<div class="row justify-content-center mt-4">
+  <div class="col-md-10">
+    <div class="card border-0 text-white shadow-lg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <div class="card-body p-4 text-center">
+        <h3 class="h2 mb-3">Tamamen Ücretsiz Kullanabilirsin!</h3>
+        <h4 class="h5 mb-3">Nasıl mı?</h4>
+        <p class="mb-3">
+          Etkinliklere katılırken yanında bu etkinlikten yararlanmak isteyen yeni bir katılımcı getirmen yeterli..
+        </p>
+        <h3 class="h2 mb-3">Bu kadar Basit!</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4 text-dark">Nasıl Üye Olunur?</h2>
+        <p class="lead text-muted">
+          MeetWork platformuna üye olabilmek için bazı şartları karşılamalısınız.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <h3 class="text-primary">Üyelik Şartları</h3>
+              <ul class="list-unstyled">
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Girişimci veya işletme sahibi olmanız gerekmektedir.
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Şirketinizde üst düzey bir yönetici (müzakereci, genel müdür, CEO, CTO, COO vb.) konumunda olmalısınız.
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Sektörünüzde etkin bir iş ağı kurma hedefiniz olmalıdır.
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  MeetWork etkinliklerine aktif katılım sağlayabilecek konumda olmalısınız.
+                </li>
+                <li class="mb-2">
+                  <i class="bi bi-check-circle-fill text-success me-2"></i>
+                  Stratejik iş birlikleri kurma hedefiniz olmalıdır.
+                </li>
+              </ul>
+
+              <div class="text-center mt-4">
+                <p class="lead text-muted">
+                  Yukarıdaki şartları karşılıyorsanız, üyelik başvurunuzu aşağıdaki paketleri inceleyerek iletebilirsiniz.
+                </p>
+                <a href="https://wa.me/905412465429?text=Üye%20olmak%20istiyorum." target="_blank" class="btn btn-success btn-lg">
+                  <i class="bi bi-whatsapp me-2"></i> Üye Olmak İstiyorum
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Üyelik Paketleri Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <!-- Başlık -->
+        <div class="text-center mb-5">
+          <h2 class="display-5 text-dark mb-3">MeetWork Üyelik Paketleri</h2>
+          <p class="lead text-muted">
+            Ticaretinizi Bir Üst Seviyeye Taşıyın
+          </p>
+          <p class="text-dark">
+            MeetWork, her büyüklükteki iş insanının network ve ticaret hedeflerine ulaşması için tasarlanmış üç farklı üyelik seçeneği sunar.
+          </p>
+        </div>
+
+        <!-- Üyelik Paketleri Tablosu - Masaüstü Görünüm -->
+        <div class="d-none d-lg-block">
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th class="text-center py-4">Özellik</th>
+                  <th class="text-center py-4 bg-light">
+                    <h4 class="h5 text-muted mb-2">ÜCRETSİZ ÜYELİK</h4>
+                    <p class="small text-muted mb-0">Sistemi Deneyimleme</p>
+                  </th>
+                  <th class="text-center py-4 bg-primary text-white">
+                    <h4 class="h5 mb-2">STANDART ÜYELİK</h4>
+                    <p class="small mb-0 opacity-75">Büyüme Odaklı</p>
+                  </th>
+                  <th class="text-center py-4 bg-warning text-white">
+                    <h4 class="h5 mb-2">PRO ÜYELİK</h4>
+                    <p class="small mb-0 opacity-75">Stratejik Liderlik</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Katılım Ücreti -->
+                <tr>
+                  <td class="fw-semibold py-3">Katılım Ücreti</td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-danger">İlk Katılım ve <br><br>Referans ile Daima <br><br>Ücretsiz</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-success">Ücretsiz</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-success">Ücretsiz</span>
+                  </td>
+                </tr>
+                
+                <!-- Giriş Bilgileri -->
+                <tr>
+                  <td class="fw-semibold py-3">Giriş Bilgileri</td>
+                  <td class="text-center py-3">
+                    <i class="bi bi-check-lg text-success fs-5"></i>
+                  </td>
+                  <td class="text-center py-3">
+                    <i class="bi bi-check-lg text-success fs-5"></i>
+                  </td>
+                  <td class="text-center py-3">
+                    <i class="bi bi-check-lg text-success fs-5"></i>
+                  </td>
+                </tr>
+                
+                <!-- Etkinlik Katılımı -->
+                <tr>
+                  <td class="fw-semibold py-3">Etkinlik Katılımı</td>
+                  <td class="text-center py-3">
+                    <small>Sadece Mini Etkinliklere Katılım</small>
+                  </td>
+                  <td class="text-center py-3">
+                    <small>Mini ve Maxi Etkinliklere Katılım</small>
+                  </td>
+                  <td class="text-center py-3">
+                    <small>Mini ve Maxi Etkinliklere Katılım</small>
+                  </td>
+                </tr>
+                
+                <!-- Yapay Zeka Eşleşmesi -->
+                <tr>
+                  <td class="fw-semibold py-3">Yapay Zeka Eşleşmesi</td>
+                  <td class="text-center py-3">
+                    <small>Toplantılarda 1 Defa Kullanım Hakkı</small>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-success">Sınırsız Kullanım</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-success">Sınırsız Kullanım</span>
+                  </td>
+                </tr>
+                
+                <!-- Win-Win Sistemi -->
+                <tr>
+                  <td class="fw-semibold py-3">Win-Win Sistemi</td>
+                  <td class="text-center py-3">
+                    <i class="bi bi-x-lg text-danger fs-5"></i>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-primary">Var</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-warning">Var</span>
+                  </td>
+                </tr>
+                
+                <!-- İşbirliği Topluluğu -->
+                <tr>
+                  <td class="fw-semibold py-3">İşbirliği Topluluğu</td>
+                  <td class="text-center py-3">
+                    <i class="bi bi-x-lg text-danger fs-5"></i>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-primary">Ürün/Hizmet Veren Olabilir</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-warning">Ürün/Hizmet Veren Olabilir</span>
+                  </td>
+                </tr>
+                
+                <!-- Yatırım & Ortaklık -->
+                <tr>
+                  <td class="fw-semibold py-3">Yatırım & Ortaklık</td>
+                  <td class="text-center py-3">
+                    <i class="bi bi-x-lg text-danger fs-5"></i>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-primary">Yatırım/Ortaklık İmkanı</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-warning">Yatırım/Ortaklık İmkanı</span>
+                  </td>
+                </tr>
+                
+                <!-- Dijital Dönüşüm Araçları -->
+                <tr>
+                  <td class="fw-bold py-3">Dijital Dönüşüm Araçları💰💰</td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-secondary">Erişim Yok</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-secondary">Erişim Yok</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-danger">ÜCRETSİZ ERİŞİM</span>
+                  </td>
+                </tr>
+                
+                <!-- EK FAYDA -->
+                <tr>
+                  <td class="fw-semibold py-3">EK FAYDA</td>
+                  <td class="text-center py-3">
+                    <span class="text-muted">-</span>
+                  </td>
+                  <td class="text-center py-3">
+                    <small>MeetWork APP Tam Erişim</small>
+                  </td>
+                  <td class="text-center py-3">
+                    <span class="badge bg-danger">MeetWork APP Tam Erişim<br>Global Erişim</span>
+                  </td>
+                </tr>
+                
+                <!-- Butonlar -->
+                <tr>
+                  <td class="fw-semibold py-4"></td>
+                  <td class="text-center py-4">
+                    <a href="https://wa.me/905412465429?text=Merhaba,%20ÜCRETSİZ%20ÜYELİK%20hakkında%20bilgi%20almak%20istiyorum" 
+                       target="_blank" 
+                       class="btn btn-outline-secondary btn-sm mb-2">
+                      <i class="bi bi-whatsapp me-1"></i>Bilgi Al
+                    </a>
+                    <a href="https://panel.meetwork.net/" 
+                       target="_blank" 
+                       class="btn btn-secondary btn-sm w-100">
+                      <i class="bi bi-box-arrow-in-right me-1"></i>Sisteme Giriş
+                    </a>
+                  </td>
+                  <td class="text-center py-4">
+                    <a href="https://wa.me/905412465429?text=Merhaba,%20STANDART%20ÜYELİK%20hakkında%20bilgi%20almak%20istiyorum" 
+                       target="_blank" 
+                       class="btn btn-outline-primary btn-sm mb-2">
+                      <i class="bi bi-whatsapp me-1"></i>Bilgi Al
+                    </a>
+                    <a href="https://panel.meetwork.net/" 
+                       target="_blank" 
+                       class="btn btn-primary btn-sm w-100">
+                      <i class="bi bi-box-arrow-in-right me-1"></i>Sisteme Giriş
+                    </a>
+                  </td>
+                  <td class="text-center py-4">
+                    <a href="https://wa.me/905412465429?text=Merhaba,%20PRO%20ÜYELİK%20hakkında%20bilgi%20almak%20istiyorum" 
+                       target="_blank" 
+                       class="btn btn-outline-warning btn-sm mb-2">
+                      <i class="bi bi-whatsapp me-1"></i>Bilgi Al
+                    </a>
+                    <a href="https://panel.meetwork.net/" 
+                       target="_blank" 
+                       class="btn btn-warning btn-sm w-100">
+                      <i class="bi bi-box-arrow-in-right me-1"></i>Sisteme Giriş
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Mobil Görünüm - Kartlar -->
+        <div class="d-lg-none">
+          <div class="row g-4">
+            <!-- ÜCRETSİZ ÜYELİK Kart -->
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-header bg-light text-center py-4">
+                  <h4 class="h5 text-muted mb-2">ÜCRETSİZ ÜYELİK</h4>
+                  <p class="small text-muted mb-0">Sistemi Deneyimleme</p>
+                </div>
+                <div class="card-body p-3">
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-success w-100">İlk Katılım Ücretsiz</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <i class="bi bi-check-lg text-success fs-5"></i>
+                    <small>Giriş Bilgileri</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <small>Sadece Mini Etkinliklere Katılım</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <small>Yapay Zeka: 1 Defa Kullanım</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <i class="bi bi-x-lg text-danger fs-5"></i>
+                    <small>Win-Win Sistemi</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <i class="bi bi-x-lg text-danger fs-5"></i>
+                    <small>İşbirliği Topluluğu</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <i class="bi bi-x-lg text-danger fs-5"></i>
+                    <small>Yatırım & Ortaklık</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-secondary">Dijital Araç Yok</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="text-muted">-</span>
+                  </div>
+                </div>
+                <div class="card-footer bg-light border-0 text-center py-3">
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20ÜCRETSİZ%20ÜYELİK%20hakkında%20bilgi%20almak%20istiyorum" 
+                     target="_blank" 
+                     class="btn btn-outline-secondary btn-sm w-100 mb-2">
+                    <i class="bi bi-whatsapp me-1"></i>Bilgi Al
+                  </a>
+                  <a href="https://panel.meetwork.net/" 
+                     target="_blank" 
+                     class="btn btn-secondary btn-sm w-100">
+                    <i class="bi bi-box-arrow-in-right me-1"></i>Sisteme Giriş
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- STANDART ÜYELİK Kart -->
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm featured">
+                <div class="card-header bg-primary text-white text-center py-4">
+                  <h4 class="h5 mb-2">STANDART ÜYELİK</h4>
+                  <p class="small mb-0 opacity-75">Büyüme Odaklı</p>
+                </div>
+                <div class="card-body p-3">
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-success w-100">Ücretsiz</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <i class="bi bi-check-lg text-success fs-5"></i>
+                    <small>Giriş Bilgileri</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <small>Mini ve Maxi Etkinliklere Katılım</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-success">Yapay Zeka: Sınırsız</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-primary">Win-Win Sistemi Var</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-primary">Ürün/Hizmet Veren</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-primary">Yatırım/Ortaklık İmkanı</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-secondary">Dijital Araç Yok</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <small>MeetWork APP Tam Erişim</small>
+                  </div>
+                </div>
+                <div class="card-footer bg-light border-0 text-center py-3">
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20STANDART%20ÜYELİK%20hakkında%20bilgi%20almak%20istiyorum" 
+                     target="_blank" 
+                     class="btn btn-outline-primary btn-sm w-100 mb-2">
+                    <i class="bi bi-whatsapp me-1"></i>Bilgi Al
+                  </a>
+                  <a href="https://panel.meetwork.net/" 
+                     target="_blank" 
+                     class="btn btn-primary btn-sm w-100">
+                    <i class="bi bi-box-arrow-in-right me-1"></i>Sisteme Giriş
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PRO ÜYELİK Kart -->
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-header bg-warning text-white text-center py-4">
+                  <h4 class="h5 mb-2">PRO ÜYELİK</h4>
+                  <p class="small mb-0 opacity-75">Stratejik Liderlik</p>
+                </div>
+                <div class="card-body p-3">
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-success w-100">Ücretsiz</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <i class="bi bi-check-lg text-success fs-5"></i>
+                    <small>Giriş Bilgileri</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <small>Mini ve Maxi Etkinliklere Katılım</small>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-success">Yapay Zeka: Sınırsız</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-warning">Win-Win Sistemi Var</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-warning">Ürün/Hizmet Veren</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-warning">Yatırım/Ortaklık İmkanı</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-success">ÜCRETSİZ Dijital Araçlar</span>
+                  </div>
+                  <div class="feature-item text-center mb-3">
+                    <span class="badge bg-warning">ÖNCELİKLİ ERİŞİM</span>
+                  </div>
+                </div>
+                <div class="card-footer bg-light border-0 text-center py-3">
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20PRO%20ÜYELİK%20hakkında%20bilgi%20almak%20istiyorum" 
+                     target="_blank" 
+                     class="btn btn-outline-warning btn-sm w-100 mb-2">
+                    <i class="bi bi-whatsapp me-1"></i>Bilgi Al
+                  </a>
+                  <a href="https://panel.meetwork.net/" 
+                     target="_blank" 
+                     class="btn btn-warning btn-sm w-100">
+                    <i class="bi bi-box-arrow-in-right me-1"></i>Sisteme Giriş
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ek Bilgi -->
+        <div class="text-center mt-5">
+          <div class="card border-0 bg-light">
+            <div class="card-body p-4">
+              <h5 class="h6 text-dark mb-3">Hangi üyelik paketi size uygun?</h5>
+              <p class="text-muted mb-3">
+                Tüm üyelik paketleri hakkında detaylı bilgi almak ve size en uygun seçeneği belirlemek için bizimle iletişime geçin.
+              </p>
+              <a href="https://wa.me/905412465429?text=Merhaba,%20tüm%20üyelik%20paketleri%20hakkında%20detaylı%20bilgi%20almak%20istiyorum" 
+                 target="_blank" 
+                 class="btn btn-success">
+                <i class="bi bi-whatsapp me-2"></i>Tüm Paketler Hakkında Bilgi Al
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+  }
+  
+  .table th {
+    border-bottom: 2px solid #dee2e6;
+  }
+  
+  .table > :not(caption) > * > * {
+    border-bottom: 1px solid #f8f9fa;
+  }
+  
+  .feature-item {
+    border-bottom: 1px solid #f8f9fa;
+    padding-bottom: 0.75rem;
+  }
+  
+  .feature-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  @media (max-width: 991.98px) {
+    .featured {
+      transform: none;
+    }
+  }
+</style>
+
+</BaseLayout>

@@ -1,0 +1,998 @@
+---
+// zamanlayici.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="MeetWork Toplantı Zamanlayıcı">
+  
+  <section class="py-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h1 class="display-5 text-center mb-4">MeetWork</h1>
+          <label class="form-label fw-bold">MeetWork Zaman kazanmanız için kurulmuş bir topluluktur. Akıllı Ticari Eşleşme ve diğer tüm teknolojilerimiz katılımcılarımızın ticari kazanımları içindir.</label>
+          <p class="text-center text-muted mb-5">Profesyonel B2B toplantılarınız için akıllı zaman yönetimi sistemi</p>
+
+          <!-- 1. ANA ZAMANLAYICI -->
+          <div class="card border-danger shadow-lg mb-4">
+            <div class="card-header bg-danger text-white text-center py-3">
+              <h3 class="mb-0">
+                <i class="bi bi-alarm me-2"></i>
+                Toplantı Zamanlayıcı Sistemi
+              </h3>
+            </div>
+            <div class="card-body text-center p-4">
+              <!-- Geri Sayım Ekranı -->
+              <div id="countdownDisplay" class="countdown-display mb-4">
+                <div class="countdown-time display-1 fw-bold text-danger" id="currentTime">00:00</div>
+                <div class="countdown-label h5 text-muted" id="currentPhase">Hazır</div>
+                <div class="speaker-info mt-3" id="currentSpeakerInfo">
+                  <div class="speaker-name h6" id="currentSpeakerName">-</div>
+                  <div class="speaker-company small text-muted" id="currentSpeakerCompany">-</div>
+                </div>
+              </div>
+
+              <!-- Kontrol Butonları -->
+              <div class="control-buttons mb-4">
+                <button class="btn btn-success btn-lg me-2" id="startBtn">
+                  <i class="bi bi-play-fill me-1"></i>Başlat
+                </button>
+                <button class="btn btn-warning btn-lg me-2" id="pauseBtn" disabled>
+                  <i class="bi bi-pause-fill me-1"></i>Durdur
+                </button>
+                <button class="btn btn-secondary btn-lg me-2" id="nextBtn">
+                  <i class="bi bi-skip-forward me-1"></i>Sonraki
+                </button>
+                <button class="btn btn-danger btn-lg" id="resetBtn">
+                  <i class="bi bi-arrow-clockwise me-1"></i>Sıfırla
+                </button>
+              </div>
+
+              <!-- Faz Seçimi -->
+              <div class="phase-selector mb-3">
+                <label class="form-label fw-bold me-2">Aktif Faz:</label>
+                <select class="form-select d-inline-block w-auto" id="phaseSelect">
+                  <option value="opening">Açılış Konuşması</option>
+                  <option value="bronze">Bronz Sponsor</option>
+                  <option value="silver">Gümüş Sponsor</option>
+                  <option value="gold">Altın Sponsor</option>
+                  <option value="invited1">Davetli Konuşmacı 1</option>
+                  <option value="invited2">Davetli Konuşmacı 2</option>
+                  <option value="invited3">Davetli Konuşmacı 3</option>
+                  <option value="invited4">Davetli Konuşmacı 4</option>
+                  <option value="invited5">Davetli Konuşmacı 5</option>
+                  <option value="b2b">B2B Oturumlar</option>
+                </select>
+              </div>
+
+              <!-- Katılımcı Linki -->
+              <div class="participant-link mt-4">
+                <div class="input-group input-group-lg">
+                  <input type="text" class="form-control" id="participantUrl" 
+                         value="" readonly>
+                  <button class="btn btn-outline-primary" id="copyLinkBtn">
+                    <i class="bi bi-clipboard me-1"></i>Kopyala
+                  </button>
+                  <button class="btn btn-outline-success" id="showParticipantBtn">
+                    <i class="bi bi-display me-1"></i>Göster
+                  </button>
+                </div>
+                <small class="text-muted">Bu linki katılımcılarla paylaşın veya "Göster" butonu ile tam ekran açın</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. HESAPLANAN SÜRELER -->
+          <div class="card shadow-sm mb-4">
+            <div class="card-header bg-info text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-calculator me-2"></i>
+                Hesaplanan Süreler
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="row text-center">
+                <div class="col-md-3 mb-3">
+                  <div class="result-card">
+                    <div class="result-value h4 text-primary" id="openingTotal">0 dk</div>
+                    <div class="result-label text-muted">Açılış Toplamı</div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="result-card">
+                    <div class="result-value h4 text-success" id="b2bTimeLeft">0 dk</div>
+                    <div class="result-label text-muted">Kalan B2B Süresi</div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="result-card">
+                    <div class="result-value h4 text-warning" id="sessionTime">0 dk</div>
+                    <div class="result-label text-muted">Oturum Başına</div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div class="result-card">
+                    <div class="result-value h4 text-danger" id="totalCalculated">0 dk</div>
+                    <div class="result-label text-muted">Toplam Süre</div>
+                  </div>
+                </div>
+              </div>
+              <div class="alert alert-warning small mt-2">
+                <i class="bi bi-info-circle me-1"></i>
+                Süreleri manuel olarak ayarlayabilirsiniz. "Sonraki" butonu ile bir sonraki faza geçebilirsiniz.
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. TOPLANTI AYARLARI -->
+          <div class="card shadow-lg mb-4">
+            <div class="card-header bg-primary text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-gear-fill me-2"></i>
+                Toplantı Ayarları
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <!-- Temel Ayarlar -->
+                <div class="col-md-4">
+                  <label class="form-label fw-bold">Katılımcı Sayısı</label>
+                  <input type="number" class="form-control" id="participantCount" value="20" min="1">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-bold">B2B Oturum Sayısı</label>
+                  <input type="number" class="form-control" id="sessionCount" value="4" min="1" max="10">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-bold">Toplam Süre (dk)</label>
+                  <input type="number" class="form-control" id="totalTime" value="120" min="10">
+                </div>
+
+                <!-- Giriş Konuşması -->
+                <div class="col-12 mt-3">
+                  <h6 class="fw-bold text-primary">Açılış ve Sponsor Sunumları</h6>
+                  <div class="row g-3">
+                    <div class="col-md-3">
+                      <label class="form-label">Giriş Konuşması (dk)</label>
+                      <input type="number" class="form-control intro-time" value="2" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="opening">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="opening">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label">Bronz Sponsor (dk)</label>
+                      <input type="number" class="form-control sponsor-time" data-level="bronze" value="5" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="bronze">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="bronze">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label">Gümüş Sponsor (dk)</label>
+                      <input type="number" class="form-control sponsor-time" data-level="silver" value="10" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="silver">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="silver">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label">Altın Sponsor (dk)</label>
+                      <input type="number" class="form-control sponsor-time" data-level="gold" value="15" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="gold">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="gold">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Davetli Konuşmacılar -->
+                <div class="col-12 mt-4">
+                  <h6 class="fw-bold text-danger">Davetli Konuşmacılar (Maxi Toplantılar için)</h6>
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <label class="form-label">Davetli Konuşmacı 1 (dk)</label>
+                      <input type="number" class="form-control invited-time" data-invited="1" value="0" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="invited1">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="invited1">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label">Davetli Konuşmacı 2 (dk)</label>
+                      <input type="number" class="form-control invited-time" data-invited="2" value="0" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="invited2">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="invited2">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label">Davetli Konuşmacı 3 (dk)</label>
+                      <input type="number" class="form-control invited-time" data-invited="3" value="0" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="invited3">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="invited3">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label">Davetli Konuşmacı 4 (dk)</label>
+                      <input type="number" class="form-control invited-time" data-invited="4" value="0" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="invited4">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="invited4">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label">Davetli Konuşmacı 5 (dk)</label>
+                      <input type="number" class="form-control invited-time" data-invited="5" value="0" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="invited5">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="invited5">
+                    </div>
+                    <div class="col-md-4">
+                      <label class="form-label">Davetli Konuşmacı 6 (dk)</label>
+                      <input type="number" class="form-control invited-time" data-invited="6" value="0" min="0">
+                      <input type="text" class="form-control mt-1 speaker-name-input" placeholder="Konuşmacı Adı" data-phase="invited6">
+                      <input type="text" class="form-control mt-1 speaker-company-input" placeholder="Firma Adı" data-phase="invited6">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hesaplama Butonu -->
+                <div class="col-12 mt-4">
+                  <button class="btn btn-success btn-lg w-100" id="calculateBtn">
+                    <i class="bi bi-calculator me-2"></i>B2B Sürelerini Hesapla ve Zamanlayıcıyı Ayarla
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. UYARI AYARLARI -->
+          <div class="card">
+            <div class="card-header bg-warning text-dark">
+              <h5 class="mb-0">
+                <i class="bi bi-bell-fill me-2"></i>
+                Uyarı Ayarları (İsteğinize göre ayarlayabilirsiniz)
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <label class="form-label">Son Uyarı (saniye)</label>
+                  <input type="number" class="form-control" id="warningTime" value="10" min="5" max="30">
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Uyarı Rengi</label>
+                  <select class="form-select" id="warningColor">
+                    <option value="yellow-blue">Sarı-Mavi Geçiş</option>
+                    <option value="red-flash">Kırmızı Flaş</option>
+                    <option value="blue-flash">Mavi Flaş</option>
+                    <option value="rainbow">Gökkuşağı</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Ses Uyarısı</label>
+                  <select class="form-select" id="soundAlert">
+                    <option value="beep">Bip Sesi</option>
+                    <option value="bell">Zil Sesi</option>
+                    <option value="alarm">Alarm Sesi</option>
+                    <option value="none">Sessiz</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">Uyarı Testi</label>
+                  <button class="btn btn-outline-warning w-100" id="testAlertBtn">
+                    <i class="bi bi-play-circle me-1"></i>Test Et
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Katılımcı Ekranı (Gizli) -->
+  <div id="participantScreen" class="participant-screen">
+    <div class="countdown-participant">
+      <div class="countdown-time display-1 fw-bold" id="participantTime">00:00</div>
+      <div class="countdown-label h4" id="participantPhase">Hazır</div>
+      <div class="speaker-info mt-4" id="participantSpeakerInfo">
+        <div class="speaker-name h3" id="participantSpeakerName">-</div>
+        <div class="speaker-company h5 text-light" id="participantSpeakerCompany">-</div>
+      </div>
+    </div>
+    <button class="btn btn-light btn-sm position-absolute top-0 end-0 m-3" id="closeParticipantBtn">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <style>
+    .countdown-display {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 3px solid #dc3545;
+      min-height: 250px;
+      transition: all 0.5s ease;
+    }
+    
+    .countdown-time {
+      font-family: 'Courier New', monospace;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .speaker-info {
+      border-top: 1px solid #dee2e6;
+      padding-top: 1rem;
+    }
+    
+    .participant-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1a1a1a;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      transition: all 0.5s ease;
+    }
+    
+    .countdown-participant {
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+    
+    /* Uyarı Stilleri */
+    .warning-yellow-blue {
+      background: linear-gradient(45deg, #ffd700, #1e90ff) !important;
+      animation: colorShift 1s infinite alternate !important;
+    }
+    
+    .warning-red-flash {
+      background: #dc3545 !important;
+      animation: flash 0.5s infinite !important;
+    }
+    
+    .warning-blue-flash {
+      background: #0d6efd !important;
+      animation: flash 0.5s infinite !important;
+    }
+    
+    .warning-rainbow {
+      background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff) !important;
+      background-size: 400% 400% !important;
+      animation: rainbow 2s infinite !important;
+    }
+    
+    .warning-text {
+      color: white !important;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5) !important;
+    }
+    
+    @keyframes colorShift {
+      0% { background: linear-gradient(45deg, #ffd700, #1e90ff); }
+      100% { background: linear-gradient(45deg, #1e90ff, #ffd700); }
+    }
+    
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .result-card {
+      padding: 1rem;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      background: #f8f9fa;
+    }
+    
+    .result-value {
+      margin-bottom: 0.5rem;
+    }
+    
+    .control-buttons .btn {
+      min-width: 120px;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .countdown-time {
+        font-size: 3rem;
+      }
+      
+      .control-buttons .btn {
+        width: 100%;
+        margin-right: 0 !important;
+      }
+    }
+  </style>
+
+
+
+
+<!-- script kısmı  -->
+
+<script>
+    // ÖNCE elements objesini tanımla!
+    const elements = {
+        // Toplantı ayarları
+        participantCount: document.getElementById('participantCount'),
+        sessionCount: document.getElementById('sessionCount'),
+        totalTime: document.getElementById('totalTime'),
+        calculateBtn: document.getElementById('calculateBtn'),
+        
+        // Hesaplanan süreler
+        openingTotal: document.getElementById('openingTotal'),
+        b2bTimeLeft: document.getElementById('b2bTimeLeft'),
+        sessionTime: document.getElementById('sessionTime'),
+        totalCalculated: document.getElementById('totalCalculated'),
+        
+        // Zamanlayıcı
+        currentTime: document.getElementById('currentTime'),
+        currentPhase: document.getElementById('currentPhase'),
+        currentSpeakerName: document.getElementById('currentSpeakerName'),
+        currentSpeakerCompany: document.getElementById('currentSpeakerCompany'),
+        countdownDisplay: document.getElementById('countdownDisplay'),
+        startBtn: document.getElementById('startBtn'),
+        pauseBtn: document.getElementById('pauseBtn'),
+        nextBtn: document.getElementById('nextBtn'),
+        resetBtn: document.getElementById('resetBtn'),
+        phaseSelect: document.getElementById('phaseSelect'),
+        
+        // Katılımcı ekranı
+        participantUrl: document.getElementById('participantUrl'),
+        copyLinkBtn: document.getElementById('copyLinkBtn'),
+        showParticipantBtn: document.getElementById('showParticipantBtn'),
+        participantScreen: document.getElementById('participantScreen'),
+        participantTime: document.getElementById('participantTime'),
+        participantPhase: document.getElementById('participantPhase'),
+        participantSpeakerName: document.getElementById('participantSpeakerName'),
+        participantSpeakerCompany: document.getElementById('participantSpeakerCompany'),
+        closeParticipantBtn: document.getElementById('closeParticipantBtn'),
+        
+        // Uyarı ayarları
+        warningTime: document.getElementById('warningTime'),
+        warningColor: document.getElementById('warningColor'),
+        soundAlert: document.getElementById('soundAlert'),
+        testAlertBtn: document.getElementById('testAlertBtn')
+    };
+
+    // Ses elementleri
+    const sounds = {
+        beep: new Audio("data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA=="),
+        bell: new Audio("data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA=="),
+        alarm: new Audio("data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA==")
+    };
+
+    // Toplantı durumu - localStorage'dan oku veya default değerleri kullan
+    let meetingState = JSON.parse(localStorage.getItem('meetingState')) || {
+        currentTime: 0,
+        currentPhase: 'opening',
+        isRunning: false,
+        timer: null,
+        warningActive: false,
+        phases: ['opening', 'bronze', 'silver', 'gold', 'invited1', 'invited2', 'invited3', 'invited4', 'invited5', 'invited6', 'b2b'],
+        currentPhaseIndex: 0,
+        speakerData: {
+            opening: { name: '', company: '' },
+            bronze: { name: '', company: '' },
+            silver: { name: '', company: '' },
+            gold: { name: '', company: '' },
+            invited1: { name: '', company: '' },
+            invited2: { name: '', company: '' },
+            invited3: { name: '', company: '' },
+            invited4: { name: '', company: '' },
+            invited5: { name: '', company: '' },
+            invited6: { name: '', company: '' },
+            b2b: { name: 'B2B Oturum Katılımcıları', company: 'Tüm Firmalar' }
+        }
+    };
+
+    // 6. DAVETLİ KONUŞMACIYI DROPDOWN'A EKLE
+    function updatePhaseSelect() {
+        // Önce dropdown'ı temizle (sadece temel fazlar kalacak şekilde)
+        const basicPhases = [
+            { value: 'opening', text: 'Açılış Konuşması' },
+            { value: 'bronze', text: 'Bronz Sponsor' },
+            { value: 'silver', text: 'Gümüş Sponsor' },
+            { value: 'gold', text: 'Altın Sponsor' }
+        ];
+        
+        // Davetli konuşmacıları ekle
+        const invitedPhases = [];
+        for (let i = 1; i <= 6; i++) {
+            invitedPhases.push({ 
+                value: `invited${i}`, 
+                text: `Davetli Konuşmacı ${i}` 
+            });
+        }
+        
+        // B2B'yi ekle
+        const allPhases = [...basicPhases, ...invitedPhases, 
+                          { value: 'b2b', text: 'B2B Oturumlar' }];
+        
+        // Dropdown'ı yeniden oluştur
+        elements.phaseSelect.innerHTML = '';
+        allPhases.forEach(phase => {
+            const option = document.createElement('option');
+            option.value = phase.value;
+            option.textContent = phase.text;
+            elements.phaseSelect.appendChild(option);
+        });
+        
+        // Mevcut fazı seçili yap
+        elements.phaseSelect.value = meetingState.currentPhase;
+    }
+
+    // Basit bip sesi oluştur
+    function createBeepSound(audio, frequency = 800, duration = 200) {
+        const context = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = context.createOscillator();
+        const gainNode = context.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(context.destination);
+        
+        oscillator.frequency.value = frequency;
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0.3, context.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, context.currentTime + duration / 1000);
+        
+        oscillator.start(context.currentTime);
+        oscillator.stop(context.currentTime + duration / 1000);
+    }
+
+    // Form verilerini kaydetme fonksiyonu
+    function saveFormData() {
+        const formData = {
+            // Temel ayarlar
+            participantCount: elements.participantCount.value,
+            sessionCount: elements.sessionCount.value,
+            totalTime: elements.totalTime.value,
+            
+            // Açılış konuşmaları süreleri
+            introTime: document.querySelector('.intro-time').value,
+            bronzeTime: document.querySelector('[data-level="bronze"]').value,
+            silverTime: document.querySelector('[data-level="silver"]').value,
+            goldTime: document.querySelector('[data-level="gold"]').value,
+            
+            // Davetli konuşmacı süreleri
+            invitedTimes: {}
+        };
+
+        // Davetli konuşmacı sürelerini kaydet
+        document.querySelectorAll('.invited-time').forEach(input => {
+            formData.invitedTimes[input.dataset.invited] = input.value;
+        });
+
+        // Konuşmacı bilgilerini kaydet
+        saveSpeakerData();
+        
+        // Tüm verileri localStorage'a kaydet
+        localStorage.setItem('meetingFormData', JSON.stringify(formData));
+        localStorage.setItem('meetingState', JSON.stringify(meetingState));
+    }
+
+    // Form verilerini yükleme fonksiyonu
+    function loadFormData() {
+        const savedData = JSON.parse(localStorage.getItem('meetingFormData'));
+        const savedState = JSON.parse(localStorage.getItem('meetingState'));
+        
+        if (savedData) {
+            // Temel ayarları yükle
+            elements.participantCount.value = savedData.participantCount || '20';
+            elements.sessionCount.value = savedData.sessionCount || '4';
+            elements.totalTime.value = savedData.totalTime || '120';
+            
+            // Açılış konuşmaları sürelerini yükle
+            document.querySelector('.intro-time').value = savedData.introTime || '2';
+            document.querySelector('[data-level="bronze"]').value = savedData.bronzeTime || '5';
+            document.querySelector('[data-level="silver"]').value = savedData.silverTime || '10';
+            document.querySelector('[data-level="gold"]').value = savedData.goldTime || '15';
+            
+            // Davetli konuşmacı sürelerini yükle
+            if (savedData.invitedTimes) {
+                Object.keys(savedData.invitedTimes).forEach(invitedId => {
+                    const input = document.querySelector(`[data-invited="${invitedId}"]`);
+                    if (input) {
+                        input.value = savedData.invitedTimes[invitedId];
+                    }
+                });
+            }
+        }
+        
+        if (savedState && savedState.speakerData) {
+            meetingState.speakerData = { ...meetingState.speakerData, ...savedState.speakerData };
+            
+            // Konuşmacı bilgilerini input alanlarına yükle
+            Object.keys(meetingState.speakerData).forEach(phase => {
+                const nameInput = document.querySelector(`[data-phase="${phase}"].speaker-name-input`);
+                const companyInput = document.querySelector(`[data-phase="${phase}"].speaker-company-input`);
+                
+                if (nameInput) nameInput.value = meetingState.speakerData[phase].name || '';
+                if (companyInput) companyInput.value = meetingState.speakerData[phase].company || '';
+            });
+        }
+    }
+
+    // Konuşmacı bilgilerini güncelle
+    function updateSpeakerInfo() {
+        const currentSpeaker = meetingState.speakerData[meetingState.currentPhase];
+        
+        // Ana ekran
+        elements.currentSpeakerName.textContent = currentSpeaker.name || '-';
+        elements.currentSpeakerCompany.textContent = currentSpeaker.company || '-';
+        
+        // Katılımcı ekranı
+        elements.participantSpeakerName.textContent = currentSpeaker.name || '-';
+        elements.participantSpeakerCompany.textContent = currentSpeaker.company || '-';
+    }
+
+    // Konuşmacı bilgilerini kaydet
+    function saveSpeakerData() {
+        const nameInputs = document.querySelectorAll('.speaker-name-input');
+        const companyInputs = document.querySelectorAll('.speaker-company-input');
+        
+        nameInputs.forEach(input => {
+            const phase = input.dataset.phase;
+            meetingState.speakerData[phase].name = input.value;
+        });
+        
+        companyInputs.forEach(input => {
+            const phase = input.dataset.phase;
+            meetingState.speakerData[phase].company = input.value;
+        });
+        
+        updateSpeakerInfo();
+    }
+
+    // Form temizleme butonu
+    function addClearFormButton() {
+        // Eğer buton zaten varsa ekleme
+        if (document.getElementById('clearFormBtn')) return;
+        
+        const clearButton = `
+            <button class="btn btn-danger w-100 mt-3" id="clearFormBtn">
+                <i class="bi bi-trash me-2"></i>Tüm Formu Temizle(Dikkat İsim, Firma Adları ve Süreleri Sıfırlar!)
+            </button>
+        `;
+        
+        // Butonu ayarlar kartının sonuna ekle
+        document.querySelector('#calculateBtn').insertAdjacentHTML('afterend', clearButton);
+        
+        // Buton event'ini ekle
+        document.getElementById('clearFormBtn').addEventListener('click', clearFormData);
+    }
+
+    function clearFormData() {
+        if (confirm('Tüm form verilerini temizlemek istediğinizden emin misiniz? Bu işlem geri alınamaz!')) {
+            // localStorage'ı temizle
+            localStorage.removeItem('meetingFormData');
+            localStorage.removeItem('meetingState');
+            
+            // Sayfayı yenile
+            location.reload();
+        }
+    }
+
+    // Input değişikliklerini dinle ve otomatik kaydet
+    function setupAutoSave() {
+        const inputsToWatch = [
+            '#participantCount', '#sessionCount', '#totalTime',
+            '.intro-time', '.sponsor-time', '.invited-time',
+            '.speaker-name-input', '.speaker-company-input'
+        ];
+        
+        inputsToWatch.forEach(selector => {
+            document.querySelectorAll(selector).forEach(input => {
+                input.addEventListener('input', () => {
+                    saveFormData();
+                    // Süreleri de otomatik hesapla
+                    if (input.type === 'number') {
+                        calculateTimes();
+                    }
+                });
+            });
+        });
+        
+        // Select elementlerini de dinle
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', saveFormData);
+        });
+    }
+
+    // Link oluşturma
+    function generateParticipantLink() {
+        const baseUrl = window.location.origin + window.location.pathname;
+        elements.participantUrl.value = baseUrl + '?view=participant';
+    }
+
+    // Süre Hesaplama
+    function calculateTimes() {
+        const totalTime = parseInt(elements.totalTime.value) * 60;
+        const introTime = parseInt(document.querySelector('.intro-time').value) * 60;
+        const bronzeTime = parseInt(document.querySelector('[data-level="bronze"]').value) * 60;
+        const silverTime = parseInt(document.querySelector('[data-level="silver"]').value) * 60;
+        const goldTime = parseInt(document.querySelector('[data-level="gold"]').value) * 60;
+        
+        // Davetli konuşmacı sürelerini topla
+        let invitedTotal = 0;
+        document.querySelectorAll('.invited-time').forEach(input => {
+            invitedTotal += parseInt(input.value) * 60;
+        });
+        
+        const openingTotal = introTime + bronzeTime + silverTime + goldTime + invitedTotal;
+        const b2bTimeLeft = totalTime - openingTotal;
+        const sessionCount = parseInt(elements.sessionCount.value);
+        const sessionTime = Math.floor(b2bTimeLeft / sessionCount);
+        
+        // Sonuçları göster
+        elements.openingTotal.textContent = Math.floor(openingTotal / 60) + ' dk';
+        elements.b2bTimeLeft.textContent = Math.floor(b2bTimeLeft / 60) + ' dk';
+        elements.sessionTime.textContent = Math.floor(sessionTime / 60) + ' dk';
+        elements.totalCalculated.textContent = Math.floor(totalTime / 60) + ' dk';
+        
+        // Konuşmacı bilgilerini kaydet
+        saveSpeakerData();
+        
+        // İlk fazı ayarla
+        meetingState.currentTime = introTime;
+        meetingState.currentPhase = 'opening';
+        meetingState.currentPhaseIndex = 0;
+        elements.phaseSelect.value = 'opening';
+        updateDisplay();
+        resetWarning();
+        
+        // Linki güncelle
+        generateParticipantLink();
+        
+        // Verileri kaydet
+        saveFormData();
+    }
+
+    // Zamanlayıcı Kontrolleri
+    function startTimer() {
+        if (meetingState.currentTime <= 0) return;
+        
+        meetingState.isRunning = true;
+        elements.startBtn.disabled = true;
+        elements.pauseBtn.disabled = false;
+        
+        meetingState.timer = setInterval(() => {
+            meetingState.currentTime--;
+            updateDisplay();
+            
+            // Uyarı kontrolü
+            const warningTime = parseInt(elements.warningTime.value);
+            if (meetingState.currentTime <= warningTime && !meetingState.warningActive) {
+                triggerWarning();
+            }
+            
+            // Süre bitti
+            if (meetingState.currentTime <= 0) {
+                clearInterval(meetingState.timer);
+                meetingState.isRunning = false;
+                elements.startBtn.disabled = false;
+                elements.pauseBtn.disabled = true;
+                triggerTimeUp();
+            }
+        }, 1000);
+    }
+
+    function pauseTimer() {
+        meetingState.isRunning = false;
+        clearInterval(meetingState.timer);
+        elements.startBtn.disabled = false;
+        elements.pauseBtn.disabled = true;
+    }
+
+    function nextPhase() {
+        meetingState.currentPhaseIndex++;
+        if (meetingState.currentPhaseIndex >= meetingState.phases.length) {
+            meetingState.currentPhaseIndex = 0;
+        }
+        
+        const nextPhase = meetingState.phases[meetingState.currentPhaseIndex];
+        changeToPhase(nextPhase);
+    }
+
+    function changeToPhase(phase) {
+        meetingState.currentPhase = phase;
+        elements.phaseSelect.value = phase;
+        
+        // Faz süresini ayarla
+        let phaseTime = 0;
+        switch(phase) {
+            case 'opening':
+                phaseTime = parseInt(document.querySelector('.intro-time').value) * 60;
+                break;
+            case 'bronze':
+                phaseTime = parseInt(document.querySelector('[data-level="bronze"]').value) * 60;
+                break;
+            case 'silver':
+                phaseTime = parseInt(document.querySelector('[data-level="silver"]').value) * 60;
+                break;
+            case 'gold':
+                phaseTime = parseInt(document.querySelector('[data-level="gold"]').value) * 60;
+                break;
+            case 'invited1':
+                phaseTime = parseInt(document.querySelector('[data-invited="1"]').value) * 60;
+                break;
+            case 'invited2':
+                phaseTime = parseInt(document.querySelector('[data-invited="2"]').value) * 60;
+                break;
+            case 'invited3':
+                phaseTime = parseInt(document.querySelector('[data-invited="3"]').value) * 60;
+                break;
+            case 'invited4':
+                phaseTime = parseInt(document.querySelector('[data-invited="4"]').value) * 60;
+                break;
+            case 'invited5':
+                phaseTime = parseInt(document.querySelector('[data-invited="5"]').value) * 60;
+                break;
+            case 'invited6':
+                phaseTime = parseInt(document.querySelector('[data-invited="6"]').value) * 60;
+                break;
+            case 'b2b':
+                phaseTime = parseInt(elements.sessionTime.textContent) * 60;
+                break;
+        }
+        
+        meetingState.currentTime = phaseTime;
+        pauseTimer();
+        updateDisplay();
+        updateSpeakerInfo();
+        resetWarning();
+    }
+
+    function changePhase() {
+        const phase = elements.phaseSelect.value;
+        changeToPhase(phase);
+    }
+
+    function resetTimer() {
+        pauseTimer();
+        calculateTimes();
+        resetWarning();
+    }
+
+    function updateDisplay() {
+        const minutes = Math.floor(meetingState.currentTime / 60);
+        const seconds = meetingState.currentTime % 60;
+        const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        elements.currentTime.textContent = timeString;
+        elements.participantTime.textContent = timeString;
+        
+        const phaseNames = {
+            opening: 'Açılış Konuşması',
+            bronze: 'Bronz Sponsor',
+            silver: 'Gümüş Sponsor',
+            gold: 'Altın Sponsor',
+            invited1: 'Davetli Konuşmacı 1',
+            invited2: 'Davetli Konuşmacı 2',
+            invited3: 'Davetli Konuşmacı 3',
+            invited4: 'Davetli Konuşmacı 4',
+            invited5: 'Davetli Konuşmacı 5',
+            invited6: 'Davetli Konuşmacı 6',
+            b2b: 'B2B Oturum'
+        };
+        
+        const phaseName = phaseNames[meetingState.currentPhase];
+        elements.currentPhase.textContent = phaseName;
+        elements.participantPhase.textContent = phaseName;
+    }
+
+    function triggerWarning() {
+        meetingState.warningActive = true;
+        const color = elements.warningColor.value;
+        
+        // Ana ekran uyarısı
+        elements.countdownDisplay.className = 'countdown-display mb-4 warning-' + color;
+        elements.currentTime.className = 'countdown-time display-1 fw-bold warning-text';
+        elements.currentPhase.className = 'countdown-label h5 warning-text';
+        elements.currentSpeakerName.className = 'speaker-name h6 warning-text';
+        elements.currentSpeakerCompany.className = 'speaker-company small warning-text';
+        
+        // Katılımcı ekranı uyarısı
+        elements.participantScreen.className = 'participant-screen warning-' + color;
+        elements.participantTime.className = 'countdown-time display-1 fw-bold warning-text';
+        elements.participantPhase.className = 'countdown-label h4 warning-text';
+        elements.participantSpeakerName.className = 'speaker-name h3 warning-text';
+        elements.participantSpeakerCompany.className = 'speaker-company h5 warning-text';
+        
+        // Ses uyarısı
+        const soundType = elements.soundAlert.value;
+        if (soundType !== 'none') {
+            if (soundType === 'beep') {
+                createBeepSound(sounds.beep, 800, 200);
+            } else if (soundType === 'bell') {
+                createBeepSound(sounds.bell, 1000, 500);
+            } else if (soundType === 'alarm') {
+                createBeepSound(sounds.alarm, 600, 300);
+                setTimeout(() => createBeepSound(sounds.alarm, 800, 300), 400);
+            }
+        }
+    }
+
+    function resetWarning() {
+        meetingState.warningActive = false;
+        
+        // Ana ekranı sıfırla
+        elements.countdownDisplay.className = 'countdown-display mb-4';
+        elements.currentTime.className = 'countdown-time display-1 fw-bold text-danger';
+        elements.currentPhase.className = 'countdown-label h5 text-muted';
+        elements.currentSpeakerName.className = 'speaker-name h6';
+        elements.currentSpeakerCompany.className = 'speaker-company small text-muted';
+        
+        // Katılımcı ekranını sıfırla
+        elements.participantScreen.className = 'participant-screen';
+        elements.participantTime.className = 'countdown-time display-1 fw-bold';
+        elements.participantPhase.className = 'countdown-label h4';
+        elements.participantSpeakerName.className = 'speaker-name h3';
+        elements.participantSpeakerCompany.className = 'speaker-company h5 text-light';
+    }
+
+    function triggerTimeUp() {
+        // Daha belirgin bitiş efekti
+        elements.currentTime.style.color = '#dc3545';
+        elements.participantTime.style.color = '#dc3545';
+        
+        // Son bip sesi
+        createBeepSound(sounds.beep, 400, 1000);
+        
+        setTimeout(() => {
+            elements.currentTime.style.color = '';
+            elements.participantTime.style.color = '';
+            resetWarning();
+            
+            // Otomatik olarak bir sonraki faza geç
+            setTimeout(() => nextPhase(), 2000);
+        }, 3000);
+    }
+
+    // Event Listener'ları kur
+    function setupEventListeners() {
+        elements.calculateBtn.addEventListener('click', calculateTimes);
+        elements.startBtn.addEventListener('click', startTimer);
+        elements.pauseBtn.addEventListener('click', pauseTimer);
+        elements.nextBtn.addEventListener('click', nextPhase);
+        elements.resetBtn.addEventListener('click', resetTimer);
+        elements.phaseSelect.addEventListener('change', changePhase);
+        elements.copyLinkBtn.addEventListener('click', () => {
+            elements.participantUrl.select();
+            navigator.clipboard.writeText(elements.participantUrl.value).then(() => {
+                alert('Katılımcı linki kopyalandı!');
+            });
+        });
+        elements.showParticipantBtn.addEventListener('click', () => {
+            elements.participantScreen.style.display = 'flex';
+        });
+        elements.closeParticipantBtn.addEventListener('click', () => {
+            elements.participantScreen.style.display = 'none';
+        });
+        elements.testAlertBtn.addEventListener('click', () => {
+            triggerWarning();
+            setTimeout(resetWarning, 3000);
+        });
+    }
+
+    // Sayfa yüklendiğinde
+    window.addEventListener('load', () => {
+        updatePhaseSelect(); // Dropdown'ı güncelle (6. konuşmacıyı ekle)
+        loadFormData(); // Kayıtlı verileri yükle
+        addClearFormButton(); // Temizle butonunu ekle
+        setupAutoSave(); // Otomatik kaydetmeyi başlat
+        setupEventListeners(); // Event listener'ları kur
+        calculateTimes(); // Süreleri hesapla
+        generateParticipantLink(); // Linki oluştur
+    });
+
+    // URL'de participant view kontrolü
+    if (new URLSearchParams(window.location.search).get('view') === 'participant') {
+        elements.participantScreen.style.display = 'flex';
+    }
+</script>
+
+
+</BaseLayout>

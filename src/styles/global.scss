@@ -1,0 +1,113 @@
+// 1. Tüm Bootstrap (en basit)
+@import "bootstrap/scss/bootstrap";
+
+// 2. Bootstrap icons
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// 3. Global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+// Animasyonlar
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// Responsive düzenlemeler
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+  
+  &:hover {
+    background: #555;
+  }
+}
+
+// Submenu turuncu yap
+.dropdown-menu .dropdown-item {
+  &.text-warning,
+  &.text-warning:hover {
+    color: #fd7e14 !important;
+  }
+}
+
+// Mobil
+@media (max-width: 991.98px) {
+  .dropdown-menu .dropdown-item {
+    &.text-warning,
+    &.text-warning:hover {
+      color: #fd7e14 !important;
+    }
+  }
+}
+
+// Dropdown menü
+.dropdown-menu {
+  background-color: #fff !important;
+  border: 1px solid rgba(0,0,0,.15) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175) !important;
+
+  .dropdown-item {
+    color: #fd7e14 !important;
+    padding: 0.5rem 1.5rem !important;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      background-color: #070707 !important;
+      color: #fd7e14 !important;
+    }
+  }
+}
+
+// Card
+.card {
+    border: 2px solid #e9ecef !important;
+}
+
+// Mobil dropdown
+@media (max-width: 991.98px) {
+  .dropdown-menu {
+    background-color: #fff !important;
+    .dropdown-item {
+      color: #fd7e14 !important;
+      &:hover,
+      &:focus {
+        background-color: #ffe0cc !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CompanyProfile from '../../../components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'Forte Toptan',
+  description: 'Koroplast ve Şölen markalarının güvenilir toptan tedarikçisi - Geniş ürün yelpazesi ile hizmetinizdeyiz.',
+  slug: 'forte-toptan',
+  sector: 'gida-toptan',
+  color: '#2c5aa0',
+  heroIcon: '/images/icons/gida-toptan.svg',
+  location: 'İstanbul, Türkiye',
+  services: [
+    { title: 'Şölen Ürünleri', description: 'Biscolata, Boombastic, Chocodan\'s ve daha fazlası' },
+    { title: 'Koroplast Ürünleri', description: 'Pişirme, saklama, temizlik ürünleri' },
+    { title: 'Gıda Toptan', description: 'Geniş gıda ürün yelpazesi' },
+    { title: 'Toptan Tedarikçi', description: 'Koroplast ve Şölen tedarikçisi' }
+  ],
+  products: [
+    { 
+      title: 'Şölen Marka Ürünler', 
+      description: 'Biscolata, Boombastic, Chocodan\'s, Greta, Luppo, Nutymax, Ozmo, Papita ve ikramlık ürünler' 
+    },
+    { 
+      title: 'Koroplast Pişirme Ürünleri', 
+      description: 'Yüksek kaliteli pişirme kapları, fırın kapları ve mutfak gereçleri' 
+    },
+    { 
+      title: 'Koroplast Saklama Ürünleri', 
+      description: 'Gıda saklama kapları, vakumlu saklama sistemleri ve mutfak organizasyon ürünleri' 
+    },
+    { 
+      title: 'Koroplast Temizlik Ürünleri', 
+      description: 'Çöp torbaları, temizlik gereçleri ve hijyen ürünleri' 
+    },
+    { 
+      title: 'Koroplast Doğal Ürünler', 
+      description: 'Çevre dostu, doğal malzemelerden üretilmiş ürünler' 
+    },
+    { 
+      title: 'SemPatili Ürünler', 
+      description: 'Evcil hayvan bakım ürünleri ve aksesuarları' 
+    },
+    { 
+      title: 'İdeal Ürünler', 
+      description: 'Günlük kullanım için pratik ve fonksiyonel ürünler' 
+    },
+    { 
+      title: 'Gıda Toptan Ürünleri', 
+      description: 'Geniş gıda ürün yelpazesi ile toptan satış' 
+    }
+  ],
+  expertise: ['Toptan Satış', 'Gıda Ürünleri', 'Ev Gereçleri', 'Temizlik Ürünleri', 'Tedarik Hizmetleri'],
+  contact: {
+    phone: '+905554007788',
+    email: 'iletisim@fortetoptan.com.tr',
+    website: 'https://fortetoptan.com.tr'
+  },
+  longDescription: `Forte Toptan, sektördeki güçlü deneyimiyle Koroplast ve Şölen markalarının toptan tedarikçiliğini yapmaktadır. Geniş ürün yelpazemiz ve rekabetçi fiyat politikamız ile iş ortaklarımıza değer katıyor, uzun vadeli iş birlikleri kuruyoruz.
+
+Şölen markası altında Biscolata, Boombastic, Chocodan's, Greta, Luppo, Nutymax, Ozmo, Papita ve çeşitli ikramlık ürünleri bulunmaktadır. Koroplast markası kapsamında ise pişirme, saklama, temizlik, doğal ürünler, SemPatili ürünler ve Ideal serisi yer almaktadır.
+
+Müşteri memnuniyetini ön planda tutan hizmet anlayışımız ve kaliteli ürün yelpazemiz ile sektördeki lider konumumuzu sürdürüyoruz.`,
+  
+  seo: { 
+    title: 'Forte Toptan | Koroplast ve Şölen Tedarikçisi', 
+    description: 'Forte Toptan - Koroplast ve Şölen markalarının güvenilir toptan tedarikçisi. Geniş ürün yelpazesi ile hizmetinizde.' 
+  }
+};
+---
+
+<BaseLayout title={`${company.title} - Firma Profili`} description={company.seo?.description ?? company.description}>
+  <CompanyProfile company={company} />
+</BaseLayout>

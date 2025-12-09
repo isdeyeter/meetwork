@@ -1,0 +1,475 @@
+---
+// Not: BaseLayout'un (PazaryeriLayout) Bootstrap 5 ve Bootstrap Icons içerdiğini varsayıyoruz.
+import BaseLayout from '@layouts/BaseLayout.astro'; // Veya projenizdeki PazaryeriLayout import yolu
+
+// --- Gerekli JSON Verilerini Yükleme ---
+// (Projenizin dosya yapısına göre path'leri ayarlamanız gerekebilir: Örn: '../../data/...')
+// Şimdilik, verileri doğrudan içeri alıyoruz (gerçek Astro projelerinde Astro.glob veya import kullanılır)
+
+// bedenler.json
+const bedenlerData = { "mont": { "erkek": ["S", "M", "L", "XL", "XXL", "3XL"] } };
+const mevcutBedenler = bedenlerData.mont.erkek;
+const defaultSize = 'L';
+
+// odeme-turleri.json - KRİTİK DÜZELTME: 'odeeme_turleri' -> 'odeme_turleri'
+const odemeTurleriData = {
+  "odeme_turleri": [
+    { "id": "pesin-kredi", "ad": "Peşin Kredi", "ikon": "bi-credit-card", "renk": "primary", "aktif": true },
+    { "id": "karti-taksit", "ad": "Kartı Taksitle", "ikon": "bi-credit-card-2-front", "renk": "success", "aktif": true }
+  ]
+};
+const odemeTurleri = odemeTurleriData.odeme_turleri.filter(t => t.aktif);
+const defaultPayment = 'pesin-kredi';
+
+// teslimat-turleri.json
+const teslimatTurleriData = {
+  "teslimat_turleri": [
+    { "id": "kargo", "ad": "Kargo", "ikon": "bi-truck", "renk": "primary", "aktif": true, "sure": "1-3 iş günü", "ucret": "29₺" },
+    { "id": "ambar", "ad": "Ambar", "ikon": "bi-building", "renk": "warning", "aktif": true, "sure": "2-5 iş günü", "ucret": "Ücretsiz" }
+  ]
+};
+const teslimatTurleri = teslimatTurleriData.teslimat_turleri.filter(t => t.aktif);
+const defaultDelivery = 'kargo';
+
+// kampanyalar.json
+const kampanyalarData = {
+  "aktif_kampanyalar": [
+    { "id": "flash-sale-48", "baslik": "🔥 FLASH SALE - 48 SAAT 🔥", "alt_baslik": "Kışın En Sıcak Teknolojisiyle Donatılmış Premium Mont", "badge": "⚡ İNDİRİM SONA ERİYOR! ⚡", "indirim_orani": 45, "renk": "danger", "durum": "aktif" },
+    { "id": "kisiye-ozel", "baslik": "🎯 ÖZEL KAMPANYA!", "detaylar": ["Sepette ekstra %20 indirim", "2. üründe %50 indirim", "Ücretsiz kargo (500₺ üzeri)"], "renk": "warning", "durum": "aktif" }
+  ]
+};
+const flashSale = kampanyalarData.aktif_kampanyalar.find(k => k.id === 'flash-sale-48');
+const ozelKampanya = kampanyalarData.aktif_kampanyalar.find(k => k.id === 'kisiye-ozel');
+
+// birlikte-alinanlar.json (Sadece ilk 3'ü göstereceğiz)
+const birlikteAlinanlarData = {
+  "fluend-moda-kurulu-mont-001": [
+    { "id": "urun-1", "baslik": "Termal İçlik", "fiyat": 129, "resim": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=300&fit=crop" },
+    { "id": "urun-2", "baslik": "Kış Bere Seti", "fiyat": 89, "resim": "https://images.unsplash.com/photo-1574484284002-952d92456975?w=400&h=300&fit=crop" }
+  ]
+};
+const birlikteAlinanlar = birlikteAlinanlarData["fluend-moda-kurulu-mont-001"];
+
+// buna-bakanlar.json (Sadece ilk 3'ü göstereceğiz)
+const bunaBakanlarData = {
+  "fluend-moda-kurulu-mont-001": [
+    { "id": "urun-1", "baslik": "Diğer Marka Kış Montu", "fiyat": 799, "puan": 4.5, "resim": "https://images.unsplash.com/photo-1592878904946-b3cd4dc9a33d?w=400&h=300&fit=crop" },
+    { "id": "urun-2", "baslik": "Benzer Tasarım Mont", "fiyat": 650, "puan": 4.2, "resim": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" },
+    { "id": "urun-3", "baslik": "Premium Kış Ceketi", "fiyat": 950, "puan": 4.7, "resim": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=300&fit=crop" }
+  ]
+};
+const bunaBakanlar = bunaBakanlarData["fluend-moda-kurulu-mont-001"];
+
+// populer-kelimeler.json
+const populerKelimelerData = { "populer_kelimeler": ["kürklü mont", "su geçirmez mont", "rüzgar geçirmez ceket", "kış montu erkek", "fluend moda", "kapüşonlu mont", "suni kürk astar", "erkek kış giyim", "premium mont", "trendyol mont"] };
+const populerKelimeler = populerKelimelerData.populer_kelimeler;
+
+const productName = 'FLUEND MODA Su ve Rüzgar Geçirmez Kürklü Mont Ceket';
+---
+
+<BaseLayout title={`FLUEND MODA ${productName} - Premium Kış Koleksiyonu`}>
+  
+  <section class="py-5">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Anasayfa</a></li>
+          <li class="breadcrumb-item"><a href="/erkek" class="text-decoration-none">Erkek</a></li>
+          <li class="breadcrumb-item"><a href="/erkek-giyim" class="text-decoration-none">Erkek Giyim</a></li>
+          <li class="breadcrumb-item"><a href="/erkek-mont" class="text-decoration-none">Erkek Mont</a></li>
+          <li class="breadcrumb-item active" aria-current="page">FLUEND MODA Kürklü Mont</li>
+        </ol>
+      </nav>
+
+      {flashSale && (
+        <div class="p-3 mb-4 text-center text-white rounded-3 shadow-lg" 
+             style="background: linear-gradient(90deg, #ff416c, #ff4b2b);">
+          <h1 class="h3 fw-bold mb-2">{flashSale.baslik}</h1>
+          <h2 class="h6 mb-2">{flashSale.alt_baslik}</h2>
+          <div class="d-inline-block px-3 py-1 rounded-pill fs-6 fw-bold" style="background: white; color: #ff416c;">
+            {flashSale.badge}
+          </div>
+        </div>
+      )}
+
+
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="product-gallery">
+            <div class="main-image-container mb-3" style="position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+              <img src="https://cdn.dsmcdn.com/ty1761/prod/QC_PREP/20250926/00/af3eeb9f-6518-343e-ba5c-125fede67953/1_org_zoom.jpg" 
+                  alt={`${productName} - Ana Görsel`} 
+                  class="img-fluid w-100" 
+                  style="height: 600px; object-fit: cover; transition: transform 0.3s ease;"
+                  id="mainImage">
+              <div class="image-overlay" style="position: absolute; top: 10px; right: 10px; background: rgba(255,59,48,0.9); color: white; padding: 8px 12px; border-radius: 20px; font-weight: bold; font-size: 14px;">
+                %{flashSale ? flashSale.indirim_orani : '45'} İNDİRİM
+              </div>
+            </div>
+            
+            <div class="thumbnail-gallery d-flex gap-2 overflow-auto">
+              <img src="https://cdn.dsmcdn.com/ty1761/prod/QC_PREP/20250926/00/af3eeb9f-6518-343e-ba5c-125fede67953/1_org_zoom.jpg" alt="Ana Görsel" class="thumbnail-img" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 3px solid #667eea;" onclick="changeMainImage(this.src, 'Ana Görsel')">
+              <img src="https://cdn.dsmcdn.com/mnresize/620/920/ty1761/prod/QC_PREP/20250926/00/af3eeb9f-6518-343e-ba5c-125fede67953/1_org_zoom.jpg" alt="Detay Görsel 1" class="thumbnail-img" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid #ddd; transition: border-color 0.3s;" onclick="changeMainImage(this.src, 'Detay Görsel 1')">
+              <img src="https://cdn.dsmcdn.com/mnresize/620/920/ty1762/prod/QC_PREP/20250926/00/8d9646de-6b15-3054-a7b1-9bf32f01ed78/1_org_zoom.jpg" alt="Detay Görsel 2" class="thumbnail-img" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid #ddd; transition: border-color 0.3s;" onclick="changeMainImage(this.src, 'Detay Görsel 2')">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          
+          <div class="mb-3">
+            <span class="badge bg-primary me-2">Erkek Giyim</span>
+            <span class="badge bg-secondary me-2">Kış Koleksiyonu</span>
+            <span class="badge bg-success">Premium</span>
+          </div>
+
+          <h1 class="h2 fw-bold text-dark mb-3">
+            <span class="text-primary">FLUEND MODA</span> {productName.replace('FLUEND MODA ', '')}
+          </h1>
+
+          <div class="d-flex align-items-center mb-4">
+            <div class="stars me-3">
+              <i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-half text-warning"></i>
+            </div>
+            <span class="text-muted me-3">(4.8/5)</span>
+            <span class="text-muted">1,247 Yorum</span>
+            <a href="#yorumlar" class="ms-3 text-primary text-decoration-none">Tüm yorumları gör →</a>
+          </div>
+
+          <div class="mb-4 p-3 bg-success bg-opacity-10 border border-success rounded-3">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-whatsapp text-success fs-4 me-3"></i>
+              <div>
+                <h6 class="text-success mb-1">Ürün Hakkında Bilgi Almak İster misiniz?</h6>
+                <a href="https://wa.me/905551234567?text=FLUEND%20MODA%20Su%20ve%20R%C3%BCzgar%20Ge%C3%A7irmez%20K%C3%BCrkl%C3%BC%20Mont%20Ceket%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum" 
+                  target="_blank" 
+                  class="btn btn-success btn-sm">
+                  WhatsApp ile Sor
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {ozelKampanya && (
+            <div class="mb-4 p-4 rounded-3 text-white shadow-sm" style="background: linear-gradient(135deg, #764ba2, #667eea);">
+              <h5 class="fw-bold mb-3">{ozelKampanya.baslik}</h5>
+              {ozelKampanya.detaylar.map(detay => (
+                <p class="mb-1"><i class="bi bi-check-circle-fill me-2 text-warning"></i>{detay}</p>
+              ))}
+            </div>
+          )}
+
+          <div class="mb-4">
+            <h6 class="fw-bold mb-3">Beden Seçin:</h6>
+            <div class="btn-group" role="group" aria-label="Beden seçimi">
+              {mevcutBedenler.map((beden) => (
+                <>
+                  <input 
+                    type="radio" 
+                    class="btn-check" 
+                    name="beden" 
+                    id={`beden-${beden.toLowerCase()}`} 
+                    value={beden} 
+                    autocomplete="off" 
+                    checked={beden === defaultSize} // Varsayılan olarak L seçili
+                  />
+                  <label 
+                    class={`btn ${beden === defaultSize ? 'btn-primary' : 'btn-outline-primary'}`} 
+                    for={`beden-${beden.toLowerCase()}`}
+                  >
+                    {beden}
+                  </label>
+                </>
+              ))}
+            </div>
+          </div>
+          
+          <div class="mb-4 p-3 border rounded-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="mb-1">Satıcı: <a href="/magaza/fluend-moda" class="text-primary text-decoration-none fw-bold">FLUEND MODA</a></h6>
+                <small class="text-muted">• Güvenilir satıcı • Hızlı teslimat • Müşteri memnuniyeti %98</small>
+              </div>
+              <div class="text-end">
+                <div class="text-warning fs-4">⭐</div>
+                <small class="text-muted">4.9/5</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h5 class="fw-bold mb-3">Fiyat Seçenekleri:</h5>
+            <div class="mb-3 p-3 border rounded-3 bg-light">
+              <div class="d-flex justify-content-between align-items-center">
+                <div><h6 class="mb-1">Piyasa Perakende Fiyatı(1 Adet)</h6><small class="text-muted">Bilgi amaçlı - Seçilemez</small></div>
+                <div class="text-end"><span class="text-decoration-line-through text-muted">1.799₺</span><h4 class="text-success fw-bold mb-0">1.397₺</h4></div>
+              </div>
+            </div>
+            <div class="mb-3 p-3 border rounded-3" style="border-color: #667eea; background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));">
+              <div class="d-flex justify-content-between align-items-center">
+                <div><h6 class="mb-1">Koli Fiyatı (Koli Adeti: 12 Adet)</h6><small class="text-muted">İşletmeler ve toptancılar için</small></div>
+                <div class="text-end"><h4 class="text-primary fw-bold mb-0">10.764₺</h4><small class="text-success">Adet başı: 897₺</small></div>
+              </div>
+              <a href="https://wa.me/905551234567?text=FLUEND%20MODA%20Su%20ve%20R%C3%BCzgar%20Ge%C3%A7irmez%20K%C3%BCrkl%C3%BC%20Mont%20Ceket%20koli%20olarak%20almak%20istiyorum" target="_blank" class="btn btn-primary btn-sm mt-2">WhatsApp ile Koli Siparişi</a>
+            </div>
+            <div class="mb-3 p-3 border rounded-3" style="border-color: #28a745; background: linear-gradient(135deg, rgba(40,167,69,0.1), rgba(32,201,151,0.1));">
+              <div class="d-flex justify-content-between align-items-center">
+                <div><h6 class="mb-1">Palet Fiyatı (Palet Adeti: 72 Adet)</h6><small class="text-muted">Bayiler ve büyük toptancılar için</small></div>
+                <div class="text-end"><h4 class="text-success fw-bold mb-0">58.824₺</h4><small class="text-success">Adet başı: 817₺</small></div>
+              </div>
+              <a href="https://wa.me/905551234567?text=FLUEND%20MODA%20Su%20ve%20R%C3%BCzgar%20Ge%C3%A7irmez%20K%C3%BCrkl%C3%BC%20Mont%20Ceket%20palet%20olarak%20almak%20istiyorum" target="_blank" class="btn btn-success btn-sm mt-2">WhatsApp ile Palet Siparişi</a>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h6 class="fw-bold mb-2">Ödeme Türü:</h6>
+            <div class="btn-group" role="group" aria-label="Ödeme Türü Seçimi">
+              {odemeTurleri.map((odeme) => (
+                <>
+                  <input 
+                    type="radio" 
+                    class="btn-check" 
+                    name="odemeTuru" 
+                    id={`odeme-${odeme.id}`} 
+                    value={odeme.id} 
+                    autocomplete="off" 
+                    checked={odeme.id === defaultPayment} // Varsayılan seçim
+                  />
+                  <label 
+                    class={`btn ${odeme.id === defaultPayment ? `btn-${odeme.renk}` : `btn-outline-${odeme.renk}`}`} 
+                    for={`odeme-${odeme.id}`}
+                  >
+                    <i class={`bi ${odeme.ikon} me-2`}></i> {odeme.ad}
+                  </label>
+                </>
+              ))}
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h6 class="fw-bold mb-2">Teslimat Türü:</h6>
+            <div class="btn-group" role="group" aria-label="Teslimat Türü Seçimi">
+              {teslimatTurleri.map((teslimat) => (
+                <>
+                  <input 
+                    type="radio" 
+                    class="btn-check" 
+                    name="teslimatTuru" 
+                    id={`teslimat-${teslimat.id}`} 
+                    value={teslimat.id} 
+                    autocomplete="off" 
+                    checked={teslimat.id === defaultDelivery} // Varsayılan seçim
+                  />
+                  <label 
+                    class={`btn ${teslimat.id === defaultDelivery ? `btn-${teslimat.renk}` : `btn-outline-${teslimat.renk}`}`} 
+                    for={`teslimat-${teslimat.id}`}
+                  >
+                    <i class={`bi ${teslimat.ikon} me-2`}></i> {teslimat.ad}
+                  </label>
+                </>
+              ))}
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h6 class="fw-bold mb-2">Kuponlar:</h6>
+            <div class="row">
+              <div class="col-md-4 mb-2"><div class="p-2 border rounded text-center bg-warning bg-opacity-10"><small class="fw-bold">Ürün Kuponu</small><div class="text-success fw-bold">50₺</div></div></div>
+              <div class="col-md-4 mb-2"><div class="p-2 border rounded text-center bg-info bg-opacity-10"><small class="fw-bold">Mağaza Kuponu</small><div class="text-info fw-bold">25₺</div></div></div>
+              <div class="col-md-4 mb-2"><div class="p-2 border rounded text-center bg-success bg-opacity-10"><small class="fw-bold">Kategori Kuponu</small><div class="text-success fw-bold">35₺</div></div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr/>
+
+  <section class="py-4 bg-light">
+    <div class="container">
+      <h5 class="fw-bold mb-3">Ürün Özellikleri:</h5>
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Su İtici Teknoloji</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Rüzgar Geçirmez Özellik</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Premium Suni Kürk Astar</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Kapüşonlu Tasarım</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Çift Cepli</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Regular Kalıp</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Kış Sezonu Ürünü</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Uzun Kollu</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Dokuma Kumaş</li>
+            <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Türkiye Menşei</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr/>
+
+  <section class="py-5">
+    <div class="container">
+      <h5 class="fw-bold mb-3">Ürün Açıklaması:</h5>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="border rounded-3 p-4">
+            <p class="mb-3">
+              <strong>{productName}</strong> ile kışın soğuk günlerinde hem şıklığınızı hem de konforunuzu koruyun. Premium kalitede suni kürk astarı sayesinde maksimum sıcaklık sağlar.
+            </p>
+            <p class="mb-3">
+              Su itici ve rüzgar geçirmez özellikleri ile kötü hava koşullarında size tam koruma sunar. Kapüşonlu tasarımı ve çift cepleri ile hem fonksiyonel hem de şık bir görünüm sağlar.
+            </p>
+            <p class="mb-3">
+              Regular kalıp yapısı ile vücudunuze mükemmel oturur. Günlük kullanıma uygun bu mont, şehirde ve açık havada konforlu bir kullanım deneyimi sunar.
+            </p>
+            <p class="mb-3">
+              Kaliteli dokuma kumaşı sayesinde uzun yıllar kullanabilirsiniz. Kuru temizleme önerilir.
+            </p>
+            
+            <hr>
+            <div class="mt-4 p-3 bg-light rounded-3">
+              <h6 class="fw-bold mb-2">Platform Genel Bilgilendirme:</h6>
+              <small class="text-muted">
+                Bu ürün, güvenilir satıcılarımız tarafından satılmakta olup, platformumuz üzerinden güvenli ödeme imkanı sunmaktayız. 
+                Tüm ürünlerimiz orijinal ambalajında ve garantili olarak gönderilir. Müşteri memnuniyeti bizim önceliğimizdir. 
+                Herhangi bir sorun yaşamanız durumunda 7/24 müşteri hizmetlerimizden destek alabilirsiniz. 
+                Ürün iade ve değişim işlemleri için yasal süreçlere uygun olarak hareket edilir. 
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr/>
+
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h5 class="fw-bold mb-4">Birlikte Alınanlar</h5>
+      <div class="row">
+        {birlikteAlinanlar.map((urun) => (
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src={urun.resim} class="card-img-top" alt={urun.baslik}>
+              <div class="card-body">
+                <h6 class="card-title">{urun.baslik}</h6>
+                <p class="text-muted small">Fluend Moda</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">{urun.fiyat}₺</span>
+                  <button class="btn btn-outline-primary btn-sm">Sepete Ekle</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <h5 class="fw-bold mb-4">Buna Bakanların Aldıkları</h5>
+      <div class="row">
+        {bunaBakanlar.map((urun) => (
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src={urun.resim} class="card-img-top" alt={urun.baslik}>
+              <div class="card-body">
+                <h6 class="card-title">{urun.baslik}</h6>
+                <p class="text-muted small">Benzer ürünler</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-success">{urun.fiyat}₺</span>
+                  <button class="btn btn-outline-primary btn-sm">Sepete Ekle</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <hr/>
+
+  <section class="py-4 bg-light">
+    <div class="container">
+      <h6 class="fw-bold mb-3">Bu Ürün İçin Popüler Arama Kelimeleri:</h6>
+      <div class="d-flex flex-wrap gap-2">
+        {populerKelimeler.map((kelime) => (
+          <span class="badge bg-primary-subtle text-primary border border-primary-subtle">{kelime}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    function changeMainImage(src, alt, clickedElement) { // <-- 3. parametre eklendi!
+      const mainImage = document.getElementById('mainImage');
+      mainImage.src = src;
+      mainImage.alt = alt;
+      
+      // Update thumbnail borders (tüm kenarlıkları sıfırla)
+      const thumbnails = document.querySelectorAll('.thumbnail-img');
+      thumbnails.forEach(thumb => {
+        thumb.style.border = '2px solid #ddd';
+      });
+      
+      // Highlight selected thumbnail (sadece tıklanan öğeyi vurgula)
+      clickedElement.style.border = '3px solid #667eea'; // <-- event.target yerine artık bu kullanılıyor
+    }
+</script>
+
+  <style>
+    .main-image-container:hover #mainImage {
+      transform: scale(1.05);
+    }
+    
+    .thumbnail-img:hover {
+      border-color: #667eea !important;
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+    }
+    
+    .bg-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
+    }
+    
+    /* Seçim alanları için özel renklendirme (Bootstrap 5'in btn-check yapısıyla uyumlu) */
+    .btn-check:checked + .btn-outline-primary,
+    .btn-check:checked + .btn-outline-success,
+    .btn-check:checked + .btn-outline-warning {
+      color: white;
+      /* Primary rengi, BaseLayout'tan geliyor */
+      background-color: var(--bs-primary); 
+      border-color: var(--bs-primary);
+    }
+
+    /* Özel renkler için overrides */
+    .btn-check:checked + .btn-outline-primary {
+        background-color: #667eea; 
+        border-color: #667eea;
+    }
+    .btn-check:checked + .btn-outline-success {
+        background-color: #198754; 
+        border-color: #198754;
+    }
+    .btn-check:checked + .btn-outline-warning {
+        background-color: #ffc107; 
+        border-color: #ffc107;
+    }
+  </style>
+</BaseLayout>

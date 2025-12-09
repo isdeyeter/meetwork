@@ -1,0 +1,56 @@
+---
+// pages/firmalar/teknoloji/akfa-girisimcilik.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CompanyProfile from '../../../components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'Akfa Girişimcilik',
+  description: 'Yenilikçi girişimlere yatırım ve danışmanlık hizmetleri',
+  slug: 'akfa-girisimcilik',
+  sector: 'teknoloji',
+  color: '#28a745',
+  heroIcon: '/images/icons/teknoloji.svg',
+  location: 'İstanbul, Türkiye',
+  services: [
+    { 
+      title: 'Girişim Sermayesi', 
+      description: 'Erken aşama girişimlere yatırım ve fon sağlama',
+      icon: 'cash-coin'
+    },
+    { 
+      title: 'İş Geliştirme', 
+      description: 'Girişimlerin büyüme stratejileri ve pazara giriş danışmanlığı',
+      icon: 'graph-up'
+    },
+    { 
+      title: 'Mentörlük', 
+      description: 'Deneyimli mentörlerle girişimcilik yolculuğunda rehberlik',
+      icon: 'person-check'
+    },
+    { 
+      title: 'Pazar Araştırması', 
+      description: 'Detaylı pazar analizi ve rakip değerlendirmesi',
+      icon: 'search'
+    }
+  ],
+  products: [
+    {
+      title: 'Startup Paketi',
+      description: 'Yeni girişimler için temel danışmanlık paketi',
+      price: '₺5.000',
+      icon: 'box'
+    }
+  ],
+  expertise: ['Teknoloji Startupları', 'FinTech', 'Yatırım Danışmanlığı', 'İş Planı Hazırlama'],
+  contact: {
+    phone: '+90 212 123 45 67',
+    email: 'info@akfagirisim.com',
+    website: 'https://akfagirisim.com'
+  },
+  longDescription: 'Akfa Girişimcilik, yenilikçi fikirleri olan girişimcilere yatırım, danışmanlık ve mentörlük hizmetleri sunmaktadır. Teknoloji odaklı girişimleri destekleyerek Türkiye\'nin inovasyon ekosistemine katkıda bulunuyoruz.'
+};
+---
+
+<BaseLayout title={`${company.title} - Firma Profili`}>
+  <CompanyProfile company={company} />
+</BaseLayout>

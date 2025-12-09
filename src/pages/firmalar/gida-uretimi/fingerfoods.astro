@@ -1,0 +1,101 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CompanyProfile from '@components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'FingerFoods',
+  description: 'Yeni nesil catering şirketi - Özel kutularında lezzet ve şıklığı bir araya getiren, hızlı ve pratik catering çözümleri',
+  slug: 'fingerfoods-catering',
+  sector: 'catering-organizasyon',
+  color: '#f97316',
+  heroIcon: '/images/icons/catering.svg',
+  location: 'İstanbul, Türkiye',
+  services: [
+    { title: '📦 Özel Kutulu Menüler', description: 'Lezzetli ve doyurucu öğünler özel tasarlanmış kutularda, her yerde kolay tüketim' },
+    { title: '🏢 Ofis Catering', description: 'Ofislerinizde pratik ve lezzetli çözümler, toplantılar ve günlük ikramlar için' },
+    { title: '🏠 Ev Cateringi', description: 'Evde özel davetler ve partiler için şık ve lezzetli finger food seçenekleri' },
+    { title: '🧺 Piknik Catering', description: 'Açık hava etkinlikleri ve piknikler için taşınabilir lezzetler' },
+    { title: '✈️ Seyahat Catering', description: 'Yolculuklarınızda pratik ve lezzetli atıştırmalıklar, taze ve dayanıklı seçenekler' },
+    { title: '🎉 Etkinlik Cateringi', description: 'Doğum günleri, açılışlar ve özel organizasyonlar için kusursuz ikramlar' },
+    { title: '🥗 Sağlıklı Seçenekler', description: 'Vejetaryen, vegan ve diyet dostu sağlıklı finger food alternatifleri' },
+    { title: '🍰 Tatlı İkramlar', description: 'Unutulmaz anılar için lezzetli tatlı atıştırmalıklar ve özel tatlı kutuları' }
+  ],
+  practiceAreas: [
+    {
+      title: 'Yeni Nesil Catering Konsepti',
+      description: 'FingerFoods olarak geleneksel catering anlayışını yeniden tanımlıyoruz. Özel tasarlanmış kutularımızda sunduğumuz lezzetler, modern yaşamın hızlı temposuna uygun, pratik ama şık çözümler sunuyor. Hem görsel hem lezzet açısından mükemmel deneyimler yaratıyoruz.'
+    },
+    {
+      title: 'Her An Her Yerde Lezzet',
+      description: 'Ofiste, evde, piknikte veya seyahatte olun; özel kutularımız sayesinde lezzetli öğünleriniz her zaman yanınızda. Lezzetlerini asla kaybetmeyecek şekilde hazırlanan menülerimiz, taze ve doyurucu alternatifler sunar.'
+    },
+    {
+      title: 'Kusursuz Sunum ve Organizasyon',
+      description: 'Şık sunumlarımız ve profesyonel organizasyon anlayışımızla, siz sadece eğlencenize odaklanın. Gerisini bize bırakın! Unutulmaz anılar için lezzetli ikramlar sunuyoruz.'
+    },
+    {
+      title: 'Özel Davet ve Etkinlikler',
+      description: 'Kurumsal etkinliklerden özel davetlere, doğum günlerinden açılış organizasyonlarına kadar her türlü etkinlik için özelleştirilmiş catering çözümleri sunuyoruz.'
+    },
+    {
+      title: 'Sağlıklı ve Dengeli Beslenme',
+      description: 'Sağlıklı yaşam trendlerine uygun, dengeli ve besleyici finger food seçenekleriyle hem lezzetli hem de sağlıklı alternatifler sunuyoruz.'
+    },
+    {
+      title: 'Sürdürülebilirlik ve Çevre Dostu',
+      description: 'Çevre dostu ambalaj malzemeleri ve sürdürülebilir üretim anlayışıyla, lezzet sunarken doğayı da koruyoruz.'
+    }
+  ],
+  expertise: [
+    'Finger Food Catering',
+    'Kutulu Menü Sistemleri',
+    'Ofis İkramları',
+    'Etkinlik Cateringi',
+    'Piknik Catering',
+    'Vejetaryen/Vegan Menüler',
+    'Tatlı İkramları',
+    'Organizasyon Planlama'
+  ],
+  contact: {
+    phone: '+90 531 561 98 99',
+    mobile: '+90 531 561 98 99',
+    whatsapp: '+90 531 561 98 99',
+    email: 'info@fingerfoods.com.tr',
+    website: 'https://fingerfoods.com.tr',
+    address: 'İstanbul, Türkiye'
+  },
+  features: [
+    { title: 'Yeni Nesil Konsept', description: 'Geleneksel catering anlayışını modern ve pratik çözümlerle yeniden tanımlıyoruz' },
+    { title: 'Özel Tasarım Kutular', description: 'Lezzet ve şıklığı bir araya getiren özel tasarlanmış kutularımızla fark yaratıyoruz' },
+    { title: 'Her Yerde Lezzet', description: 'Özel ambalajlarımız sayesinde lezzetinizi istediğiniz her yerde güvenle tüketebilirsiniz' },
+    { title: 'Unutulmaz Deneyim', description: 'Kusursuz sunum ve lezzetli ikramlarla unutulmaz anılar yaratıyoruz' }
+  ],
+  brands: ['FingerFoods', 'Kutulu Lezzetler', 'Pratik Catering', 'Şık Sunumlar'],
+  longDescription: `FingerFoods, hızlı ve pratik çözümler sunan yeni nesil bir catering şirketidir. Özel kutularda sunduğu menüleriyle lezzeti ve şıklığı bir araya getiriyor. Bu özel kutular, ister ofiste ister evde ister piknikte ister seyahatte olun, her yerde lezzetli ve doyurucu bir öğün yemenizi sağlıyor.
+
+Lezzetlerini asla kaybetmeyecek şekilde hazırlıyor, ve kusursuz bir sunumla sizlere sunuyoruz. Siz eğlencenize bakın, gerisini bize bırakın! Unutulmaz anılar için lezzetli ikramlar sunuyoruz.
+
+Modern yaşamın hızlı temposunda, kaliteli ve lezzetli yemek ihtiyacına pratik çözümler sunuyoruz. Geleneksel catering anlayışını yeniden tanımlayarak, hem görsel hem lezzet açısından mükemmel deneyimler yaratıyoruz.`,
+  detailedServices: {
+    kutuluMenuler: `Özel tasarlanmış kutularımızda sunulan menülerimiz, taşınabilirlik ve konfor açısından mükemmel çözümler sunar. Her biri özenle hazırlanan bu kutular, lezzetin taze kalmasını sağlar ve her ortamda kolay tüketim imkânı sunar.`,
+    ofisCatering: `Çalışanlarınız ve misafirleriniz için özel hazırlanmış ofis catering çözümlerimiz, toplantılar, seminerler ve günlük ikramlar için mükemmel seçenekler sunar. Pratik ambalajları sayesinde ofis ortamında kolayca servis edilebilir.`,
+    etkinlikCatering: `Doğum günleri, düğünler, açılışlar ve kurumsal etkinlikler için özelleştirilmiş catering hizmetlerimiz, organizasyonunuzun unutulmaz olmasını sağlar. Menülerimiz etkinliğinizin konseptine göre özelleştirilebilir.`,
+    saglikliSecenekler: `Sağlık bilinci yüksek müşterilerimiz için özel hazırlanmış vejetaryen, vegan ve diyet dostu seçeneklerimiz bulunmaktadır. Bu menülerimizde de lezzetten ödün vermeden sağlıklı alternatifler sunuyoruz.`
+  },
+  mission: `Modern yaşamın hızlı temposuna uygun, pratik ama şık catering çözümleri sunarak, her an ve her yerde lezzetli deneyimler yaratmak. Kusursuz sunum ve kaliteli hizmet anlayışımızla unutulmaz anılar için lezzetli ikramlar sağlamak.`,
+  vision: `Türkiye'nin lider yeni nesil catering markası olmak, finger food konseptini yeniden tanımlayarak dünya çapında tanınan bir marka haline gelmek. Lezzet, yenilik ve müşteri memnuniyetini her zaman ön planda tutarak sektörde fark yaratmak.`,
+  externalLinks: [
+    { title: 'Anasayfa', url: 'https://fingerfoods.com.tr', target: '_blank' },
+    { title: 'Menülerimiz', url: 'https://fingerfoods.com.tr/menuler', target: '_blank' },
+    { title: 'Hakkımızda', url: 'https://fingerfoods.com.tr/hakkimizda', target: '_blank' }
+  ],
+  seo: { 
+    title: 'FingerFoods | Yeni Nesil Catering - Lezzet ve Şıklığın Buluşma Noktası', 
+    description: 'FingerFoods - Özel kutularda lezzet ve şıklığı bir araya getiren yeni nesil catering şirketi. Ofis, ev, piknik ve etkinlikleriniz için pratik ve lezzetli çözümler.' 
+  }
+};
+---
+
+<BaseLayout title={company.seo.title} description={company.seo.description}>
+  <CompanyProfile company={company} />
+</BaseLayout>

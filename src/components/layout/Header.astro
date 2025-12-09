@@ -1,0 +1,19 @@
+---
+const { title = 'Hoş Geldiniz', subtitle = 'Modern ve hızlı web çözümleri', buttonText = 'Başlayalım', buttonAction = 'showWelcomeAlert()' } = Astro.props;
+---
+
+<header class="bg-primary text-white py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="display-4 fw-bold">{title}</h1>
+        <p class="lead">{subtitle}</p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <button class="btn btn-light btn-lg" onclick={buttonAction}>
+          <i class="bi bi-rocket"></i> {buttonText}
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

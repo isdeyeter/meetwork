@@ -1,0 +1,169 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CompanyProfile from '@components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'Hanegelioğlu Hukuk ve Danışmanlık',
+  description: 'İstanbul Şişli merkezli hukuk bürosu - Sigorta hukuku, arabuluculuk, ticaret hukuku, icra iflas ve gayrimenkul hukuku alanlarında uzman danışmanlık',
+  slug: 'hanegelioglu-hukuk',
+  sector: 'Avukatlık Hukuk Bürosu',
+  color: '#8B0000',
+  heroIcon: '/images/icons/terazi.svg',
+  location: 'Pangaltı - Şişli - İstanbul',
+  
+  // İLETİŞİM
+  contact: {
+    phone: '+90 212 241 16 66',
+    phones: ['+90 212 241 16 66', '+90 212 230 82 13', '+90 212 230 82 14'],
+    whatsapp: '+90 212 241 16 66',
+    email: 'info@hanegelioglu.av.tr',
+    website: 'https://hanegelioglu.av.tr',
+    address: 'Halaskargazi Cad. No:61 Mert Apartmanı Kat: 4-5, Pangaltı - Şişli - İstanbul'
+  },
+
+  // EKİBİMİZ
+  team: {
+    lawyers: [
+      { 
+        name: 'Av. Arb. Selçuk Hanegelioğlu', 
+        role: 'Kurucu Avukat', 
+        email: 'selcuk@hanegelioglu.av.tr',
+        expertise: ['Sigorta Hukuku', 'Ticaret Hukuku']
+      },
+      { 
+        name: 'Av. Arb. Gülşah Hanegelioğlu', 
+        role: 'Kurucu Avukat', 
+        email: 'gulsah@hanegelioglu.av.tr',
+        expertise: ['Aile Hukuku', 'İş Hukuku']
+      },
+      { 
+        name: 'Av. Arb. Seda Atalay', 
+        role: 'Avukat', 
+        email: 'seda@hanegelioglu.av.tr',
+        expertise: ['Ceza Hukuku', 'Arabuluculuk']
+      },
+      { 
+        name: 'Av. Arb. Nesrin Yiğit Mayi', 
+        role: 'Avukat', 
+        email: 'nesrin@hanegelioglu.av.tr',
+        expertise: ['Gayrimenkul Hukuku', 'İcra İflas']
+      },
+      { 
+        name: 'Av. Durmuş Onur Erdem', 
+        role: 'Avukat', 
+        email: 'onur@hanegelioglu.av.tr',
+        expertise: ['Marka Patent', 'Fikri Mülkiyet']
+      },
+      { 
+        name: 'Av. Berfin Danış', 
+        role: 'Avukat', 
+        email: 'berfin@hanegelioglu.av.tr',
+        expertise: ['Şirketler Hukuku', 'Sözleşmeler Hukuku']
+      }
+    ],
+    support: [
+      { 
+        name: 'Kevser Adanalı', 
+        role: 'Takip Memuru', 
+        email: 'kevser@hanegelioglu.av.tr',
+        department: 'İcra Takip'
+      }
+    ]
+  },
+
+  // HİZMETLER
+  services: [
+    { title: '⚖️ Arabuluculuk', description: 'Dostane ve yaratıcı yollarla uyuşmazlık çözüm yöntemleri' },
+    { title: '🛡️ Sigorta Hukuku', description: 'Trafik, yangın, mal ve sorumluluk sigortası konularında hukuki hizmetler' },
+    { title: '📊 İcra ve İflas Hukuku', description: 'Şirketlere iflas gibi hukuksal müesseselerde hukuki destek' },
+    { title: '🏢 Ticaret ve Şirketler Hukuku', description: 'Şirketlerin ihtiyaç duyduğu her türlü hukuki danışmanlık' },
+    { title: '💼 İş Hukuku', description: 'İşçi ve işverenin hak ve yükümlülükleri ve sözleşmelerin hazırlanması' },
+    { title: '🏠 Gayrimenkul Hukuku', description: 'Gayrimenkul işlemlerinin her türlü aşamasında danışmanlık hizmeti' },
+    { title: '👨‍👩‍👧‍👦 Aile Hukuku', description: 'Aile hukuku kapsamında tüm konularda danışmanlık hizmeti' },
+    { title: '⚔️ Ceza Hukuku', description: 'Soruşturma ve kovuşturma evrelerinin her aşamasını takip' },
+    { title: '🎯 Marka ve Patent Hukuku', description: 'Patent vekilleri ile marka ve patent başvurularının takibi' }
+  ],
+
+  // UZMANLIK ALANLARI
+  expertise: [
+    'Sigorta Hukuku', 'Arabuluculuk', 'İcra ve İflas Hukuku', 
+    'Ticaret Hukuku', 'Şirketler Hukuku', 'İş Hukuku',
+    'Gayrimenkul Hukuku', 'Aile Hukuku', 'Ceza Hukuku',
+    'Marka ve Patent Hukuku', 'Enerji Hukuku', 'İdare Hukuku'
+  ],
+
+  // ÖZELLİKLER
+  features: [
+    { title: '📍 Merkezi Lokasyon', description: 'Pangaltı - Şişli\'de ulaşımı kolay merkezi ofis' },
+    { title: '💻 Online İşlemler', description: 'E-Müvekkil sistemi ile dosya takibi ve E-Ödeme sistemi' },
+    { title: '👥 Uzman Kadro', description: 'Her hukuk dalında uzmanlaşmış avukat ve danışman kadrosu' },
+    { title: '🚀 Teknoloji Entegrasyonu', description: 'Anlık veri tabanı güncellemesi ve web tabanlı raporlama' },
+    { title: '💰 Maliyet Optimizasyonu', description: 'Müvekkil maliyetlerini en aza indiren çözümler' },
+    { title: '🕒 Hızlı Çözüm', description: 'İcra ve iflas dosyalarında hızlı tahsilat ve sonuç odaklı yaklaşım' }
+  ],
+
+  // ÇALIŞMA ALANLARI
+  practiceAreas: [
+    {
+      title: 'Sigorta Hukuku',
+      description: '2006 yılından bu yana sigorta hukuku alanında mali mesuliyet, yangın, ihracat, nakliyat sigortaları poliçelerinden kaynaklı ihtilaflar dâhil olmak üzere tüm hayat ve hayat dışı branşlarında bireysel ve kurumsal müvekkillerine hukuki hizmet ve danışmanlık sağlamaktayız.'
+    },
+    {
+      title: 'Arabuluculuk',
+      description: 'Dostane ve yaratıcı yollarla uyuşmazlık çözüm yöntemleri sunuyor, müvekkillerimizin zaman ve maliyet kaybını en aza indiriyoruz.'
+    },
+    {
+      title: 'İcra ve İflas Hukuku',
+      description: 'Etkin hukuki yapımızla alacakların hızlı şekilde tahsili amacını hedef edinmiş, ilamsız ve ilamlı takiplerin infazı aşamasında kurumsal bir yönetim sunuyoruz.'
+    },
+    {
+      title: 'Ticaret ve Şirketler Hukuku',
+      description: 'Şirketlerin ihtiyaç duyduğu her türlü hukuki danışmanlık, sözleşmelerin hazırlanması ve kurumsal yönetim hizmetleri.'
+    }
+  ],
+
+  // ONLINE HİZMETLER
+  onlineServices: [
+    { 
+      title: 'E-MÜVEKKİL', 
+      description: 'Online olarak dava dosyalarınızın güncel durumu hakkında bilgi alabilirsiniz.', 
+      url: 'https://hanegelioglu.av.tr/e-muvekkil',
+      icon: '📱'
+    },
+    { 
+      title: 'E-ÖDEME SİSTEMİ', 
+      description: 'Online olarak Türkiye bürolar birliği güvencesiyle borç tutarınızı veya dava avansınızı yatırabilirsiniz.', 
+      url: 'https://hanegelioglu.av.tr/e-odeme',
+      icon: '💳'
+    }
+  ],
+
+  // HAKKIMIZDA
+  longDescription: `Hanegelioğlu, Türkiye'nin ticaret ve sigorta ihtilafları alanında hizmet veren en önde gelen hukuk bürolarından biridir.
+
+**2006 yılından bu yana** sigorta hukuku alanında uzmanlaşmış ekibimizle; mali mesuliyet, yangın, ihracat, nakliyat sigortaları poliçelerinden kaynaklı ihtilaflar dâhil olmak üzere tüm hayat ve hayat dışı branşlarında bireysel ve kurumsal müvekkillerimize hukuki hizmet ve danışmanlık sağlıyoruz.
+
+Sigorta hukukundaki tecrübemizin yanı sıra, enerji hukuku, marka ve patent hukuku, iş hukuku, gayrimenkul hukuku, ticaret ve şirketler hukuku alanında uzmanlaşmış ekibimizle hizmet verirken, müvekkillerimizin maliyetlerini en aza indirmeyi hedefliyoruz.`,
+
+  mission: `Müvekkillerimizin ticari hedeflerine yönelik kapsamlı stratejiler geliştirmesine katkı sağlamak ve maliyetlerini en aza indirerek en etkin hukuki çözümleri sunmak.`,
+  vision: `Türkiye'nin en güvenilir ve yenilikçi hukuk bürosu olarak, teknoloji entegrasyonu ve uzman kadromuzla sektörde öncü olmak.`,
+
+  brands: ['Sigorta Hukuku', 'Arabuluculuk', 'İcra İflas', 'Ticaret Hukuku'],
+  
+  externalLinks: [
+    { title: 'Ana Sayfa', url: 'https://hanegelioglu.av.tr' },
+    { title: 'Online İşlemler', url: 'https://hanegelioglu.av.tr/online-islemler' },
+    { title: 'Ekibimiz', url: 'https://hanegelioglu.av.tr/ekibimiz' },
+    { title: 'İletişim', url: 'https://hanegelioglu.av.tr/iletisim' }
+  ],
+
+  seo: { 
+    title: 'Hanegelioğlu Hukuk | Şişli Avukatlık Bürosu - Pangaltı', 
+    description: 'Hanegelioğlu Hukuk - Şişli Pangaltı\'da sigorta hukuku, arabuluculuk, icra iflas, ticaret hukuku alanlarında uzman avukatlık ve danışmanlık hizmetleri.' 
+  }
+};
+---
+
+<BaseLayout title={company.seo.title} description={company.seo.description}>
+  <CompanyProfile company={company} />
+</BaseLayout>

@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sıkça Sorulan Sorular - MeetWork">
+
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4 text-dark">Sıkça Sorulan Sorular</h2>
+        <p class="lead text-muted">
+          MeetWork hakkında sormak istediğiniz soruların cevaplarını burada bulabilirsiniz.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="accordion" id="faqAccordion">
+            <!-- Soru 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                  <i class="bi bi-question-circle-fill me-2"></i> MeetWork nedir?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  MeetWork, KOBİ'lerin ve profesyonellerin stratejik iş birlikleri kurduğu, dinamik bir iş ekosistemidir. Amacımız, doğru bağlantıları kurarak potansiyelinizi maksimize etmenize ve iş hedeflerinize ulaşmanıza yardımcı olmaktır.
+                </div>
+              </div>
+            </div>
+
+            <!-- Soru 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  <i class="bi bi-calendar-check me-2"></i> Mini ve Maxi etkinlikler arasındaki fark nedir?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  <strong>Mini etkinlikler</strong>, sınırlı sayıda profesyonelin katıldığı, samimi ve butik buluşmalardır. Derinlemesine sohbetler ve birebir ilişkiler kurmak için idealdir. Her hafta bölgesel olarak düzenlenir. <strong>Maxi etkinlikler</strong> ise daha geniş katılımlı ve kapsamlı organizasyonlardır. Marka görünürlüğünü artırmak, geniş bir kitleye ulaşmak ve sektörel trendleri takip etmek için stratejik bir platform sunar. Her ay bir bölgede düzenlenir.
+                </div>
+              </div>
+            </div>
+
+            <!-- Soru 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                  <i class="bi bi-currency-dollar me-2"></i> Etkinliklere katılım ücretli mi?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Etkinliklere katılım prensip olarak <strong>ücretsizdir</strong>. Ancak, etkinlik sırasındaki yemek, kokteyl, çay-kahve gibi ikramlar için bilet alımı gerekmektedir. Biletler, sadece bu ikramları kapsar.
+                </div>
+              </div>
+            </div>
+
+            <!-- Soru 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                  <i class="bi bi-star me-2"></i> Sponsor olabilir miyim?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Evet, MeetWork etkinliklerine sponsor olabilirsiniz. Farklı ihtiyaçlara ve hedeflere yönelik <strong>Bronz, Gümüş ve Altın</strong> sponsorluk paketlerimiz bulunmaktadır. Sponsorluk fırsatları hakkında daha fazla bilgi almak için <a href="/sponsor-ol">Sponsor Ol</a> sayfamızı ziyaret edebilirsiniz.
+                </div>
+              </div>
+            </div>
+
+            <!-- Soru 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                  <i class="bi bi-list-check me-2"></i> Etkinlikleriniz hangi sektörleri kapsıyor?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Etkinliklerimiz birçok farklı sektörü bir araya getiriyor. Teknoloji, finans, üretim, perakende, sağlık ve daha fazlası... Amacımız, sektörler arası iş birliğini teşvik ederek yeni fırsatlar yaratmaktır. Hangi sektörlere odaklandığımızı görmek için <a href="/sektorler">Sektörler</a> sayfamızı ziyaret edebilirsiniz.
+                </div>
+              </div>
+            </div>
+
+            <!-- Soru 6 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+                  <i class="bi bi-building me-2"></i> KOBİ'ler için özel avantajlar nelerdir?
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  KOBİ'lerin büyüme hedeflerini desteklemek için özel çözümler sunuyoruz. Etkinliklerimizde yer alan standlar, sunum imkanları ve özel eşleştirme servisleri sayesinde, KOBİ'ler doğru yatırımcılar ve iş ortaklarıyla kolayca buluşabilir.
+                </div>
+              </div>
+            </div>
+
+            <!-- Soru 7 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+                  <i class="bi bi-globe me-2"></i> Etkinlikleriniz sadece Türkiye'de mi düzenleniyor?
+                </button>
+              </h2>
+              <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  MeetWork küresel bir platformdur ve etkinliklerimiz dünya genelinde düzenlenmektedir. Türkiye, platformumuzun en önemli merkezlerinden biridir ve <strong>İşte Birlik Platformu (İŞTEP)</strong> aracılığıyla temsil edilmektedir.
+                </div>
+              </div>
+            </div>
+
+            <!-- Soru 8 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight">
+                  <i class="bi bi-envelope me-2"></i> Bize nasıl ulaşabilirsin?
+                </button>
+              </h2>
+              <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Bize <a href="/iletisim">iletişim sayfamızdaki</a> bilgiler aracılığıyla veya doğrudan WhatsApp hattımız üzerinden iletişime geçebilirsiniz.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Örnek etkinlik verisi (gerçek hayatta API'den gelir)
+const events = [
+  {
+    id: 1,
+    day: 10,
+    title: "Üsküdar ",
+    time: "14:00",
+    location: "İstanbul, Üsküdar",
+    attendees: 18,
+    slug: "meetwork-istanbul-7"
+  },
+  {
+    id: 2,
+    day: 15,
+    title: "MeetWork Ankara #5",
+    time: "10:00",
+    location: "Ankara, Çankaya",
+    attendees: 15,
+    slug: "meetwork-ankara-5"
+  },
+  {
+    id: 3,
+    day: 22,
+    title: "MeetWork İzmir #3",
+    time: "13:00",
+    location: "İzmir, Konak",
+    attendees: 12,
+    slug: "meetwork-izmir-3"
+  }
+];
+
+// 31 günlük takvim için gün listesi (1'den 31'e kadar)
+const days = Array.from({ length: 31 }, (_, i) => i + 1);
+---
+
+<BaseLayout 
+  title="Etkinlik Takvimi"
+  description="MeetWork etkinliklerini takvim üzerinden takip edin, rezervasyon yapın."
+>
+
+  <main class="container py-5">
+
+    <h1 class="display-4 text-dark text-center">Etkinlik Takvimi</h1>
+    <p class="lead text-muted text-center">Aşağıdaki takvimde etkinliklerimizi görebilir ve rezervasyon yapabilirsiniz.</p>
+
+    <div class="calendar-grid mt-5">
+
+      <!-- Takvim kutuları (her gün bir kutu) -->
+      {days.map((day) => {
+        const event = events.find(e => e.day === day);
+        const hasEvent = !!event;
+
+        return (
+          <div class={`calendar-day ${hasEvent ? 'event-day' : ''}`} key={day}>
+            <div class={`day-box ${hasEvent ? 'bg-warning text-dark' : 'bg-light'}`}>
+              <div class="day-number">{day}</div>
+              {hasEvent && (
+                <>
+                  <div class="event-title">{event.title}</div>
+                  <div class="event-time">{event.time}</div>
+                  <div class="event-location">{event.location}</div>
+                  <div class="event-attendees">{event.attendees} kişi</div>
+                  <a href={`/etkinlik/${event.slug}`} class="btn btn-sm btn-primary mt-2">Rezervasyon Yap</a>
+                </>
+              )}
+            </div>
+          </div>
+        );
+      })}
+
+    </div>
+
+  </main>
+
+  <style jsx>
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+
+    .calendar-day {
+      padding: 5px;
+    }
+
+    .day-box {
+      height: 120px;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .day-number {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .event-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .event-time, .event-location, .event-attendees {
+      font-size: 0.8rem;
+    }
+
+    .btn-sm {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+    }
+  </style>
+
+</BaseLayout>

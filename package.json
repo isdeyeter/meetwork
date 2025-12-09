@@ -1,0 +1,30 @@
+{
+  "name": "meetwork",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "build:prod": "NODE_ENV=production astro build --force --verbose",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.3.6",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
+    "@popperjs/core": "^2.11.8",
+    "astro": "^5.13.11",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.13.1",
+    "sass": "^1.93.2",
+    "sweetalert2": "^11.23.0",
+    "terser": "^5.44.1",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.10"
+  }
+}

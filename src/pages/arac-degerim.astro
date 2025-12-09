@@ -1,0 +1,108 @@
+---
+const title = "Araç Değerim – Güncel Piyasa Fiyatı";
+---
+
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <style>
+      ::placeholder { color: #9e9e9e !important; opacity: 1; }
+      .radio-card { cursor: pointer; border: 2px solid #0d6efd; background: #fff; border-radius: .5rem; padding: .75rem; text-align: center; transition: .2s; color: #0d6efd; }
+      .radio-card:hover { border-color: #ffc107; }
+      .radio-card .bi { font-size: 1.5rem; }
+      .btn-check:checked + .radio-card { background: #ffc107; border-color: #ffc107; color: #000; }
+      .btn-car { min-width: 220px; }
+      @media (max-width: 576px) { .radio-card { margin-bottom: .5rem; } }
+    </style>
+  </head>
+
+  <body class="bg-light">
+    <main class="container py-5">
+      <h1 class="display-5 fw-bold text-center mb-2"><i class="bi bi-speedometer2 text-warning"></i> Araç Değerim</h1>
+      <p class="text-center text-muted mb-5">Türkiye'nin önde gelen ilan sitelerinden güncel fiyatlar</p>
+
+      <form id="priceForm" class="row g-3 needs-validation" novalidate client:load>
+        <div class="col-12"><label class="form-label fw-semibold">Marka</label><select class="form-select" name="brand" required><option value="">Seçiniz</option></select></div>
+        <div class="col-12"><label class="form-label fw-semibold">Model</label><select class="form-select" name="model" required disabled><option value="">Seçiniz</option></select></div>
+        <div class="col-12"><label class="form-label fw-semibold">Yıl</label><select class="form-select" name="year" required><option value="">Seçiniz</option></select></div>
+
+        <!-- Gövde Tipi – Lacivert → Sarı -->
+        <div class="col-12"><label class="form-label fw-semibold">Gövde Tipi</label>
+          <div class="row g-2">
+            {[{val:"Hatchback",icon:"bi-car-front"},{val:"Sedan",icon:"bi-car-front-fill"},{val:"SUV",icon:"bi-truck"},{val:"Coupe",icon:"bi-car-front"},{val:"Station Wagon",icon:"bi-truck-flatbed"},{val:"Van",icon:"bi-truck"}].map(g=>
+              <div class="col-6 col-md-4 col-lg-2">
+                <input type="radio" class="btn-check" name="body" id={`b-${g.val}`} value={g.val} />
+                <label class="btn btn-outline-primary radio-card w-100" for={`b-${g.val}`}>
+                  <i class={`bi ${g.icon}`}></i><br />{g.val}
+                </label>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Yakıt – Lacivert → Sarı -->
+        <div class="col-12"><label class="form-label fw-semibold">Yakıt</label>
+          <div class="row g-2">
+            {[{val:"Benzin",icon:"bi-fuel-pump"},{val:"Dizel",icon:"bi-fuel-pump"},{val:"Hybrid",icon:"bi-ev-station"},{val:"Elektrik",icon:"bi-lightning-charge"},{val:"Plug-in",icon:"bi-ev-station"}].map(y=>
+              <div class="col-6 col-md-4 col-lg-2">
+                <input type="radio" class="btn-check" name="fuel" id={`f-${y.val}`} value={y.val} />
+                <label class="btn btn-outline-primary radio-card w-100" for={`f-${y.val}`}>
+                  <i class={`bi ${y.icon}`}></i><br />{y.val}
+                </label>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Vites – Lacivert → Sarı renkler-->
+        <div class="col-12"><label class="form-label fw-semibold">Vites</label>
+          <div class="row g-2">
+            {[{val:"Düz",icon:"bi-stick-shift"},{val:"Otomatik",icon:"bi-automatic"}].map(v=>
+              <div class="col-6 col-md-4 col-lg-2">
+                <input type="radio" class="btn-check" name="gear" id={`g-${v.val}`} value={v.val} />
+                <label class="btn btn-outline-primary radio-card w-100" for={`g-${v.val}`}>
+                  <i class={`bi ${v.icon}`}></i><br />{v.val}
+                </label>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div class="col-12"><label class="form-label fw-semibold">Kilometre</label><input type="number" class="form-control" name="km" placeholder="145000" required /></div>
+        <div class="col-12"><label class="form-label fw-semibold">Cep Telefonu</label><input type="tel" class="form-control" name="phone" placeholder="051234567890" pattern="[0-9]{11}" required /></div>
+        <div class="col-12"><label class="form-label fw-semibold">İl / İlçe</label><input type="text" class="form-control" name="city" placeholder="İstanbul / Kadıköy" required /></div>
+
+        <div class="col-12 text-center">
+          <button class="btn btn-lg btn-warning px-5 btn-car" type="submit">
+            <i class="bi bi-car-front-fill"></i> Değerini Göster
+          </button>
+        </div>
+      </form>
+
+      <section id="sonuc" class="mt-5 d-none">
+        <h5 class="text-center mb-4">Piyasa Fiyat Aralığı</h5>
+        <div class="row g-3 text-center">
+          <div class="col-md-4"><div class="card border-success bg-success bg-opacity-10"><div class="card-body"><h6 class="text-success">En Ucuz</h6><div id="min" class="fs-3 text-success fw-bold"></div></div></div></div>
+          <div class="col-md-4"><div class="card border-warning bg-warning bg-opacity-10"><div class="card-body"><h6 class="text-warning">Ortalama Mantıklı</h6><div id="avg" class="fs-3 text-warning fw-bold"></div></div></div></div>
+          <div class="col-md-4"><div class="card border-danger bg-danger bg-opacity-10"><div class="card-body"><h6 class="text-danger">En Pahalı</h6><div id="max" class="fs-3 text-danger fw-bold"></div></div></div></div>
+        </div>
+        <p class="text-muted small text-center mt-3">* Fiyatlar Sahibinden.com & Arabam.com’daki güncel ilanlardan alınmıştır.</p>
+      </section>
+    </main>
+
+    <script>
+      let data=[]; fetch('/vehicles.json').then(r=>r.json()).then(d=>{data=d; fillBrand();});
+      const form=document.getElementById('priceForm'); const sonuc=document.getElementById('sonuc');
+      function fillBrand(){ const b=document.querySelector('[name=brand]'); b.innerHTML='<option value="">Seçiniz</option>'; data.forEach(x=>b.insertAdjacentHTML('beforeend',`<option value="${x.brand}">${x.brand}</option>`)); b.addEventListener('change',()=>fillModel(b.value)); }
+      function fillModel(brand){ const m=document.querySelector('[name=model]'); m.disabled=false; m.innerHTML='<option value="">Seçiniz</option>'; const item=data.find(x=>x.brand===brand); item.models.forEach(x=>m.insertAdjacentHTML('beforeend',`<option value="${x.name}">${x.name}</option>`)); }
+      const y=document.querySelector('[name=year]'); for(let i=2024;i>=2005;i--) y.insertAdjacentHTML('beforeend',`<option value="${i}">${i}</option>`);
+      form.addEventListener('submit',async(e)=>{ e.preventDefault(); if(!form.checkValidity()){form.classList.add('was-validated'); return;} const payload=Object.fromEntries(new FormData(form).entries()); sonuc.classList.add('d-none');
+        const res=await fetch('/api/price-query',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).then(r=>r.json());
+        if(res.error){alert(res.error); return;} document.getElementById('min').textContent=new Intl.NumberFormat('tr-TR').format(res.min)+' TL'; document.getElementById('max').textContent=new Intl.NumberFormat('tr-TR').format(res.max)+' TL'; document.getElementById('avg').textContent=new Intl.NumberFormat('tr-TR').format(res.sensible)+' TL'; sonuc.classList.remove('d-none'); sonuc.scrollIntoView({behavior:'smooth'}); });
+    </script>
+  </body>
+</html>

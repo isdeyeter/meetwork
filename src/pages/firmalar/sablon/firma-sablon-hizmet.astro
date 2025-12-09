@@ -1,0 +1,44 @@
+---
+// pages/firmalar/danismanlik/abc-danismanlik.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CompanyProfile from '../../../components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'ABC Danışmanlık',
+  description: 'Kurumsal danışmanlık ve iş geliştirme çözümleri',
+  slug: 'abc-danismanlik',
+  sector: 'danışmanlık',
+  color: '#6f42c1',
+  heroIcon: '/images/icons/danismanlik.svg',
+  location: 'Ankara, Türkiye',
+  services: [
+    { 
+      title: 'Stratejik Planlama', 
+      description: 'Uzun vadeli iş stratejileri ve yol haritası oluşturma',
+      icon: 'diagram-3'
+    },
+    { 
+      title: 'Kurumsal Eğitim', 
+      description: 'Çalışan gelişimi için özelleştirilmiş eğitim programları',
+      icon: 'mortarboard'
+    },
+    { 
+      title: 'Süreç İyileştirme', 
+      description: 'İş süreçlerinin optimizasyonu ve verimlilik artışı',
+      icon: 'gear'
+    }
+  ],
+  // products: [], // Ürün yok - gösterilmez
+  expertise: ['Stratejik Yönetim', 'Kurumsal Gelişim', 'Süreç Optimizasyonu'],
+  contact: {
+    phone: '+90 312 987 65 43',
+    email: 'info@abcdanismanlik.com',
+    website: 'https://abcdanismanlik.com'
+  },
+  longDescription: 'ABC Danışmanlık, kurumlara özel danışmanlık hizmetleri sunarak iş süreçlerini optimize eder ve verimliliği artırır. Deneyimli danışman kadromuzla kurumsal müşterilerimize çözüm ortaklığı yapıyoruz.'
+};
+---
+
+<BaseLayout title={`${company.title} - Firma Profili`}>
+  <CompanyProfile company={company} />
+</BaseLayout>

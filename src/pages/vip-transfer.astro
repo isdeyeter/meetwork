@@ -1,0 +1,682 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="VIP Transfer Hizmeti - Lüks Araç Kiralama">
+  <!-- Hero Section -->
+  <section class="py-5 bg-dark text-white position-relative overflow-hidden">
+    <div class="position-absolute top-0 end-0 w-50 h-100 d-none d-lg-block">
+      <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+           alt="Lüks Siyah Makam Arabası" 
+           class="img-fluid h-100"
+           style="object-fit: cover; opacity: 0.3;">
+    </div>
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold mb-4">🚘 VIP Transfer</h1>
+          <h2 class="mb-4">Lüks ve Konforlu Taşımacılığın Yeni Tanımı Şimdi Deneyin</h2>
+          <p class="lead mb-4">
+            Havalimanı'ndan Otele, Gezi rotalarından şehirler arası tüm yolculuklarınız için VIP transfer hizmetimizle lüks, konfor ve güveni bir arada sunuyoruz. 
+            Mercedes-Benz, Tesla, Audi, BMW, Range Rover, Porsche, Lexus, Volkswagen ve Otobüs filomuzla her an yanınızdayız.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="https://wa.me/905412465429?text=Merhaba,%20VIP%20transfer%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." 
+               target="_blank"
+               class="btn btn-success btn-lg px-5">
+              <i class="bi bi-whatsapp me-2"></i> WhatsApp ile İletişim
+            </a>
+            <a href="#araçlar" class="btn btn-outline-light btn-lg">
+              <i class="bi bi-car-front me-2"></i> Araçları Gör
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Airport Services -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4 text-primary">🏢 Hizmet Verdiğimiz Havalimanları</h2>
+        <p class="lead text-muted">Türkiye'nin tüm önemli havalimanlarında hizmetinizdeyiz</p>
+      </div>
+
+      <!-- Turkish -->
+      <div class="mb-5">
+        <h3 class="text-center mb-4">Hizmet Verdiğimiz Başlıca Havalimanları</h3>
+        <div class="row g-3">
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">IST – İstanbul</h5>
+                <p class="card-text small">İstanbul Havalimanı</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">SAW – İstanbul</h5>
+                <p class="card-text small">Sabiha Gökçen Havalimanı</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">ESB – Ankara</h5>
+                <p class="card-text small">Esenboğa Havalimanı</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">NAV – Nevşehir</h5>
+                <p class="card-text small">Nevşehir Kapadokya Havalimanı</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">ASR – Kayseri</h5>
+                <p class="card-text small">Kayseri Havalimanı</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">BJV – Bodrum</h5>
+                <p class="card-text small">Milas-Bodrum Havalimanı</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">AYT – Antalya</h5>
+                <p class="card-text small">Antalya Havalimanı</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card text-center h-100 border-primary">
+              <div class="card-body">
+                <h5 class="card-title">ADB – İzmir</h5>
+                <p class="card-text small">Adnan Menderes Havalimanı</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- English -->
+      <div>
+        <h3 class="text-center mb-4">✈️ Main Cities that We Provide Airport Transfers</h3>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Istanbul Airport (IST) Transfer Service</h5>
+                <p class="card-text">
+                  Arrive stress-free! Our greeter and driver will welcome you and guide you to your vehicle.
+                </p>
+                <ul class="list-unstyled">
+                  <li>✅ Fixed prices</li>
+                  <li>✅ No surprises</li>
+                  <li>✅ Always available vehicles near the airport</li>
+                </ul>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20IST%20transfer%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm mt-2">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Sabiha Gokcen Airport (SAW) Transfer Service</h5>
+                <p class="card-text">
+                  Arrive stress-free! Our greeter and driver will welcome you and guide you to your vehicle. Available 24/7.
+                </p>
+                <ul class="list-unstyled">
+                  <li>✅ Fixed prices</li>
+                  <li>✅ Punctuality guaranteed</li>
+                  <li>✅ Always available vehicles near the airport</li>
+                </ul>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20SAW%20transfer%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm mt-2">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Private Jet & FBO Transfers</h5>
+                <p class="card-text">
+                  Exclusive Luxury Transfers for Private Jet Passengers. Elevated travel experience with our bespoke services.
+                </p>
+                <ul class="list-unstyled">
+                  <li>✅ Personalized meet-and-greet</li>
+                  <li>✅ Premium vehicles</li>
+                  <li>✅ FBO terminal transfers</li>
+                </ul>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20private%20jet%20transfer%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm mt-2">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Araçlar -->
+  <section id="araçlar" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4 text-dark">🚗 VIP Araç Filomuz - 12 Lüks Araç</h2>
+        <p class="lead text-muted">En lüks ve konforlu araçlarımızla hizmetinizdeyiz</p>
+      </div>
+
+      <!-- Araç Grid - 12 Araç -->
+      <div class="row g-4">
+        <!-- Araç 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">1. VIP Mercedes Benz Maybach Vito</h4>
+              <h6 class="text-muted mb-3">Lüks ve Konforlu Taşımacılığın Yeni Tanımı</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Lüks Taşıma Deneyimi</li>
+                <li class="mb-1">✅ Refined ve Geniş İç Mekan</li>
+                <li class="mb-1">✅ Özel ve Kişiselleştirilmiş Hizmet</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=VIP+Mercedes+Benz+Maybach+Vito+Private&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Mercedes%20Maybach%20Vito%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">2. Mercedes Vito Lüks</h4>
+              <h6 class="text-muted mb-3">Dinamik, konforlu ve işlevsel</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Konforlu seyahat</li>
+                <li class="mb-1">✅ Profesyonel personel</li>
+                <li class="mb-1">✅ Güvenli hizmet</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Mercedes+Vito+Luxury&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Mercedes%20Vito%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">3. Mercedes Benz Sprinter VIP</h4>
+              <h6 class="text-muted mb-3">Geniş ve konforlu grup transferi</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ 8-14 kişilik kapasite</li>
+                <li class="mb-1">✅ Lüks iç tasarım</li>
+                <li class="mb-1">✅ Bagaj genişliği</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Mercedes+Sprinter+VIP+Transfer&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Mercedes%20Sprinter%20VIP%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">4. Mercedes-Benz E200</h4>
+              <h6 class="text-muted mb-3">Lüks, Güçlü, Prestijli</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Teknolojik donanım</li>
+                <li class="mb-1">✅ Konforlu sürüş</li>
+                <li class="mb-1">✅ Zarif ve şık tasarım</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Mercedes+E200+2024+black&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Mercedes%20E200%202024%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">5. Mercedes-Benz S500</h4>
+              <h6 class="text-muted mb-3">Üstün Performans, Sınırsız Konfor</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Lüks ve konforlu yolculuk</li>
+                <li class="mb-1">✅ VIP hizmet standartları</li>
+                <li class="mb-1">✅ Güvenli taşımacılık</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Mercedes+S500+2023+black&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Mercedes%20S500%202023%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">6. Mercedes-Benz C180</h4>
+              <h6 class="text-muted mb-3">Tarz ve Güvenin Buluştuğu Yolculuk</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Dinamik sürüş keyfi</li>
+                <li class="mb-1">✅ Lüks ve modern tasarım</li>
+                <li class="mb-1">✅ Kişiye özel hizmet</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Mercedes+C180+black+executive&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Mercedes%20C180%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- YENİ ARAÇLAR -->
+
+        <!-- Araç 7 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">7. BMW 7 Serisi</h4>
+              <h6 class="text-muted mb-3">Ultimate Lüks Sedan</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Yüksek teknoloji</li>
+                <li class="mb-1">✅ Executive paket</li>
+                <li class="mb-1">✅ Tam donanım</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=BMW+7+Series+2024+black+executive&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20BMW%207%20Serisi%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 8 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">8. Audi A8 L</h4>
+              <h6 class="text-muted mb-3">Flagship Lüks Sedan</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Quattro 4x4</li>
+                <li class="mb-1">✅ Tam LED aydınlatma</li>
+                <li class="mb-1">✅ Massaj koltuklar</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Audi+A8+L+2023+black+executive&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Audi%20A8%20L%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 9 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">9. Range Rover Autobiography</h4>
+              <h6 class="text-muted mb-3">Ultimate Lüks SUV</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ 4x4 performans</li>
+                <li class="mb-1">✅ İç mekan lüksü</li>
+                <li class="mb-1">✅ Yüksek yerden görüş</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Range+Rover+Autobiography+black+2023&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Range%20Rover%20Autobiography%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 10 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">10. Lexus LS 500h</h4>
+              <h6 class="text-muted mb-3">Hibrit Lüks Sedan</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Hibrit teknoloji</li>
+                <li class="mb-1">✅ Sessiz sürüş</li>
+                <li class="mb-1">✅ Mark Levinson ses sistemi</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Lexus+LS+500h+black+executive&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Lexus%20LS%20500h%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 11 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">11. Porsche Panamera Executive</h4>
+              <h6 class="text-muted mb-3">Sportif Lüks Sedan</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Sportif performans</li>
+                <li class="mb-1">✅ Lüks iç mekan</li>
+                <li class="mb-1">✅ Uzun dingil mesafesi</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Porsche+Panamera+Executive+black&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Porsche%20Panamera%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Araç 12 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow border-0">
+            <div class="card-body">
+              <h4 class="text-primary">12. Tesla Model S Plaid</h4>
+              <h6 class="text-muted mb-3">Elektrikli Süper Sedan</h6>
+              <ul class="list-unstyled mb-3">
+                <li class="mb-1">✅ Elektrikli performans</li>
+                <li class="mb-1">✅ Oyun konsolu</li>
+                <li class="mb-1">✅ Full self-driving</li>
+              </ul>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="https://www.google.com/search?q=Tesla+Model+S+Plaid+black&tbm=isch" 
+                   target="_blank"
+                   class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-image me-1"></i> Fotosu İçin Tıklayın
+                </a>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20Tesla%20Model%20S%20Plaid%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4">🌟 Hizmetlerimiz</h2>
+      </div>
+
+      <!-- Turkish -->
+      <div class="mb-5">
+        <h3 class="text-center mb-4">ŞOFÖRLÜ VİP ARAÇ KİRALAMA</h3>
+        <p class="lead text-center mb-4">Konaklamanıza lüks bir başlangıç. Güvenle ve Konforla Şoförlü Araç Kiralama Hizmeti</p>
+        
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="display-4 mb-3">🚘</div>
+                <h5>Şoförlü Araç Kiralama</h5>
+                <p class="small">Rent a Car With Driver</p>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20şoförlü%20araç%20kiralama%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="display-4 mb-3">🚙</div>
+                <h5>Lüks Van Şoförlü</h5>
+                <p class="small">Luxury Van With Driver</p>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20lüks%20van%20şoförlü%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="display-4 mb-3">🚌</div>
+                <h5>Büyük Van Şoförlü</h5>
+                <p class="small">Big Van With Driver</p>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20büyük%20van%20şoförlü%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="display-4 mb-3">🏙️</div>
+                <h5>Özel İstanbul Turu</h5>
+                <p class="small">Private Istanbul Tour</p>
+                <a href="https://wa.me/905412465429?text=Merhaba,%20özel%20İstanbul%20turu%20hakkında%20bilgi%20almak%20istiyorum." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- English -->
+      <div>
+        <h3 class="text-center mb-4">🚖 Our Services</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Chauffeur Service</h5>
+                <ul class="list-unstyled">
+                  <li>• Rent a Car With Driver</li>
+                  <li>• Luxury Van With Driver</li>
+                  <li>• Big Van With Driver</li>
+                  <li>• Car With Driver Istanbul</li>
+                </ul>
+                <a href="https://wa.me/905412465429?text=Hello,%20I%20want%20information%20about%20chauffeur%20service." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Private Tours</h5>
+                <ul class="list-unstyled">
+                  <li>• Private Istanbul Tour</li>
+                  <li>• Private Intercity Tours</li>
+                  <li>• Bursa - Uludag Private Tour from Istanbul</li>
+                  <li>• Private Sapanca Tour from Istanbul</li>
+                </ul>
+                <a href="https://wa.me/905412465429?text=Hello,%20I%20want%20information%20about%20private%20tours." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Transfer Services</h5>
+                <ul class="list-unstyled">
+                  <li>• Airport VIP Transfer</li>
+                  <li>• VIP Transfer Istanbul</li>
+                  <li>• Luxury Transfer Service</li>
+                  <li>• Door-to-door Transfer</li>
+                </ul>
+                <a href="https://wa.me/905412465429?text=Hello,%20I%20want%20information%20about%20transfer%20services." 
+                   target="_blank"
+                   class="btn btn-success btn-sm">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- CTA Section -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="display-4 mb-4">📞 Hemen Rezervasyon Yapın!</h2>
+        <p class="lead mb-4">
+          7/24 hizmet veren ekibimizle, lüks ve konforlu bir yolculuk için hemen iletişime geçin.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="https://wa.me/905412465429?text=Merhaba,%20VIP%20transfer%20hizmeti%20i%C3%A7in%20rezervasyon%20yapmak%20istiyorum." 
+             target="_blank"
+             class="btn btn-success btn-lg px-5">
+            <i class="bi bi-whatsapp me-2"></i> WhatsApp ile Rezervasyon
+          </a>
+          <a href="tel:+905412465429" class="btn btn-light btn-lg px-5">
+            <i class="bi bi-telephone me-2"></i> Hemen Ara: +90 541 246 54 29
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

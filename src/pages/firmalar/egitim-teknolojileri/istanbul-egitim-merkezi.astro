@@ -1,0 +1,169 @@
+---
+// This file can be used as a page or as an include that receives a `company` prop.
+// Guard against missing Astro.props when it's rendered as a standalone page.
+const defaultCompany = {
+  title: 'İstanbul Eğitim Merkezi',
+  description: 'Eğitim programları ve kurslar',
+  color: '#fd7e14',
+  courses: { yazilim: [], grafik: [], agDonanim: [] },
+  kariyerYollari: { donanim: [], yazilim: [] }
+};
+
+const company = Astro.props?.company ?? defaultCompany;
+const color = company?.color ?? defaultCompany.color;
+
+---
+
+<style scoped>
+  /* Mevcut stillerin yanına ekle */
+  .course-category {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .course-list {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  .course-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+    transition: background-color 0.2s ease;
+  }
+
+  .course-item:hover {
+    background-color: #f8f9fa;
+  }
+
+  .course-item:last-child {
+    border-bottom: none;
+  }
+
+  .kariyer-yolu {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--company-accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .kariyer-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .kariyer-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .kariyer-list li:last-child {
+    border-bottom: none;
+  }
+
+  .kariyer-list li::before {
+    content: "✓";
+    color: var(--company-accent);
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+</style>
+
+<article class="company-profile" style={`--company-accent: ${color}`}>
+  <!-- Mevcut hero section ve diğer bölümler burada kalacak -->
+
+  <!-- Eğitim Listeleri Bölümü -->
+  {company.courses && (
+    <section class="mb-5">
+      <h2 class="h3 mb-4 border-bottom pb-2">
+        <i class="bi bi-book me-2" style={`color: ${color}`}></i>Tüm Eğitim Programları
+      </h2>
+
+      <!-- Yazılım Eğitimleri -->
+      <div class="course-category">
+        <h4 class="h5 mb-3 text-primary">
+          <i class="bi bi-code-slash me-2"></i>Yazılım & Programlama Eğitimleri
+        </h4>
+        <div class="course-list">
+          {(company.courses?.yazilim ?? []).map((course: any, index: number) => (
+            <div class="course-item d-flex justify-content-between align-items-center">
+              <span>{course.name}</span>
+              {course.hours && course.hours !== '-' && (
+                <span class="badge bg-light text-dark">{course.hours} saat</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Grafik Tasarım Eğitimleri -->
+      <div class="course-category">
+        <h4 class="h5 mb-3 text-success">
+          <i class="bi bi-palette me-2"></i>Grafik Tasarım Eğitimleri
+        </h4>
+        <div class="course-list">
+          {(company.courses?.grafik ?? []).map((course: any, index: number) => (
+            <div class="course-item d-flex justify-content-between align-items-center">
+              <span>{course.name}</span>
+              {course.hours && (
+                <span class="badge bg-light text-dark">{course.hours} saat</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Ağ & Donanım Eğitimleri -->
+      <div class="course-category">
+        <h4 class="h5 mb-3 text-warning">
+          <i class="bi bi-hdd-network me-2"></i>Ağ & Donanım Eğitimleri
+        </h4>
+        <div class="course-list">
+          {(company.courses?.agDonanim ?? []).map((course: any, index: number) => (
+            <div class="course-item d-flex justify-content-between align-items-center">
+              <span>{course.name}</span>
+              {course.hours && (
+                <span class="badge bg-light text-dark">{course.hours} saat</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Kariyer Yolları -->
+  {company.kariyerYollari && (
+    <section class="mb-5">
+      <h2 class="h3 mb-4 border-bottom pb-2">
+        <i class="bi bi-briefcase me-2" style={`color: ${color}`}></i>Kariyer Yolları
+      </h2>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="kariyer-yolu">
+            <h4 class="h5 mb-3 text-primary">Donanım & Network Kariyeri</h4>
+            <ul class="kariyer-list">
+              {(company.kariyerYollari?.donanim ?? []).map((item: any, index: number) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="kariyer-yolu">
+            <h4 class="h5 mb-3 text-success">Yazılım Kariyeri</h4>
+            <ul class="kariyer-list">
+              {(company.kariyerYollari?.yazilim ?? []).map((item: any, index: number) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+</article>

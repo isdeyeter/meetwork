@@ -1,0 +1,100 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CompanyProfile from '@components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'Avukat Burhan Teker',
+  description: 'İstanbul merkezli avukatlık bürosu - Şirketler hukuku, tazminat davaları, ceza hukuku ve medeni hukuk alanlarında profesyonel hukuki danışmanlık',
+  slug: 'avukat-burhan-teker',
+  sector: 'avukatlik-hukuk-burosu',
+  color: '#1e3a8a',
+  heroIcon: '/images/icons/terazi.svg',
+  location: 'İstanbul, Türkiye',
+  services: [
+    { title: '⚖️ Ceza Hukuku', description: 'Soruşturma ve yargılama süreçlerinde profesyonel hukuki destek ve savunma hizmetleri' },
+    { title: '💰 Tazminat Hukuku', description: 'Maddi ve manevi tazminat davaları, trafik kazası, iş kazası tazminat talepleri' },
+    { title: '🏠 Gayrimenkul Hukuku', description: 'Tapu iptal ve tescil davaları, önalım davaları, taşınmaz uyuşmazlıkları' },
+    { title: '👨‍👩‍👧‍👦 Medeni Hukuk', description: 'Boşanma davaları, miras hukuku, nafaka, velayet ve aile hukuku davaları' },
+    { title: '🏢 Şirketler Hukuku', description: 'Şirket kuruluş, birleşme ve devralmalar, kurumsal yönetim danışmanlığı' },
+    { title: '💼 İş Hukuku', description: 'İş sözleşmeleri, işçi-işveren uyuşmazlıkları, sendika hukuku' },
+    { title: '🎯 Fikri Mülkiyet Hukuku', description: 'Patent, marka, telif hakları ve endüstriyel tasarım koruması' },
+    { title: '📊 Rekabet Hukuku', description: 'Rekabet kurulu uygulamaları, uyum danışmanlığı ve rekabet hukuku davaları' }
+  ],
+  practiceAreas: [
+    {
+      title: 'Şirketler ve Ticaret Hukuku',
+      description: 'Burhan Teker Hukuk Bürosu olarak tarafımızca, yerli ve yabancı müvekkillerimize taraf oldukları ticari sözleşmelerin hazırlanması, şirket kuruluş işlemleri, birleşme ve devralma süreçlerinde hukuki danışmanlık hizmeti sunulmaktadır.'
+    },
+    {
+      title: 'Medeni Hukuk ve Borçlar Hukuku',
+      description: 'Büromuzca, evlilik, boşanma ile ailenin korunması ve evliliğe ilişkin genel hükümleri kapsayan aile hukuku davalarında, borçlar hukukundan kaynaklanan uyuşmazlıkların çözümünde profesyonel hukuki destek sağlanmaktadır.'
+    },
+    {
+      title: 'İş ve Sosyal Güvenlik Hukuku',
+      description: 'Büromuzca, yerli ve yabancı müvekkillere, iş sözleşmelerinin hazırlanması, şirket organizasyonunun düzenlenmesi, işçi-işveren uyuşmazlıklarının çözümü konularında kapsamlı hukuki danışmanlık verilmektedir.'
+    },
+    {
+      title: 'İdare ve Vergi Hukuku',
+      description: 'Büromuz tarafından, idari başvuru ve itirazların yapılması, izin ve ruhsatların alınması, kamu ve devlet ihaleleri süreçlerinde hukuki danışmanlık ve dava takip hizmetleri sunulmaktadır.'
+    },
+    {
+      title: 'Fikri Mülkiyet Hukuku',
+      description: 'Büromuzca, yerli ve yabancı müvekkillere, ulusal ve uluslararası patent, marka, tasarım tescilleri ve fikri mülkiyet haklarının korunması konularında hukuki danışmanlık hizmeti verilmektedir.'
+    },
+    {
+      title: 'Rekabet Hukuku',
+      description: 'Büromuz nezdinde, müvekkillere, Rekabet Hukuku\'na ilişkin görüş ve danışmanlık verilmekte, müvekkiller adına rekabet kurulu başvuruları ve uyum süreçleri yönetilmektedir.'
+    }
+  ],
+  expertise: [
+    'Ceza Hukuku', 
+    'Tazminat Hukuku', 
+    'Gayrimenkul Hukuku', 
+    'Medeni Hukuk', 
+    'Şirketler Hukuku', 
+    'İş Hukuku',
+    'Fikri Mülkiyet',
+    'Rekabet Hukuku'
+  ],
+  contact: {
+    phone: '+90 546 877 88 23',
+    mobile: '+90 546 877 88 23',
+    whatsapp: '+90 546 877 88 23',
+    email: '',
+    website: '',
+    address: 'İstanbul, Türkiye'
+  },
+  features: [
+    { title: 'Profesyonel Danışmanlık', description: 'Hukuki sorunlarınızda uzman avukat kadrosuyla profesyonel çözümler' },
+    { title: 'Güncel Mevzuat Takibi', description: 'Sürekli değişen mevzuatı yakından takip ederek güncel hukuki danışmanlık' },
+    { title: 'Etkin Savunma', description: 'Ceza ve hukuk davalarında etkin savunma ve dava takip hizmeti' },
+    { title: 'Türkiye Geneli Hizmet', description: 'İstanbul merkezli olarak Türkiye\'nin her yerinde dava ve iş takibi' }
+  ],
+  brands: ['Avukatlık', 'Hukuki Danışmanlık', 'Dava Takibi', 'Hukuk Bürosu'],
+  longDescription: `Hukuk bilgisinin doğru ve güncel olması kadar, somut hukuki sorunları çözecek şekilde ele alınması da önemlidir. Somut hukuki problemler, mevzuat ve yargıtay kararları ışığında değerlendirilerek bir çözüme ulaşılmalıdır. Avukatlık faaliyeti, farklı hukuk alanlarına ilişkin normların somut olaya doğru bir şekilde uygulanarak müvekkilin hukuki probleminin çözülmesi faaliyetidir.
+
+Burhan Teker Hukuk Bürosu, bir taraftan müvekkillerine hukuki yardım sunarken diğer taraftan makale ve yargıtay kararları yayımlayarak uygulamaya katkı sunmaktadır. Makalelerimiz, hukuk teorisi, güncel mevzuat (kanun, yönetmelik, tüzük vs.) ve yargıtay kararları ile şekillenen en son mahkeme uygulamaları dikkate alınarak hazırlanmıştır. Mevzuat değişiklikleri veya yeni yargısal uygulamalar makalelere eklenerek bilgi akışının güncelliği sağlanmaktadır.
+
+Avukat Burhan Teker, hukuki danışmanlık hizmetinin yanı sıra Ceza Hukuku, Tazminat Hukuku, Vergi ve İdare Hukuku, Gayrimenkul Hukuku, Medeni Hukuk gibi birçok hukuk alanında faaliyet göstermektedir.`,
+  detailedServices: {
+    cezaHukuku: `Ceza yargılaması süreci, hukuki yardıma en çok ihtiyaç duyulan süreçtir. Ceza hukuku arama, el koyma, yakalama, gözaltı, tutuklama gibi koruma tedbirleri; adli para cezası veya hapis cezası mahkumiyeti gibi mahkeme kararları vasıtasıyla kişi özgürlüğüne müdahale eder. Suç işlendiğinde savcılık tarafından soruşturma, ceza davası açıldığında mahkeme tarafından yargılama faaliyeti yapılır. Tüm bu süreçlere şüpheli, sanık veya şikayetçi olarak katılanlar mutlaka profesyonel hukuki yardım almalıdır. Avukat Burhan Teker, ceza hukuku teorisi ve uygulamasını birlikte ele alarak müvekkillerine etkin bir avukatlık ve hukuki danışmanlık hizmeti sunmaya çalışmaktadır.`,
+    tazminatHukuku: `Tazminat hukuku, özel hukuk ilişkilerinde birbirinden farklı sebeplerle ortaya çıkan tazminat uyuşmazlıklarını konu alır. Maddi ve manevi tazminat davası; trafik kazası, iş kazası, doktor uygulama hatası (malpraktis), boşanma, sözleşme ihlali, suç işlenmesi vb. gibi birçok farklı hukuki nedenden kaynaklanabilir. Avukatlık büromuz, tazminat davaları için tazminat sebebini ve somut olaya özgü mevzuatı birlikte analiz ederek hem hukuki danışmanlık hem de avukatlık hizmeti sunmaktadır.`,
+    gayrimenkulHukuku: `Tapu iptal ve tescil davaları; önalım, ortaklığın giderilmesi, taşınmaz vaadi sözleşmelerinin feshi vb. gibi taşınmaza ilişkin davalar mülkiyet hakkını etkileyen, ekonomik açıdan dava değeri yüksek davalardır. İstanbul'da bulunan hukuk büromuz, gayrimenkul davalarını dava hazırlık süreciyle birlikte planlayarak mülkiyet hakkının temin edilmesini sağlamaktadır.`,
+    medeniHukuk: `Medeni hukuk; boşanma davası, velayet, nafaka, boşanmada mal paylaşımı gibi aile hukuku sorunlarını; mirasta mal paylaşımı, muvazaa (mirastan mal kaçırma), mirasçının saklı payının ihlal edilmesi nedeniyle tenkis davası, mirasın reddi gibi miras hukuku davalarını; sözleşmenin düzenlenmesi, yenilenmesi ve feshi, alacak davası vb. gibi borçlar hukuku davalarını kapsayan oldukça geniş bir özel hukuk alanıdır.`
+  },
+  mission: `Müvekkillerimizin hukuki sorunlarını, mevzuat ve yargıtay kararları ışığında değerlendirerek en etkin çözümlere ulaşmak ve hukuki güvenliklerini sağlamak.`,
+  vision: `Hukukun üstünlüğü ilkesi çerçevesinde, müvekkillerimize en kaliteli hukuki hizmeti sunarak sektörde öncü bir hukuk bürosu olmak.`,
+  externalLinks: [
+    { title: 'Anasayfa', url: 'http://www.burhanteker.av.tr' },
+    { title: 'Hizmetlerimiz', url: 'http://www.burhanteker.av.tr/hizmetlerimiz' }
+  ],
+  seo: { 
+    title: 'Avukat Burhan Teker | İstanbul Hukuk Bürosu', 
+    description: 'Avukat Burhan Teker - Ceza hukuku, tazminat davaları, gayrimenkul hukuku ve medeni hukuk alanlarında profesyonel avukatlık ve hukuki danışmanlık hizmetleri. İstanbul merkezli.' 
+  }
+};
+---
+
+<BaseLayout title={company.seo.title} description={company.seo.description}>
+  <CompanyProfile company={company} />
+</BaseLayout>

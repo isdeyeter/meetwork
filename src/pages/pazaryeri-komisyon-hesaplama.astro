@@ -1,0 +1,587 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Komisyon Hesaplama Aracı - E-Ticaret Platformları Komisyon Hesaplayıcı">
+  
+  <section class="py-5">
+    <div class="container">
+      
+      <!-- Başlık & Açıklama -->
+      <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-danger mb-4">
+          E-Ticaret Pazaryerleri Komisyon Hesaplama Aracı
+        </h1>
+        
+        <p class="lead text-muted mb-4">
+          E-ticaret platformları ürün komisyonlarını en doğru ve kolay şekilde hesaplamak için aşağıdaki komisyon hesaplama aracını kullanabilirsiniz.
+        </p>
+
+        <!-- Hızlı Erişim Butonları -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3 col-6">
+            <a href="/dijital-donusum/e-ticaret-ve-internetten-satis" class="btn btn-outline-primary w-100 h-100 py-3">
+              <div class="fw-bold">E-Ticaret Paketine mi ihtiyacın var?</div>
+            </a>
+          </div>
+          <div class="col-md-3 col-6">
+            <a href="/dijital-donusum/on-muhasebe-magazacilik-edonusum-erp" class="btn btn-outline-success w-100 h-100 py-3">
+              <div class="fw-bold">E-Dönüşüm Paketine mi ihtiyacın var?</div>
+            </a>
+          </div>
+          <div class="col-md-3 col-6">
+            <a href="/dijital-donusum/on-muhasebe-magazacilik-edonusum-erp" class="btn btn-outline-info w-100 h-100 py-3">
+              <div class="fw-bold">Muhasebe Programına mı ihtiyacın var?</div>
+            </a>
+          </div>
+          <div class="col-md-3 col-6">
+            <a href="/dijital-donusum/hibe-destek-kredi" class="btn btn-outline-danger w-100 h-100 py-3">
+              <div class="fw-bold">Hibe Destek ve Krediye mi İhtiyaç Duyuyorsun?</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pazaryeri Seçimi - Güncellenmiş Versiyon -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-danger mb-4 text-center fs-4">Pazaryeri Seçin</h5>
+              <div class="row g-3">
+                <!-- Trendyol -->
+                <div class="col-md-2 col-4">
+                  <input type="radio" class="btn-check" name="marketplace" id="trendyol" value="trendyol" checked>
+                  <label class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center marketplace-card" for="trendyol">
+                    <span class="marketplace-icon mb-2">🛍️</span>
+                    <span class="marketplace-name fw-bold fs-6">Trendyol</span>
+                  </label>
+                </div>
+                
+                <!-- n11 -->
+                <div class="col-md-2 col-4">
+                  <input type="radio" class="btn-check" name="marketplace" id="n11" value="n11">
+                  <label class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center marketplace-card" for="n11">
+                    <span class="marketplace-icon mb-2">🛒</span>
+                    <span class="marketplace-name fw-bold fs-6">n11</span>
+                  </label>
+                </div>
+                
+                <!-- Hepsiburada -->
+                <div class="col-md-2 col-4">
+                  <input type="radio" class="btn-check" name="marketplace" id="hepsiburada" value="hepsiburada">
+                  <label class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center marketplace-card" for="hepsiburada">
+                    <span class="marketplace-icon mb-2">📦</span>
+                    <span class="marketplace-name fw-bold fs-6">Hepsiburada</span>
+                  </label>
+                </div>
+                
+                <!-- Amazon -->
+                <div class="col-md-2 col-4">
+                  <input type="radio" class="btn-check" name="marketplace" id="amazon" value="amazon">
+                  <label class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center marketplace-card" for="amazon">
+                    <span class="marketplace-icon mb-2">🌎</span>
+                    <span class="marketplace-name fw-bold fs-6">Amazon</span>
+                  </label>
+                </div>
+                
+                <!-- ÇiçekSepeti -->
+                <div class="col-md-2 col-4">
+                  <input type="radio" class="btn-check" name="marketplace" id="ciceksepeti" value="ciceksepeti">
+                  <label class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center marketplace-card" for="ciceksepeti">
+                    <span class="marketplace-icon mb-2">💐</span>
+                    <span class="marketplace-name fw-bold fs-6">ÇiçekSepeti</span>
+                  </label>
+                </div>
+                
+                <!-- Etsy -->
+                <div class="col-md-2 col-4">
+                  <input type="radio" class="btn-check" name="marketplace" id="etsy" value="etsy">
+                  <label class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center marketplace-card" for="etsy">
+                    <span class="marketplace-icon mb-2">🎨</span>
+                    <span class="marketplace-name fw-bold fs-6">Etsy</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Hesaplama Formu -->
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-primary mb-4">Komisyon Hesaplama</h5>
+              
+              <form id="commissionForm">
+                <!-- Ürün Kategorisi -->
+                <div class="mb-3">
+                  <label for="productCategory" class="form-label">Ürün Kategorisi (Seçim zorunlu değil)</label>
+                  <select class="form-select" id="productCategory">
+                    <option value="">Kategori seçin</option>
+                    <option value="moda">Moda (%18-30)</option>
+                    <option value="elektronik">Elektronik (%5-15)</option>
+                    <option value="ev-yasam">Ev & Yaşam (%15-25)</option>
+                    <option value="kozmetik">Kozmetik (%12-20)</option>
+                    <option value="spor">Spor & Outdoor (%10-18)</option>
+                    <option value="supermarket">Süpermarket (%8-15)</option>
+                    <option value="oyuncak">Oyuncak (%12-20)</option>
+                    <option value="kitap">Kitap (%10-15)</option>
+                  </select>
+                </div>
+
+                <!-- Komisyon Oranı -->
+                <div class="mb-3">
+                  <label for="commissionRate" class="form-label">Komisyon Oranı: <span id="commissionValue">0</span>%</label>
+                  <input type="range" class="form-range" id="commissionRate" min="0" max="30" step="0.5" value="0">
+                  <div class="form-text">(Oranı değiştirebilirsiniz)</div>
+                </div>
+
+                <!-- Alış Fiyatı -->
+                <div class="mb-3">
+                  <label for="purchasePrice" class="form-label"><b>Alış Fiyatı</b></label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="purchasePrice" value="0" min="0">
+                    <span class="input-group-text">₺</span>
+                  </div>
+                </div>
+
+                <!-- Satış Fiyatı -->
+                <div class="mb-3">
+                  <label for="salePrice" class="form-label">Satış Fiyatı</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="salePrice" value="0" min="0">
+                    <span class="input-group-text">₺</span>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="priceIncludesVAT" checked>
+                    <label class="form-check-label" for="priceIncludesVAT">
+                      KDV Dahil
+                    </label>
+                  </div>
+                </div>
+
+                <!-- KDV Oranı -->
+                <div class="mb-3">
+                  <label class="form-label">KDV Oranı</label>
+                  <div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="vatRate" id="vat20" value="20" checked>
+                      <label class="form-check-label" for="vat20">%20</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="vatRate" id="vat10" value="10">
+                      <label class="form-check-label" for="vat10">%10</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="vatRate" id="vat1" value="1">
+                      <label class="form-check-label" for="vat1">%1</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="vatRate" id="vatOther" value="0">
+                      <label class="form-check-label" for="vatOther">Diğer</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Kargo Ücreti -->
+                <div class="mb-3">
+                  <label for="shippingCost" class="form-label">Kargo Ücreti</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="shippingCost" value="0" min="0">
+                    <span class="input-group-text">₺</span>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="radio" name="shippingPaidBy" id="shippingSeller" value="seller" checked>
+                    <label class="form-check-label" for="shippingSeller">
+                      Kargo Satıcıya Ait
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="shippingPaidBy" id="shippingBuyer" value="buyer">
+                    <label class="form-check-label" for="shippingBuyer">
+                      Kargo Alıcıya Ait
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Hizmet Bedeli -->
+                <div class="mb-4">
+                  <label for="serviceFee" class="form-label">Hizmet Bedeli</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="serviceFee" value="0" min="0">
+                    <span class="input-group-text">₺</span>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input class="form-check-input" type="checkbox" id="serviceFeeIncludesVAT" checked>
+                    <label class="form-check-label" for="serviceFeeIncludesVAT">
+                      KDV Dahil
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Butonlar -->
+                <div class="d-grid gap-2 d-md-flex">
+                  <button type="button" class="btn btn-outline-secondary flex-fill" id="clearBtn">
+                    🗑️ Temizle
+                  </button>
+                  <button type="button" class="btn btn-success flex-fill" id="calculateBtn">
+                    🧮 Hesapla
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sonuçlar -->
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title text-danger mb-4">Hesaplama Sonuçları</h5>
+              <h5 class="card-title text-primary mb-4">Kar/Zarar Hesabı Yapmadan ürün satışı Yapmayınız</h5>
+              
+              <div id="results" class="d-none">
+                <div class="row g-3">
+                  <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                      <div class="text-muted small">Satış Fiyatı (KDV Dahil)</div>
+                      <div class="h5 fw-bold text-success" id="resultSalePriceWithVAT">₺0,00</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                      <div class="text-muted small">Satış Fiyatı (KDV Hariç)</div>
+                      <div class="h5 fw-bold" id="resultSalePriceWithoutVAT">₺0,00</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                      <div class="text-muted small">Alış Fiyatı</div>
+                      <div class="h5 fw-bold text-danger" id="resultPurchasePrice">-₺0,00</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                      <div class="text-muted small">Komisyon Tutarı</div>
+                      <div class="h5 fw-bold text-danger" id="resultCommission">-₺0,00</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                      <div class="text-muted small">Kargo Tutarı</div>
+                      <div class="h5 fw-bold text-danger" id="resultShipping">-₺0,00</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="border rounded p-3 text-center">
+                      <div class="text-muted small">Hizmet Bedeli</div>
+                      <div class="h5 fw-bold text-danger" id="resultServiceFee">-₺0,00</div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="border rounded p-3 text-center bg-light">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <div class="text-muted small">Net Kar/Zarar</div>
+                          <div class="h4 fw-bold" id="resultNetProfit">₺0,00</div>
+                        </div>
+                        <span class="badge bg-success fs-6" id="resultProfitPercentage">%0,00</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="noResults" class="text-center py-5">
+                <div class="text-muted">
+                  <div class="fs-1 mb-3">📊</div>
+                  <p>Hesaplama yapmak için formu doldurun ve "Hesapla" butonuna tıklayın.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destek Butonları -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h4 class="text-primary mb-4 text-center">🛠️ Pazaryeri Destek Hizmetleri</h4>
+              <p class="text-center text-danger mb-4">Pazaryeri Destek, E-Ticaret ve Entegrasyon Hizmetleri ne ihtiyacın var?</p>
+               <p class="text-center text-muted mb-4">İş birliği yaptığımız İş De Yeter Platformu üzerinden hızlıca uzman bulabilirsiniz (Detaylar için isdeyeter.com)</p>
+              
+              <div class="row g-3">
+                <!-- Pazaryeri Destek -->
+                <div class="col-md-6">
+                  <h6 class="text-primary mb-3">📍 Pazaryeri Destek</h6>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">Trendyol Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">Hepsiburada Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">n11 Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">ÇiçekSepeti Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">Amazon Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">Cimri Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">Akakçe Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">TeknoSA Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">Pazarama Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">ETSY Destek</a>
+                    </div>
+                    <div class="col-12">
+                      <a href="https://isdeyeter.com/e-ticaret-destegi-295/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm w-100 mb-2">Farklı Pazaryeri</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- E-Ticaret Platform Destek -->
+                <div class="col-md-6">
+                  <h6 class="text-success mb-3">🌐 E-Ticaret Platform Destek</h6>
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">Shopify Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">PrestaShop Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">Magento Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">WooCommerce Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">İkas Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">Ticimax Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">T-Soft Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">İdeasoft Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">ShopPHP Destek</a>
+                    </div>
+                    <div class="col-6">
+                      <a href="https://isdeyeter.com/global-e-ticaret-destegi-296/" target="_blank" rel="noopener" class="btn btn-outline-success btn-sm w-100 mb-2">PlatinMarket Destek</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bilgilendirme Bölümü -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <h4 class="text-primary mb-4">📋 Dikkat Edilmesi Gerekenler</h4>
+              
+              <div class="accordion" id="infoAccordion">
+                <!-- Trendyol Bilgileri -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#trendyolInfo">
+                      🛍️ Trendyol
+                    </button>
+                  </h2>
+                  <div id="trendyolInfo" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                      <ul class="list-unstyled">
+                        <li>✓ Komisyon Oranında KDV Dahildir</li>
+                        <li>✓ Her Sepet İçin Hizmet Bedeli 8.49 TL + KDV (2025 yılı)</li>
+                        <li>✓ Mikro İhracat siparişlerinde ürün başına %5 "Uluslararası Hizmet Bedeli" uygulanır</li>
+                        <li>✓ Barem Destek Uygulaması kapsamında sepet tutarına göre farklı kargo ücretleri uygulanır</li>
+                        <li>✓ Komisyon oranları %5 ile %20 arasında değişir</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hepsiburada Bilgileri -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hepsiburadaInfo">
+                      📦 Hepsiburada
+                    </button>
+                  </h2>
+                  <div id="hepsiburadaInfo" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                      <ul class="list-unstyled">
+                        <li>✓ Komisyon Oranı İçerisinde KDV Dahil Değildir</li>
+                        <li>✓ Her Sepet İçin Hizmet Bedeli 2.50 TL + KDV (2025 yılı)</li>
+                        <li>✓ Her Sepet İçin İşlem Bedeli 7 TL + KDV (2025 yılı)</li>
+                        <li>✓ Barem Destek Uygulaması kargo gönderileri için geçerlidir</li>
+                        <li>✓ Sepet tutarına göre farklı kargo ücretleri uygulanır</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Diğer Platform Bilgileri -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#otherInfo">
+                      💼 Diğer Platformlar
+                    </button>
+                  </h2>
+                  <div id="otherInfo" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                    <div class="accordion-body">
+                      <h6>Nasıl Hesaplanıyor?</h6>
+                      <p>Platformlar tarafından ürün satış fiyatı üzerinden Komisyon ve Hizmet Bedeli adı altında ana giderler kesilmektedir. Sonrasında kargo ücreti kesilerek kalan tutar hesabınıza yatırılır.</p>
+                      
+                      <h6 class="mt-3">Önemli Terimler:</h6>
+                      <ul>
+                        <li><strong>Satış Fiyatı:</strong> Platformda sergilenen KDV Dahil ürün satış fiyatı</li>
+                        <li><strong>Alış Fiyatı:</strong> Ürünün KDV Dahil alış fiyatı</li>
+                        <li><strong>Komisyon:</strong> Platformun yapmış olduğu kesinti</li>
+                        <li><strong>Hizmet Bedeli:</strong> Teknolojik alt yapı giderleri ve çağrı merkezi masrafları</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const commissionRate = document.getElementById('commissionRate');
+      const commissionValue = document.getElementById('commissionValue');
+      const calculateBtn = document.getElementById('calculateBtn');
+      const clearBtn = document.getElementById('clearBtn');
+      const results = document.getElementById('results');
+      const noResults = document.getElementById('noResults');
+
+      // Komisyon oranı gösterimi
+      commissionRate.addEventListener('input', function() {
+        commissionValue.textContent = this.value;
+      });
+
+      // Kategori seçimi ile komisyon oranı güncelleme
+      document.getElementById('productCategory').addEventListener('change', function() {
+        const rates = {
+          'moda': 20,
+          'elektronik': 10,
+          'ev-yasam': 15,
+          'kozmetik': 15,
+          'spor': 12,
+          'supermarket': 10,
+          'oyuncak': 15,
+          'kitap': 12
+        };
+        
+        if (rates[this.value]) {
+          commissionRate.value = rates[this.value];
+          commissionValue.textContent = rates[this.value];
+        }
+      });
+
+      // Hesapla butonu
+      calculateBtn.addEventListener('click', function() {
+        calculateCommission();
+      });
+
+      // Temizle butonu
+      clearBtn.addEventListener('click', function() {
+        document.getElementById('commissionForm').reset();
+        commissionValue.textContent = '0';
+        results.classList.add('d-none');
+        noResults.classList.remove('d-none');
+      });
+
+      function calculateCommission() {
+        // Değerleri al
+        const purchasePrice = parseFloat(document.getElementById('purchasePrice').value) || 0;
+        const salePrice = parseFloat(document.getElementById('salePrice').value) || 0;
+        const commissionRateValue = parseFloat(document.getElementById('commissionRate').value) || 0;
+        const shippingCost = parseFloat(document.getElementById('shippingCost').value) || 0;
+        const serviceFee = parseFloat(document.getElementById('serviceFee').value) || 0;
+        const priceIncludesVAT = document.getElementById('priceIncludesVAT').checked;
+        const serviceFeeIncludesVAT = document.getElementById('serviceFeeIncludesVAT').checked;
+        const shippingPaidBy = document.querySelector('input[name="shippingPaidBy"]:checked').value;
+        const vatRate = parseFloat(document.querySelector('input[name="vatRate"]:checked').value) || 0;
+
+        // Hesaplamalar
+        let salePriceWithoutVAT, salePriceWithVAT;
+        
+        if (priceIncludesVAT) {
+          salePriceWithVAT = salePrice;
+          salePriceWithoutVAT = salePrice / (1 + vatRate/100);
+        } else {
+          salePriceWithoutVAT = salePrice;
+          salePriceWithVAT = salePrice * (1 + vatRate/100);
+        }
+
+        const commissionAmount = salePriceWithVAT * (commissionRateValue / 100);
+        const serviceFeeAmount = serviceFeeIncludesVAT ? serviceFee : serviceFee * (1 + vatRate/100);
+        const shippingAmount = shippingPaidBy === 'seller' ? shippingCost : 0;
+
+        // Net kar/zarar
+        const totalCosts = purchasePrice + commissionAmount + serviceFeeAmount + shippingAmount;
+        const netProfit = salePriceWithoutVAT - totalCosts;
+        const profitPercentage = (netProfit / salePriceWithoutVAT) * 100;
+
+        // Sonuçları göster
+        document.getElementById('resultSalePriceWithVAT').textContent = '₺' + salePriceWithVAT.toFixed(2);
+        document.getElementById('resultSalePriceWithoutVAT').textContent = '₺' + salePriceWithoutVAT.toFixed(2);
+        document.getElementById('resultPurchasePrice').textContent = '-₺' + purchasePrice.toFixed(2);
+        document.getElementById('resultCommission').textContent = '-₺' + commissionAmount.toFixed(2);
+        document.getElementById('resultShipping').textContent = '-₺' + shippingAmount.toFixed(2);
+        document.getElementById('resultServiceFee').textContent = '-₺' + serviceFeeAmount.toFixed(2);
+        document.getElementById('resultNetProfit').textContent = '₺' + netProfit.toFixed(2);
+        document.getElementById('resultProfitPercentage').textContent = '%' + profitPercentage.toFixed(2);
+
+        // Renk ayarı
+        const netProfitElement = document.getElementById('resultNetProfit');
+        const percentageElement = document.getElementById('resultProfitPercentage');
+        
+        if (netProfit >= 0) {
+          netProfitElement.className = 'h4 fw-bold text-success';
+          percentageElement.className = 'badge bg-success fs-6';
+        } else {
+          netProfitElement.className = 'h4 fw-bold text-danger';
+          percentageElement.className = 'badge bg-danger fs-6';
+        }
+
+        // Sonuçları göster
+        results.classList.remove('d-none');
+        noResults.classList.add('d-none');
+      }
+    });
+  </script>
+
+</BaseLayout>

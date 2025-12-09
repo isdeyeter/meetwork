@@ -1,0 +1,697 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const pageTitle = "Hesaplama Araçları | MeetWork";
+const pageDescription = "200'den fazla ücretsiz hesaplama aracı: Muhasebe, vergi, ticaret, hukuk, sigorta, seyahat, zaman, finans ve kredi hesaplamaları.";
+const canonicalURL = "https://meetwork.com.tr/hesap";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonical={canonicalURL}>
+  <main class="min-vh-100">
+    <!-- Hero Section -->
+    <section class="hero-section position-relative overflow-hidden">
+      <div class="container">
+        <div class="row align-items-center min-vh-100 py-5">
+          <div class="col-lg-6">
+            <div class="hero-content text-white">
+              <h1 class="display-3 fw-bold mb-4 animate-fade-in">
+                🚀 Akıllı Hesaplamalar
+                <span class="gradient-text">MeetWork</span> ile
+              </h1>
+              <p class="lead mb-5 fs-4 opacity-90 animate-slide-up">
+                200'den fazla ücretsiz hesaplama aracı ile günlük işlemlerinizi kolayla yapın. 
+                Muhasebe, vergi, kredi, finans ve daha fazlası için profesyonel çözümler.
+              </p>
+              <div class="d-flex flex-wrap gap-3 animate-bounce-in">
+                <a href="#categories" class="btn btn-light btn-lg px-5 py-3 fw-bold">
+                  Hesaplama Araçlarını Keşfet
+                </a>
+                <a href="https://panel.meetwork.net" class="btn btn-outline-light btn-lg px-4 py-3">
+                  Ücretsiz Üye Ol
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual position-relative">
+              <div class="floating-cards">
+                <div class="card card-1 floating-1">
+                  <div class="card-body">
+                    <i class="bi bi-calculator fs-1 text-primary"></i>
+                    <h6>Muhasebe</h6>
+                  </div>
+                </div>
+                <div class="card card-2 floating-2">
+                  <div class="card-body">
+                    <i class="bi bi-cash-coin fs-1 text-success"></i>
+                    <h6>Vergi</h6>
+                  </div>
+                </div>
+                <div class="card card-3 floating-3">
+                  <div class="card-body">
+                    <i class="bi bi-bank fs-1 text-warning"></i>
+                    <h6>Kredi</h6>
+                  </div>
+                </div>
+                <div class="card card-4 floating-4">
+                  <div class="card-body">
+                    <i class="bi bi-graph-up fs-1 text-info"></i>
+                    <h6>Finans</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Background Elements -->
+      <div class="hero-bg-elements">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold mb-3">Hesaplama Kategorileri</h2>
+          <p class="lead text-muted">İhtiyacınız olan hesaplama aracını hızlıca bulun</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Muhasebe -->
+          <div class="col-lg-6">
+            <div class="category-card muhasebe-card" data-aos="fade-right">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-calculator"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">📊 Muhasebe Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      Maaş, tazminat, emeklilik ve diğer muhasebe hesaplamaları için profesyonel araçlar.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-primary">Maaş Hesaplama</span>
+                      <span class="badge bg-primary">Kıdem Tazminatı</span>
+                      <span class="badge bg-primary">Emeklilik</span>
+                    </div>
+                    <a href="/hesap/muhasebe" class="btn btn-primary btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vergi -->
+          <div class="col-lg-6">
+            <div class="category-card vergi-card" data-aos="fade-left">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-cash-coin"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">🏛️ Vergi Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      KDV, gelir vergisi, MTV ve diğer vergi hesaplamaları için güncel araçlar.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-success">KDV Hesaplama</span>
+                      <span class="badge bg-success">Gelir Vergisi</span>
+                      <span class="badge bg-success">MTV</span>
+                    </div>
+                    <a href="/hesap/vergi" class="btn btn-success btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kredi -->
+          <div class="col-lg-6">
+            <div class="category-card kredi-card" data-aos="fade-right">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-bank"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">🏦 Kredi Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      İhtiyaç kredisi, konut kredisi, taşıt kredisi ve kredi kartı hesaplamaları.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-warning">Konut Kredisi</span>
+                      <span class="badge bg-warning">İhtiyaç Kredisi</span>
+                      <span class="badge bg-warning">Kredi Kartı</span>
+                    </div>
+                    <a href="/hesap/kredi" class="btn btn-warning btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Finans -->
+          <div class="col-lg-6">
+            <div class="category-card finans-card" data-aos="fade-left">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-graph-up"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">💹 Finans Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      Döviz, altın, faiz, yatırım ve diğer finansal hesaplamalar için profesyonel araçlar.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-info">Döviz Hesaplama</span>
+                      <span class="badge bg-info">Altın Hesaplama</span>
+                      <span class="badge bg-info">Faiz Hesaplama</span>
+                    </div>
+                    <a href="/hesap/finans" class="btn btn-info btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zaman -->
+          <div class="col-lg-6">
+            <div class="category-card zaman-card" data-aos="fade-right">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-clock"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">⏰ Zaman Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      Tarih, saat, yaş, vade ve diğer zaman hesaplamaları için pratik araçlar.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-secondary">Yaş Hesaplama</span>
+                      <span class="badge bg-secondary">Tarih Hesaplama</span>
+                      <span class="badge bg-secondary">İş Günü</span>
+                    </div>
+                    <a href="/hesap/zaman" class="btn btn-secondary btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Seyahat -->
+          <div class="col-lg-6">
+            <div class="category-card seyahat-card" data-aos="fade-left">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-geo-alt"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">🚗 Seyahat Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      Yol mesafesi, yakıt maliyeti, otel fiyatları ve diğer seyahat hesaplamaları.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-purple">Mesafe Hesaplama</span>
+                      <span class="badge bg-purple">Yakıt Maliyeti</span>
+                      <span class="badge bg-purple">Otel Fiyatı</span>
+                    </div>
+                    <a href="/hesap/seyahat" class="btn btn-purple btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sigorta -->
+          <div class="col-lg-6">
+            <div class="category-card sigorta-card" data-aos="fade-right">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-shield-check"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">🛡️ Sigorta Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      Kasko, trafik sigortası, DASK, sağlık sigortası ve diğer sigorta hesaplamaları.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-teal">Kasko</span>
+                      <span class="badge bg-teal">Trafik Sigortası</span>
+                      <span class="badge bg-teal">DASK</span>
+                    </div>
+                    <a href="/hesap/sigorta" class="btn btn-teal btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hukuk -->
+          <div class="col-lg-6">
+            <div class="category-card hukuk-card" data-aos="fade-left">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <div class="icon-wrapper">
+                      <i class="bi bi-scale-balanced"></i>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <h3 class="h4 mb-3">⚖️ Hukuk Hesaplamaları</h3>
+                    <p class="text-muted mb-4">
+                      Arabuluculuk, vekalet ücreti, icra masrafları ve diğer hukuki hesaplamalar.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                      <span class="badge bg-dark">Vekalet Ücreti</span>
+                      <span class="badge bg-dark">İcra Masrafı</span>
+                      <span class="badge bg-dark">Yasal Faiz</span>
+                    </div>
+                    <a href="/hesap/hukuk" class="btn btn-dark btn-lg">
+                      Hesaplama Araçlarına Git <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold mb-3">Neden MeetWork Hesaplama Araçları?</h2>
+          <p class="lead text-muted">Profesyonel hesaplamalar için güvenilir çözümler</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="zoom-in">
+            <div class="feature-card text-center">
+              <div class="feature-icon mb-4">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+              <h4 class="mb-3">Hızlı ve Doğru</h4>
+              <p class="text-muted">
+                Anlık hesaplamalar ile zaman kazanın. Tüm sonuçlar güncel mevzuata uygun.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card text-center">
+              <div class="feature-icon mb-4">
+                <i class="bi bi-phone"></i>
+              </div>
+              <h4 class="mb-3">Mobil Uyumlu</h4>
+              <p class="text-muted">
+                Tüm cihazlarda mükemmel çalışır. İster telefon, ister tablet, ister bilgisayar.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card text-center">
+              <div class="feature-icon mb-4">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4 class="mb-3">Güvenilir</h4>
+              <p class="text-muted">
+                2025 yılı güncel verileri ve resmi mevzuat ile güvenilir hesaplamalar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-gradient-primary text-white">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2 class="display-5 fw-bold mb-3">MeetWork Ticaretinizi Kolaylaştırır</h2>
+            <p class="lead mb-4">
+              Hesaplamalarınızı Profesyonel Şekilde Yapın, 200'den fazla hesaplama aracı ile işlerinizi kolaylaştırın. Tamamen ücretsiz!
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a href="https://panel.meetwork.net" class="btn btn-light btn-lg px-5 py-3 fw-bold">
+              🚀 Üye olmak için tıklayın
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    /* Custom Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --warning-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --info-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      --purple: #6f42c1;
+      --teal: #20c997;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: var(--primary-gradient);
+      position: relative;
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, #fff, #f0f0f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Floating Cards */
+    .floating-cards {
+      position: relative;
+      height: 400px;
+    }
+
+    .floating-cards .card {
+      position: absolute;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    .card-1 { top: 10%; left: 10%; }
+    .card-2 { top: 30%; right: 10%; }
+    .card-3 { bottom: 30%; left: 5%; }
+    .card-4 { bottom: 10%; right: 20%; }
+
+    .floating-1 { animation: float 6s ease-in-out infinite; }
+    .floating-2 { animation: float 6s ease-in-out infinite 1.5s; }
+    .floating-3 { animation: float 6s ease-in-out infinite 3s; }
+    .floating-4 { animation: float 6s ease-in-out infinite 4.5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Background Elements */
+    .hero-bg-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+      top: -150px;
+      right: -150px;
+    }
+
+    .circle-2 {
+      width: 200px;
+      height: 200px;
+      bottom: -100px;
+      left: 10%;
+    }
+
+    .circle-3 {
+      width: 150px;
+      height: 150px;
+      top: 20%;
+      left: 5%;
+    }
+
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.1)"></path></svg>');
+      background-size: cover;
+    }
+
+    .wave-1 { opacity: 0.5; }
+    .wave-2 { 
+      bottom: -10px;
+      opacity: 0.3;
+      transform: scaleY(-1);
+    }
+
+    /* Category Cards */
+    .category-card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .muhasebe-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+    .vergi-card { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; }
+    .kredi-card { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+    .finans-card { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; }
+    .zaman-card { background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%); color: white; }
+    .seyahat-card { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; }
+    .sigorta-card { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #333; }
+    .hukuk-card { background: linear-gradient(135deg, #868f96 0%, #596164 100%); color: white; }
+
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .sigorta-card .icon-wrapper {
+      background: rgba(0,0,0,0.1);
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-size: 2rem;
+      color: white;
+    }
+
+    /* Custom Buttons */
+    .btn-purple {
+      background: var(--purple);
+      border-color: var(--purple);
+      color: white;
+    }
+
+    .btn-purple:hover {
+      background: #5a32a3;
+      border-color: #5a32a3;
+      color: white;
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: white;
+    }
+
+    .btn-teal:hover {
+      background: #1aa67e;
+      border-color: #1aa67e;
+      color: white;
+    }
+
+    .bg-gradient-primary {
+      background: var(--primary-gradient);
+    }
+
+    /* Animations */
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+
+    .animate-slide-up {
+      animation: slideUp 1s ease-in 0.3s both;
+    }
+
+    .animate-bounce-in {
+      animation: bounceIn 1s ease-in 0.6s both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { 
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% { 
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% { 
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      70% { 
+        transform: scale(0.9);
+      }
+      100% { 
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .floating-cards {
+        height: 300px;
+        margin-top: 2rem;
+      }
+      
+      .category-card .row {
+        text-align: center;
+      }
+      
+      .icon-wrapper {
+        margin: 0 auto 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    // Simple intersection observer for animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, observerOptions);
+
+      // Observe all category cards
+      document.querySelectorAll('.category-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+      });
+
+      // Observe all feature cards
+      document.querySelectorAll('.feature-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+      });
+    });
+  </script>
+</BaseLayout>

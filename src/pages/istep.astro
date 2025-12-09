@@ -1,0 +1,317 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Ekip verileri 
+const ekip = [
+  {
+    ad: "Mehmet Fatih AKGÜN",
+    gorev: "Genel Başkan",
+    aciklama: "Platform stratejisi, genel yönetim, dış ilişkiler, MeetWork Küresel Ağ İletişimi",
+    seviye: 1 // En üst seviye
+  },
+  {
+    ad: "Dr. Metin Güven",
+    gorev: "Genel Başkan Yardımcısı - Eğitim Sorumlusu",
+    aciklama: "Üniversite işbirlikleri, mentorluk programları, İŞTEP Gençlik Yapılanması Sorumlusu",
+    seviye: 2
+  },
+  {
+    ad: "Yük. Müh. Mustafa Öztürk",
+    gorev: "Genel Başkan Yardımcısı - Dijital Dönüşüm & Teknoloji Sorumlusu",
+    aciklama: "Üyelere e-ticaret, ön muhasebe, web sitesi, dijital ürünler desteği sağlama",
+    seviye: 2
+  },
+  {
+    ad: "Süleyman Yerlikaya",
+    gorev: "Başkan Yardımcısı - Sektörel Komisyonlar Koordinatörü - Gıda Komisyonu Başkanı",
+    aciklama: "Gıda üretimi, denetimi, Helal gıda üretimi, Sertifikasyon ve komisyon yönetimi",
+    seviye: 3
+  },
+  {
+    ad: "Dr. Songül Şahin",
+    gorev: "Başkan Yardımcısı - Finans & Sponsorluk Sorumlusu",
+    aciklama: "Bronz/Gümüş/Altın sponsorluk paketleri, mali işler ve muhasebe süreçleri",
+    seviye: 3
+  },
+  {
+    ad: "Ayşe Emir",
+    gorev: "Başkan Yardımcısı - Operasyon & Etkinlik Yöneticisi",
+    aciklama: "Mini-Maxi etkinliklerin planlanması, yürütülmesi, bölge temsilcileri ile koordinasyon",
+    seviye: 3
+  },
+  {
+    ad: "Dr. Deniz Aksoy",
+    gorev: "Başkan Yardımcısı - İhracat & Uluslararası Bağlantılar Sorumlusu",
+    aciklama: "MeetWork Globalde farklı ülkelerdeki Hub’lar, yabancı delegasyonlar ile iletişim",
+    seviye: 3
+  },
+  {
+    ad: "Anıl Aksel Kaçmaz",
+    gorev: "Başkan Yardımcısı - Retail Kanal, Pazaryerleri Bağlantıları",
+    aciklama: "Perakende sektörünün tüm dinamiklerini takip ve komisyonlara destek yöneticisi",
+    seviye: 3
+  },
+  {
+    ad: "Muhammet Habib Kaya",
+    gorev: "Başkan Yardımcısı - Dayanıklı Tüketimler Sorumlusu",
+    aciklama: "Toptan sektörlerine yönelik (İstoç, Tektilkent vb.) tüketim malzemeleri komisyonları yönetimi",
+    seviye: 3
+  },
+  {
+    ad: "Özkan Güzeller",
+    gorev: "Başkan Yardımcısı - Gıda Tüketim Komisyon Başkanı",
+    aciklama: "Hızlı tüketim ürünleri ve nitelikli gıda komisyon yönetimi",
+    seviye: 3
+  },
+  {
+    ad: "İsa Boztemir",
+    gorev: "Başkan Yardımcısı - Uluslararası Ticaret Komisyon Başkanı",
+    aciklama: "Dış ticaret, ithalat, ihracat konularında teknik detekler komisyon yönetimi",
+    seviye: 3
+  },
+  {
+    ad: "Sinem ÖZER",
+    gorev: "Başkan Yardımcısı - Tekstil & Moda İhracatı",
+    aciklama: "Toptan sektörlerine yönelik tüketim malzemeleri komisyonları yönetimi",
+    seviye: 3
+  },
+  {
+    ad: "Zeynep YILMAZ",
+    gorev: "Başkan Yardımcısı - Ar-Ge & Startup Destek",
+    aciklama: "Girişimcilik Ekosistemi, Danışma Kaynak Bulma, Fonlama Komisyon Başkanı",
+    seviye: 3
+  }
+];
+
+// Tüm İştirakler
+const istirakler = [
+  {
+    ad: "Lezzetstop",
+    url: "/istirakler/lezzetstop",
+    aciklama: "Türkiye’nin ev yapımı lezzetlerine ulaşabileceğiniz tek adres. Ev hanımlarının el emeği tarifleriyle kuruldu. Yerel ürünü, ulusal pazara taşıyoruz."
+  },
+  {
+    ad: "İş de Yeter",
+    url: "/istirakler/isdeyeter",
+    aciklama: "Her meslekten insanın hizmetini bulabileceği yerel iş platformu. Tesisatçıdan Elektrikçiye, Kuaförden Nakliyeciye, Psikologdan Diyetisyene kadar tüm hizmetler tek çatı altında."
+  },
+  {
+    ad: "VillaBungalovTatil",
+    url: "/istirakler/villabungalovtatil",
+    aciklama: "Türkiye'nin unutulmaz tatil köylerine özel erişim sağlayan rezervasyon platformu. Doğayla iç içe, uygun fiyatlı, aile dostu tatil deneyimleri sunuyor."
+  },
+  {
+    ad: "DepodanDirekt",
+    url: "/istirakler/depodandirekt",
+    aciklama: "Toptan ve Perakende alışverişin yeni adresi. Tüm pazaryerlerinde ve kendi web sitesinde birçok FIRSAT ürünlerin satışı yapılmaktadır."
+  },
+  {
+    ad: "İstanbul Eğitim Merkezi",
+    url: "/istirakler/istanbulegitimmerkezi",
+    aciklama: "Eğitim de gelecek konsepti ile Yapay Zekadan Yazılıma, Grafikten Muhasebeye, İngilizceden Arapçaya Dil kursları ile gerçek bir eğitim merkezî."
+  },
+  {
+    ad: "StokPratik",
+    url: "/istirakler/stokpratik",
+    aciklama: "Türkiye’nin en hızlı bulut stok ve muhasebe yazılımı. ERP, e-ticaret, çok şube yönetimi ve barkod entegrasyonuyla işletmeleri dijitalleştiriyor."
+  },
+  {
+    ad: "Kuvve",
+    url: "/istirakler/kuvve",
+    aciklama: "Microsoft ve Cisco sertifikalı uzman ekiple uçtan uca IT çözümleri sunan teknoloji partneriniz."
+  },
+  {
+    ad: "Laflaf",
+    url: "/istirakler/laflaf",
+    aciklama: "İlgi alanlarınıza göre şekillenen bir dijital yaşam alanıdır. LafLaf Başlıkları: Girişimcilik, Teknoloji, Lezzet, Sağlık, Ev dekorasyonu, Kadına özel, Astroloji, Sanat, Aile."
+  },
+  {
+    ad: "Mega Proje",
+    url: "/istirakler/megaproje",
+    aciklama: "İşlerinizi Büyütmenin Yeni Adımı; Yazılım çözümlerimizle işinizi yalnızca dijitalleştirmiyoruz, büyüme odaklı bir yapıya dönüştürüyoruz."
+  }
+];
+---
+
+<BaseLayout 
+  title="İŞTEP – İş Te Birlik Platformu"
+  description="Girişimciler, yatırımcılar ve KOBİ’ler için güçlü ticari bağlantılar kuruyoruz. MeetWork ile tanış, işini İŞTEP ile büyüt."
+>
+
+  <main class="container py-5">
+    <!-- Başlık -->
+    <div class="text-center mb-5">
+      <h1 class="display-4 text-dark">İŞTEP – İş Te Birlik Platformu</h1>
+      <p class="lead text-muted">Bağlantı Kur, Fırsat Üret, İşini Büyüt</p>
+      <p class="text-muted">MeetWork ile tanış, B2B Toplantılarına Katıl.</p>
+    </div>
+
+    <!-- Tanıtım -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h3 class="text-primary">İŞTEP Nedir?</h3>
+            <p>
+              İŞTEP, üretim odaklı iş insanlarının birleştiği, yerli markaların dünyada ses getirdiği bir platformdur.
+              Girişimciler, yatırımcılar ve KOBİ’ler için güçlü ticari bağlantılar kuruyoruz.
+              Ücretsiz kayıtla başla, dijital araçlarımızla işini güçlendir.
+            </p>
+            <p>
+              <strong>İş yapmayı kolaylaştırmak için ücretsiz teknoloji araçları sunuyoruz.</strong>
+              E-ticaretten ihracata, yapay zekâdan sürdürülebilirliğe kadar her alanda destek sunuyoruz.
+            <br>Detaylı bilgi için <a href="https://istep.com.tr" target="_blank">İştep Resmi Web sitesini</a> ziyaret edebilirsiniz.
+            </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+              <a href="/uye-ol" class="btn btn-primary me-md-2">İŞTEP'e Üye Ol</a>
+              <a href="https://wa.me/905412465429?text=Merhaba,%20İŞTEP%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success">
+                <i class="bi bi-whatsapp me-2"></i>WhatsApp ile Bilgi Al
+              </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Genel Başkan Mesajı -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h3 class="text-primary">Genel Başkan Mesajı</h3>
+            <p class="text-muted">
+              “Üretmek, bir toplumun en güçlü direncidir.” Bu inançla yola çıktık. Girişimciler, KOBİ’ler ve sanayicilerin gücünü bir araya getiren bir ekosistem olmak istedik.
+            </p>
+            <p class="text-muted">
+              Sadece bir STK değil, değişimin merkezi olmayı hedefledik.
+            </p>
+            <p class="text-muted">
+              İŞTEP – İş Te Birlik Platformu olarak, üretim odaklı iş insanlarının MeetWork etkinlikleriyle kaliteli ticari bağlar kurduğu, dijital dönüşümle güçlendiği ve küresel pazara açıldığı bir yapı kurduk.
+            </p>
+            <p class="text-muted">
+              Burada her görüşme bir fırsat, her bağlantı bir büyüme adımıdır.
+            </p>
+            <p class="text-muted">
+              Amacımız basit: Türkiye’nin üretken zekâsını, yerli markalarını, girişimci cesaretini dünya ile buluşturmak.
+            </p>
+            <p class="text-muted">
+              E-ticaretten ihracata, yapay zekâdan sürdürülebilirliğe kadar her alanda destek sunuyoruz.
+            </p>
+            <p class="text-muted">
+              Çünkü biliyoruz: Tek başına ayakta kalmak çok zorken büyümek neredeyse imkansız, birlikte olursak büyürüz, Türkiye büyür.
+            </p>
+            <p class="text-muted">
+              Bu platformda siz de varsınız. Firmalarınız, fikirleriniz, ihtiyaçlarınız bizim için önemli.
+            </p>
+            <p class="text-muted">
+              Akıllı eşleştirme sistemimiz, sektörel komisyonlarımız, uluslararası Hub’larımızla size özel çözümler üretiyoruz.
+            </p>
+            <p class="text-muted">
+              Gelecek, yalnızca büyük firmalarda değil, küçük atılımların birleştiği noktada şekillenir.
+            </p>
+            <p class="text-muted">
+              İŞTEP olarak, bu birleşmenin mimarı olmak istiyoruz.
+            </p>
+            <p class="text-muted">
+              Sizinle tanıştığı için minnettarız. Birlikte daha güçlü, birlikte daha ileri.
+            <br>Detaylı bilgi için <a href="https://istep.com.tr" target="_blank">İştep Resmi Web sitesini</a> ziyaret edebilirsiniz.</p>
+            <p class="text-muted text-end">
+              <em>Saygılarımla,</em><br />
+              Mehmet Fatih AKGÜN<br />
+              İştep Genel Başkanı
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- İştirakler -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="text-primary mb-4">İŞTEP İştirakleri</h3>
+        <p>
+          İŞTEP sadece bir platform değil, başarıya giden yollarda ortaklık kuran bir ekosistemdir.
+          Burada yer alan markaların bazıları İŞTEP üyeleri tarafından ortaklaşa kurulmuş, bazıları doğrudan İŞTEP iştirakidir.
+        </p>
+        <div class="row g-4">
+          {istirakler.map((istirak) => (
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title">{istirak.ad}</h5>
+                  <p class="card-text text-muted">{istirak.aciklama}</p>
+                  <a href={istirak.url} class="btn btn-outline-primary">Detaylı Bilgi</a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Ekip (Piramit) -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <h3 class="text-primary mb-4">İştep Kurumsal Yapı</h3>
+        <p>
+          Aşağıda İŞTEP yönetim yapısını görebilirsiniz.Detaylı bilgi için <a href="https://istep.com.tr/baskan-ve-ekibimiz-is-te-birlik-platformu-istep/" target="_blank">İştep Resmi Web sitesini</a> ziyaret edebilirsiniz.
+        </p>
+        <div class="row g-4">
+          {ekip.map((uye) => (
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center">
+                  <h5 class="card-title">{uye.ad}</h5>
+                  <h6 class="text-primary">{uye.gorev}</h6>
+                  <p class="card-text text-muted">{uye.aciklama}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sosyal Medya -->
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <h3 class="text-primary mb-4">İŞTEP Sosyal Medya</h3>
+        <p class="text-muted">İŞTEP ile sosyal medyada tanışın, güncel gelişmelerden haberdar olun, B2B organizasyonlarını kaçırmayın.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="https://www.instagram.com/istep_com_tr" target="_blank" class="btn btn-outline-primary">
+            <i class="bi bi-instagram me-2"></i>Instagram
+          </a>
+          <a href="https://www.linkedin.com/in/istep-is-te-birlik-platformu/" target="_blank" class="btn btn-outline-primary">
+            <i class="bi bi-linkedin me-2"></i>LinkedIn
+          </a>
+          <a href="https://www.youtube.com/@istep_com_tr" target="_blank" class="btn btn-outline-primary">
+            <i class="bi bi-youtube me-2"></i>YouTube
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61580825476347&sk=about" target="_blank" class="btn btn-outline-primary">
+            <i class="bi bi-facebook me-2"></i>Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vizyon -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="alert alert-info" role="alert">
+          <h4 class="alert-heading">Vizyonumuz</h4>
+          <p>
+            “Üretmek, bir toplumun en güçlü direncidir.” Bu inançla yola çıktık.
+            Girişimciler, KOBİ’ler ve sanayicilerin gücünü bir araya getiren bir ekosistem olmak istedik.
+          </p>
+          <p>
+            Sadece bir STK değil, değişimin merkezi olmayı hedefledik.
+            Türkiye’nin üretken zekâsını, yerli markalarını, girişimci cesaretini dünya ile buluşturmak.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</BaseLayout>

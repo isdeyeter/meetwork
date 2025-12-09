@@ -1,0 +1,463 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Kolay İhracat Platformu - Ticaret Bakanlığı">
+  
+  <section class="py-5">
+    <div class="container">
+      <!-- Breadcrumb Navigasyon -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/" class="text-decoration-none">
+              <i class="bi bi-house-fill"></i> Ana Sayfa
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="/ticaret-bakanligi-destekler" class="text-decoration-none">Ticaret Bakanlığı Destekleri</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="/ticaret-bakanligi-kolay-ihracat" class="text-decoration-none">MeetWork ile Kolay İhracat Platformunu Keşfedin</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Platform Detay</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold text-primary mb-3">MeetWork ile Kolay İhracat Platformunu Keşfedin</h1>
+          <p class="lead text-muted mb-4">
+            Ticaret Bakanlığı'nın ihracatçılar için geliştirdiği akıllı platform ile ihracatınızı büyütün. 
+            Yapay zeka destekli analizler, kişiselleştirilmiş pazar önerileri ve kapsamlı eğitimler tek platformda!
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="https://www.kolayihracat.gov.tr/ihracat" 
+               class="btn btn-primary btn-lg px-4" target="_blank">
+              <i class="bi bi-box-arrow-up-right me-2"></i>Platforma Git
+            </a>
+            <a href="https://www.kolayihracat.gov.tr/ihracat" class="btn btn-outline-primary btn-lg px-4">
+              <i class="bi bi-play-circle me-2"></i>Özellikleri Keşfet
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <div class="platform-hero-icon">
+            <i class="bi bi-robot display-1 text-primary"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Giriş Butonları -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-warning">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title text-warning mb-3">Platforma Hemen Erişim Sağlayın</h4>
+              <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="https://www.kolayihracat.gov.tr/ihracat" 
+                   class="btn btn-outline-primary btn-lg" target="_blank">
+                  <i class="bi bi-person-plus me-2"></i>Kayıt Ol
+                </a>
+                <a href="https://www.kolayihracat.gov.tr/ihracat" 
+                   class="btn btn-outline-success btn-lg" target="_blank">
+                  <i class="bi bi-key me-2"></i>E-Devlet ile Giriş Yap
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yenilikler -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="alert alert-info">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-megaphone display-6 me-4 text-info"></i>
+              <div>
+                <h5 class="alert-heading mb-2">Kolay İhracat Platformu Zenginleşiyor!</h5>
+                <p class="mb-0">
+                  Platforma yeni eklenen tamamlayıcı ürün önerisi, potansiyel ithalatçı bilgileri, eğitim modülü, 
+                  adım adım ihracat rehberi ve chatbot fonksiyonları ile ihracatınızı artırmaya devam ediyoruz!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ana Özellikler -->
+      <div id="ozellikler" class="row g-4 mb-5">
+        
+        <!-- Akıllı İhracat Robotu -->
+        <div class="col-12">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-primary text-white py-4">
+              <h3 class="mb-0">
+                <i class="bi bi-robot me-2"></i>
+                Akıllı İhracat Robotu
+              </h3>
+            </div>
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-lg-8">
+                  <p class="lead mb-4">
+                    Makine öğrenmesi ve yapay zeka teknolojisi kullanan Akıllı İhracat Robotu, 
+                    firmanızın geçmiş verileri ve farklı veri kaynaklarından gelen milyonlarca satırı 
+                    işleyerek size özel hedef pazar önerileri üretir.
+                  </p>
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-person-check text-success fs-4 me-3"></i>
+                        <div>
+                          <h6 class="fw-bold mb-1">Kişiselleştirilmiş Öneri</h6>
+                          <p class="small text-muted mb-0">Firmanıza özel pazar önerileri</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-arrow-clockwise text-warning fs-4 me-3"></i>
+                        <div>
+                          <h6 class="fw-bold mb-1">Her Zaman Güncel</h6>
+                          <p class="small text-muted mb-0">Sürekli güncellenen veri kaynakları</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-puzzle text-info fs-4 me-3"></i>
+                        <div>
+                          <h6 class="fw-bold mb-1">Tamamlayıcı Ürün Önerisi</h6>
+                          <p class="small text-muted mb-0">Destekleyici ürün önerileri</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-cpu text-danger fs-4 me-3"></i>
+                        <div>
+                          <h6 class="fw-bold mb-1">Yapay Zeka Teknolojisi</h6>
+                          <p class="small text-muted mb-0">Anlık veri işleme</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Buton kaldırıldı -->
+                </div>
+                <div class="col-lg-4 text-center">
+                  <div class="stats-card bg-light rounded p-4">
+                    <div class="row text-center">
+                      <div class="col-6 mb-3">
+                        <h3 class="text-primary fw-bold">23</h3>
+                        <small class="text-muted">Sektör</small>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h3 class="text-success fw-bold">5400</h3>
+                        <small class="text-muted">Ürün</small>
+                      </div>
+                      <div class="col-6">
+                        <h3 class="text-warning fw-bold">200</h3>
+                        <small class="text-muted">Ülke</small>
+                      </div>
+                      <div class="col-6">
+                        <h3 class="text-info fw-bold">∞</h3>
+                        <small class="text-muted">Analiz</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pazara Giriş Haritası -->
+        <div class="col-12">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-success text-white py-4">
+              <h3 class="mb-0">
+                <i class="bi bi-map me-2"></i>
+                Pazara Giriş Haritası
+              </h3>
+            </div>
+            <div class="card-body p-4">
+              <p class="lead mb-4">
+                Gümrük vergi oranları, tarife dışı önlemler, ikili anlaşmalar ve hedeflediğiniz pazara 
+                dair bilmeniz gereken birçok bilgi Pazara Giriş Haritası'nda.
+              </p>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="feature-card border rounded p-4 h-100">
+                    <div class="d-flex align-items-start mb-3">
+                      <span class="badge bg-success me-2">YENİ</span>
+                      <h5 class="text-success mb-0">Potansiyel Müşteri</h5>
+                    </div>
+                    <p class="text-muted mb-3">Hedef pazarınızda faaliyet gösteren ithalatçıların iletişim bilgileri</p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-card border rounded p-4 h-100">
+                    <h5 class="text-info mb-3">Ticari İlişkiler</h5>
+                    <p class="text-muted mb-3">İkili anlaşmalar, menşe belgesi örnekleri ve anlaşma şartları</p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-card border rounded p-4 h-100">
+                    <h5 class="text-warning mb-3">Gümrük İşlemleri</h5>
+                    <p class="text-muted mb-3">Gümrük vergi oranları ve gümrük kabul şartları</p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-card border rounded p-4 h-100">
+                    <h5 class="text-primary mb-3">Genel Görünüm</h5>
+                    <p class="text-muted mb-3">Pazar büyüklüğü, ürün ve rakiplerin pazar payı analizi</p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eğitim Modülleri -->
+        <div class="col-12">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-warning text-dark py-4">
+              <h3 class="mb-0">
+                <i class="bi bi-mortarboard me-2"></i>
+                Eğitimler & Gelişim
+              </h3>
+            </div>
+            <div class="card-body p-4">
+              <p class="lead mb-4">
+                Kolay İhracat Platformu'ndaki eğitim içerikleri ile ihracatınızı artırmak için çok farklı 
+                alanlarda kendinizi geliştirebilir, ihracat sürecini detaylı bir şekilde öğrenebilirsiniz.
+              </p>
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="education-card text-center p-4 border rounded h-100">
+                    <i class="bi bi-journals display-4 text-primary mb-3"></i>
+                    <h5 class="text-primary mb-3">Kapsamlı Eğitimler</h5>
+                    <p class="text-muted mb-3">
+                      İş geliştirme ve pazarlama alanlarında güncel konu başlıklarıyla derlenen eğitimler
+                    </p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="education-card text-center p-4 border rounded h-100">
+                    <i class="bi bi-signpost display-4 text-success mb-3"></i>
+                    <h5 class="text-success mb-3">Adım Adım İhracat</h5>
+                    <p class="text-muted mb-3">
+                      Başlangıçtan ileri seviyeye ihracat rehberi ile başarıyı kolaylıkla yakalayın
+                    </p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="education-card text-center p-4 border rounded h-100">
+                    <i class="bi bi-file-earmark-text display-4 text-info mb-3"></i>
+                    <h5 class="text-info mb-3">Yazışma Şablonları</h5>
+                    <p class="text-muted mb-3">
+                      İletişim ihtiyaçlarınıza özel hazırlanan örnek yazışma şablonları
+                    </p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sektör Analizleri -->
+        <div class="col-12">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-info text-white py-4">
+              <h3 class="mb-0">
+                <i class="bi bi-graph-up me-2"></i>
+                Sektör Analizleri
+              </h3>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="analysis-card border-start border-4 border-primary p-4 h-100">
+                    <h5 class="text-primary mb-3">Potansiyel Pazarlar</h5>
+                    <p class="text-muted mb-3">
+                      İhraç ettiğiniz ürüne ait GTİP kodunu girerek ihracat potansiyelinin en yüksek 
+                      olduğu 10 ülkeyi görüntüleyebilirsiniz.
+                    </p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="analysis-card border-start border-4 border-success p-4 h-100">
+                    <h5 class="text-success mb-3">Sektörel Fırsatlar</h5>
+                    <p class="text-muted mb-3">
+                      Global ihaleler, son başvuru tarihleri, ihale şartları ve başvuru merci bilgilerine 
+                      hızlıca ulaşabilirsiniz.
+                    </p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="analysis-card border-start border-4 border-warning p-4 h-100">
+                    <h5 class="text-warning mb-3">Global Trendler</h5>
+                    <p class="text-muted mb-3">
+                      Sektöre yön veren global trendler ve ilerleyen dönemlerde değişen trendlerin 
+                      sektör etkilerini öğrenin.
+                    </p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="analysis-card border-start border-4 border-danger p-4 h-100">
+                    <h5 class="text-danger mb-3">Genel Durum</h5>
+                    <p class="text-muted mb-3">
+                      Sektörlerin ihracat ve ithalat perspektifinden Türkiye'de ve ülkeler bazında 
+                      durumunu görsel olarak inceleyin.
+                    </p>
+                    <!-- Buton kaldırıldı -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Ek Özellikler -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-secondary">
+            <div class="card-header bg-secondary text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-plus-circle me-2"></i>
+                Diğer Özellikler
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-shield-check text-primary fs-4 me-3"></i>
+                    <span>Teknik Engeller</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-journal-text text-success fs-4 me-3"></i>
+                    <span>Ticaret Müşavirinden Notlar</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-box-seam text-warning fs-4 me-3"></i>
+                    <span>Potansiyele Göre Ürünler</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-bar-chart text-info fs-4 me-3"></i>
+                    <span>Stratejik Pazar Kriterleri</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-magnet text-danger fs-4 me-3"></i>
+                    <span>Ticari Cazibe Faktörleri</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-globe text-primary fs-4 me-3"></i>
+                    <span>Kapsamlı Pazar Analizleri</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Son CTA -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="card border-primary bg-light">
+            <div class="card-body py-5">
+              <h3 class="card-title text-primary mb-3">İhracatınızı Kolay İhracat Platformu ile Büyütün</h3>
+              <p class="card-text lead mb-4">
+                Yapay zeka destekli analizler, kişiselleştirilmiş pazar önerileri ve kapsamlı eğitimlerle 
+                ihracat yolculuğunuzu kolaylaştırın.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/ihracat" 
+                 class="btn btn-primary btn-lg px-5" target="_blank">
+                <i class="bi bi-rocket-takeoff me-2"></i>
+                Platformu Hemen Keşfet
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .platform-hero-icon {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .card {
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .stats-card {
+      border: 2px solid #e3f2fd;
+    }
+    .feature-card, .education-card, .analysis-card {
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover, .education-card:hover, .analysis-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .btn {
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+    .display-4 {
+      color: #2c3e50;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      .display-4 {
+        font-size: 2.5rem;
+      }
+      .platform-hero-icon {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+
+</BaseLayout>

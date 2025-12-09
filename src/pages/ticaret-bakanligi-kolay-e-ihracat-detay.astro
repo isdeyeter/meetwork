@@ -1,0 +1,476 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="MeetWork ile E-Kolay İhracat Platformunu Keşfedin - Ticaret Bakanlığı">
+  
+  <section class="py-5">
+    <div class="container">
+      <!-- Breadcrumb Navigasyon -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="/" class="text-decoration-none">
+              <i class="bi bi-house-fill"></i> Ana Sayfa
+            </a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="/ticaret-bakanligi-destekler" class="text-decoration-none">Ticaret Bakanlığı Destekleri</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="/ticaret-bakanligi-kolay-ihracat" class="text-decoration-none">Kolay İhracat Platformu</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">E-Kolay İhracat</li>
+        </ol>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="row align-items-center mb-5 py-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px;">
+        <div class="col-lg-8 text-white">
+          <div class="d-flex align-items-center mb-3">
+            <div class="bg-white rounded p-2 me-3">
+              <!-- E-İhracat Platform Logosu yerine ikon -->
+              <i class="bi bi-lightning-charge-fill text-primary fs-2"></i>
+            </div>
+            <div class="bg-white rounded p-2">
+              <!-- Ticaret Bakanlığı Logosu yerine ikon -->
+              <i class="bi bi-building text-primary fs-2"></i>
+            </div>
+          </div>
+          <h1 class="display-4 fw-bold mb-3">MeetWork ile E-Kolay İhracat Platformunu Keşfedin!</h1>
+          <p class="lead mb-4">
+            E-ihracata adım atmak hiç bu kadar kolay olmamıştı! Yeni platformumuzla dünya pazarlarına açılın. 
+            Detaylı içeriklerimizle e-ihracat bilginizi en üst seviyeye taşıyın.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+               class="btn btn-light btn-lg px-4" target="_blank">
+              <i class="bi bi-rocket-takeoff me-2"></i>Platforma Hemen Git
+            </a>
+            <a href="#ozellikler" class="btn btn-outline-light btn-lg px-4">
+              <i class="bi bi-stars me-2"></i>Özellikleri Keşfet
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <!-- Banner slide image yerine ikon -->
+          <div class="hero-icon">
+            <i class="bi bi-globe-americas display-1 text-white"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-Devlet Giriş -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-primary">
+            <div class="card-body text-center py-4">
+              <div class="d-flex align-items-center justify-content-center mb-3">
+                <!-- e-Devlet logosu yerine ikon -->
+                <i class="bi bi-shield-check text-primary fs-1 me-3"></i>
+                <h4 class="text-primary mb-0">e-Devlet ile Güvenli Giriş</h4>
+              </div>
+              <p class="text-muted mb-4">E-ihracat platformuna güvenli ve hızlı erişim için e-Devlet kimliğinizle giriş yapın</p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-primary btn-lg px-5" target="_blank">
+                <i class="bi bi-key me-2"></i>e-Devlet ile Giriş Yap
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ana Özellikler Grid -->
+      <div id="ozellikler" class="row g-4 mb-5">
+        
+        <!-- Pazar Bilgileri -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-lg hover-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon bg-primary mb-4">
+                <i class="bi bi-bar-chart-fill text-white fs-2"></i>
+              </div>
+              <h4 class="text-primary mb-3">Pazar Analizi</h4>
+              <p class="text-muted mb-4">
+                E-ihracatta hedef pazarlarınızı belirleyin. Pazarlar ve pazaryerleri hakkında kapsamlı bilgiye ulaşın.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-outline-primary" target="_blank">
+                <i class="bi bi-arrow-right me-2"></i>Pazarları Keşfet
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Akıllı Robot -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-lg hover-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon bg-success mb-4">
+                <i class="bi bi-robot text-white fs-2"></i>
+              </div>
+              <h4 class="text-success mb-3">Akıllı E-İhracat Robotu</h4>
+              <p class="text-muted mb-4">
+                Dünyadaki e-ticaret pazaryerlerinde talep ve rekabet durumunu inceleyerek rakiplerinizi tanıyın.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-outline-success" target="_blank">
+                <i class="bi bi-arrow-right me-2"></i>Robotu Kullan
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chatbot -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-lg hover-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon bg-info mb-4">
+                <i class="bi bi-chat-dots-fill text-white fs-2"></i>
+              </div>
+              <h4 class="text-info mb-3">E-KİP Uzman Zeka</h4>
+              <p class="text-muted mb-4">
+                E-ihracat, destekler ve pazaryerleri hakkındaki sorularınıza anında cevap bulun.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-outline-info" target="_blank">
+                <i class="bi bi-arrow-right me-2"></i>Sohbeti Başlat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Adım Adım Eğitim -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-lg hover-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon bg-warning mb-4">
+                <i class="bi bi-signpost-split text-white fs-2"></i>
+              </div>
+              <h4 class="text-warning mb-3">Adım Adım E-İhracat</h4>
+              <p class="text-muted mb-4">
+                Küresel pazarlara açılmak çok kolay! E-ihracatın temel basamaklarını adım adım öğrenin.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-outline-warning" target="_blank">
+                <i class="bi bi-arrow-right me-2"></i>Öğrenmeye Başla
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dijital Pazarlama -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-lg hover-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon bg-danger mb-4">
+                <i class="bi bi-megaphone-fill text-white fs-2"></i>
+              </div>
+              <h4 class="text-danger mb-3">Dijital Pazarlama</h4>
+              <p class="text-muted mb-4">
+                Markanızı küresel pazarlarda öne çıkaracak dijital pazarlama stratejilerinizi geliştirin.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-outline-danger" target="_blank">
+                <i class="bi bi-arrow-right me-2"></i>Strateji Geliştir
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eğitim Modülü -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-lg hover-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-icon bg-secondary mb-4">
+                <i class="bi bi-mortarboard-fill text-white fs-2"></i>
+              </div>
+              <h4 class="text-secondary mb-3">Kapsamlı Eğitimler</h4>
+              <p class="text-muted mb-4">
+                E-ihracat süreçlerini baştan sona öğrenerek uluslararası pazarlarda yerinizi alın.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-outline-secondary" target="_blank">
+                <i class="bi bi-arrow-right me-2"></i>Eğitimlere Katıl
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Akıllı Robot Araçları -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-success shadow-lg">
+            <div class="card-header bg-success text-white py-4">
+              <h3 class="mb-0">
+                <i class="bi bi-tools me-2"></i>
+                Akıllı E-İhracat Robotu Araçları
+              </h3>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-search text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h6 class="fw-bold text-primary">Kelime Aracı</h6>
+                      <p class="small text-muted mb-0">Pazaryerlerinde en çok rağbet gören ürünleri keşfedin</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-graph-up-arrow text-success fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h6 class="fw-bold text-success">Trend Kelimeler</h6>
+                      <p class="small text-muted mb-0">Trendlerdeki kelimelerin istatistiklerini görün</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-calendar-week text-warning fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h6 class="fw-bold text-warning">Hacim Geçmişi</h6>
+                      <p class="small text-muted mb-0">Satış için en doğru zamanları belirleyin</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-eye text-info fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h6 class="fw-bold text-info">Rakip Analizi</h6>
+                      <p class="small text-muted mb-0">Rakip ürünleri ve satıcıları inceleyin</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-calculator text-danger fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h6 class="fw-bold text-danger">Kâr Hesaplama</h6>
+                      <p class="small text-muted mb-0">Finansal öngörülerle kar marjınızı hesaplayın</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="d-flex align-items-start">
+                    <i class="bi bi-chat-square-text text-primary fs-4 me-3 mt-1"></i>
+                    <div>
+                      <h6 class="fw-bold text-primary">Yorum Analizi</h6>
+                      <p class="small text-muted mb-0">Müşteri yorumlarını derinlemesine analiz edin</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center mt-4">
+                <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                   class="btn btn-success btn-lg" target="_blank">
+                  <i class="bi bi-rocket-takeoff me-2"></i>Tüm Araçları Keşfet
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eğitim Modülleri -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-warning shadow-lg">
+            <div class="card-header bg-warning text-dark py-4">
+              <h3 class="mb-0">
+                <i class="bi bi-mortarboard me-2"></i>
+                Popüler Eğitimler
+              </h3>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                  <div class="education-item border rounded p-4 h-100">
+                    <i class="bi bi-people-fill text-primary fs-1 mb-3"></i>
+                    <h5 class="text-primary mb-3">Hedef Kitle Belirleme</h5>
+                    <p class="text-muted mb-3">Hedef kitlenin ne olduğunu ve nasıl belirlendiğini öğrenin</p>
+                    <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                       class="btn btn-outline-primary btn-sm" target="_blank">
+                      Eğitime Git
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="education-item border rounded p-4 h-100">
+                    <i class="bi bi-shop text-success fs-1 mb-3"></i>
+                    <h5 class="text-success mb-3">Pazaryeri Stratejileri</h5>
+                    <p class="text-muted mb-3">Pazaryerlerinin avantajlarını ve türlerini keşfedin</p>
+                    <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                       class="btn btn-outline-success btn-sm" target="_blank">
+                      Eğitime Git
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="education-item border rounded p-4 h-100">
+                    <i class="bi bi-megaphone text-info fs-1 mb-3"></i>
+                    <h5 class="text-info mb-3">Dijital Pazarlama</h5>
+                    <p class="text-muted mb-3">Dijital pazarlamanın temel unsurlarını öğrenin</p>
+                    <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                       class="btn btn-outline-info btn-sm" target="_blank">
+                      Eğitime Git
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot Tanıtım -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div class="card border-info bg-light">
+            <div class="card-body p-5 text-center">
+              <div class="row align-items-center">
+                <div class="col-lg-8">
+                  <h3 class="text-info mb-3">
+                    <i class="bi bi-stars me-2"></i>
+                    E-KİP Uzman Zeka ile Tanışın
+                  </h3>
+                  <div class="row text-start mb-4">
+                    <div class="col-md-4 mb-3">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-question-circle text-primary fs-4 me-3"></i>
+                        <div>
+                          <h6 class="fw-bold mb-1">Merak Ettiklerini Sor</h6>
+                          <p class="small text-muted mb-0">E-ihracat konularında sorularınızı yanıtlar</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-link-45deg text-success fs-4 me-3"></i>
+                        <div>
+                          <h6 class="fw-bold mb-1">Doğru Kaynaklara Yönlendirir</h6>
+                          <p class="small text-muted mb-0">İhtiyacınız olan bilgilere hızlı erişim</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-bullseye text-warning fs-4 me-3"></i>
+                        <div>
+                          <h6 class="fw-bold mb-1">Fırsatları Keşfedin</h6>
+                          <p class="small text-muted mb-0">Uluslararası pazarlardaki fırsatlar</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                     class="btn btn-info btn-lg px-5" target="_blank">
+                    <i class="bi bi-chat-dots me-2"></i>Chatbot ile Sohbet Başlat
+                  </a>
+                </div>
+                <div class="col-lg-4 text-center">
+                  <div class="chatbot-icon">
+                    <i class="bi bi-robot display-1 text-info"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Son CTA -->
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="card border-primary shadow">
+            <div class="card-body py-5">
+              <h3 class="card-title text-primary mb-3">E-İhracat Yolculuğunuza Bugün Başlayın!</h3>
+              <p class="card-text lead mb-4">
+                Tüm e-ihracat araçları, eğitimler ve destekler tek platformda. 
+                Dünya pazarlarına açılmak için doğru adrestesiniz.
+              </p>
+              <a href="https://www.kolayihracat.gov.tr/e-ihracat" 
+                 class="btn btn-primary btn-lg px-5" target="_blank">
+                <i class="bi bi-lightning-charge me-2"></i>
+                E-Kolay İhracat'a Hemen Başla
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    .hero-icon {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+    }
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .hover-card {
+      transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    }
+    .education-item {
+      transition: all 0.3s ease;
+    }
+    .education-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .chatbot-icon {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    .btn {
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    .display-4 {
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      .display-4 {
+        font-size: 2.5rem;
+      }
+      .hero-icon {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+
+</BaseLayout>

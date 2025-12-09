@@ -1,0 +1,310 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CompanyProfile from '../../../components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'Kapha Natural',
+  description: 'Doğanın mucizelerini cildinizde hissedin - %100 doğal içerikli kişisel bakım ürünleri',
+  slug: 'kapha-natural',
+  sector: 'kozmetik-kişisel-bakım',
+  color: '#2e8b57',
+  heroIcon: '/images/icons/kozmetik.svg',
+  location: 'Türkiye',
+  services: [
+    { title: 'Mağazadan Satış', description: 'Fizikel mağazalarımızdan ürün temini' },
+    { title: 'KaphaNatural.com', description: 'Resmi web sitemizden online alışveriş' },
+    { title: 'Pazaryerlerinden Satış', description: 'Trendyol, Hepsiburada, n11, Pazarama, ÇiçekSepeti, İdefix' }
+  ],
+  products: [
+    { 
+      title: 'Akgünlük & Meyan Özlü Leke Kremi 50 ml', 
+      description: 'Cilt lekelerine karşı etkili, doğal içerikli leke kremi',
+      category: 'Cilt Bakım',
+      rating: 5.0
+    },
+    { 
+      title: 'Biberiye Özlü Saç Bakım Yağı 50 ml', 
+      description: 'Saçları güçlendiren ve besleyen doğal bakım yağı',
+      category: 'Saç Bakım'
+    },
+    { 
+      title: 'Çam Katran Sabunu 115 g', 
+      description: 'Cilt problemlerine karşı etkili doğal sabun',
+      category: 'Cilt Bakım',
+      rating: 5.0
+    },
+    { 
+      title: 'Defne Katı Şampuan 90 gr', 
+      description: 'Doğal içerikli katı şampuan',
+      category: 'Saç Bakım'
+    },
+    { 
+      title: 'Itır & Lavanta Kadın Deodorant 50 ml', 
+      description: 'Doğal ve etkili kadın deodorantı',
+      category: 'Vücut Bakım'
+    },
+    { 
+      title: 'Jojoba& Paçuli Göz Çevresi Serumu 10 ml', 
+      description: 'Göz çevresi kırışıklıklarına karşı bakım serumu',
+      category: 'Cilt Bakım',
+      rating: 5.0
+    },
+    { 
+      title: 'Lavanta Özlü Güneş Kremi 50 ml', 
+      description: 'Doğal koruma sağlayan güneş kremi',
+      category: 'Vücut Bakım'
+    },
+    { 
+      title: 'Okaliptus Özlü Beyazlatıcı Krem 50 ml', 
+      description: 'Cilt tonu eşitsizliklerine karşı etkili krem',
+      category: 'Vücut Bakım'
+    },
+    { 
+      title: 'Portakal Özlü Body Scrub 250 ml', 
+      description: 'Cildi ölü hücrelerden arındıran body scrub',
+      category: 'Vücut Bakım'
+    },
+    { 
+      title: 'Saç Bakım Spreyi Söğüt Kabuğu Özü ve Argan Yağı 100 ml', 
+      description: 'Saçları besleyen ve koruyan bakım spreyi',
+      category: 'Saç Bakım'
+    },
+    { 
+      title: 'Sedir & Ardıç Erkek Deodorant 50 ml', 
+      description: 'Erkekler için doğal deodorant',
+      category: 'Vücut Bakım',
+      rating: 5.0
+    },
+    { 
+      title: 'Sedir Özlü Vücut Koruyucu Sprey 50 ml', 
+      description: 'Vücut koruma ve nemlendirme spreyi',
+      category: 'Vücut Bakım'
+    },
+    { 
+      title: 'Tırnak ve Topuk Bakım Balmı Aynısefa ve Itır Özlü 50 ml', 
+      description: 'Tırnak ve topuklar için özel bakım balmı',
+      category: 'Vücut Bakım'
+    },
+    { 
+      title: 'Vanilya & Portakal Özlü Leke Serumu 50 ml', 
+      description: 'Leke karşıtı etkili cilt serumu',
+      category: 'Cilt Bakım'
+    },
+    { 
+      title: 'Yeşil Çay & Squalen Özlü Işıltılı Kuru Yağ 50 ml', 
+      description: 'Cilt ve saç için ışıltı veren kuru yağ',
+      category: 'Saç Bakım'
+    },
+    { 
+      title: 'Ylang Ylang Özlü Nemlendirici Krem 110 ml', 
+      description: 'Yoğun nemlendirme sağlayan vücut kremi',
+      category: 'Vücut Bakım'
+    }
+  ],
+  expertise: ['Doğal Kozmetik', 'Kişisel Bakım', 'Cilt Bakımı', 'Saç Bakımı', 'Vücut Bakımı'],
+  contact: {
+    phone: '+905325000999',
+    email: 'info@kaphanatural.com',
+    website: 'https://kaphanatural.com'
+  },
+  longDescription: `Kapha Natural, doğanın iyileştirici gücünü cilt bakımına taşıyan %100 doğal içerikli kişisel bakım ürünleri sunar. Her ürünümüz, cildinizin ve saçlarınızın ihtiyaçlarına özel olarak formüle edilmiş olup, doğal bitki özleri ve yağlarla zenginleştirilmiştir. Cilt bakımı, saç bakımı ve vücut bakımı kategorilerinde geniş bir ürün yelpazesiyle hizmetinizdeyiz.`,
+  seo: { 
+    title: 'Kapha Natural | Doğal Kişisel Bakım Ürünleri', 
+    description: 'Kapha Natural - %100 doğal içerikli cilt bakımı, saç bakımı ve vücut bakım ürünleri. Doğanın mucizesini keşfedin.' 
+  }
+};
+---
+
+<BaseLayout title={company.seo.title} description={company.seo.description}>
+  
+  <!-- Hero Section -->
+  <section class="hero-section bg-light py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-success mb-4">Kapha Natural ile</h1>
+          <h3 class="display-6 fw-bold text-success">Doğanın mucizelerini cildinizde hissedin</h3>
+          <p class="lead text-black mb-4">%100 Doğal içerikli kişisel bakım ürünleriyle tanışın. Cilt, saç ve vücut bakımında doğal çözümler.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#urunler" class="btn btn-success btn-lg">Ürünleri Keşfet</a>
+            <a href="#satis-kanallari" class="btn btn-outline-success btn-lg">Satın Al</a>
+            
+          </div>
+
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="https://kaphanatural.com" target="_blank" class="btn btn-danger mt-3  btn-lg">KaphaNatural.com</a>
+            
+          </div>
+
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="hero-image-placeholder bg-success rounded-circle d-inline-flex align-items-center justify-content-center text-white" style="width: 300px; height: 300px;">
+            <span class="fs-1">🌿</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Satış Kanalları -->
+  <section id="satis-kanallari" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Satın Alma Kanalları</h2>
+        <p class="lead text-muted">Ürünlerimize aşağıdaki kanallardan ulaşabilirsiniz</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card-body p-4">
+              <div class="text-success mb-3" style="font-size: 3rem;">🏪</div>
+              <h4 class="card-title text-success">Mağazadan Satış</h4>
+              <p class="card-text text-muted">Fiziksel mağazalarımızdan ürünlerimizi inceleyebilir ve satın alabilirsiniz.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card-body p-4">
+              <div class="text-success mb-3" style="font-size: 3rem;">🌐</div>
+              <h4 class="card-title text-success">KaphaNatural.com</h4>
+              <p class="card-text text-muted">Resmi web sitemizden tüm ürün yelpazemize ulaşabilirsiniz.</p>
+              <a href="https://kaphanatural.com" target="_blank" class="btn btn-outline-success mt-3">KaphaNatural.com'a git</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100 text-center">
+            <div class="card-body p-4">
+              <div class="text-success mb-3" style="font-size: 3rem;">🛒</div>
+              <h4 class="card-title text-success">Pazaryerleri</h4>
+              <p class="card-text text-muted">Trendyol, Hepsiburada, n11, Pazarama, ÇiçekSepeti ve İdefix'teyiz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ürün Kategorileri -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Ürün Kategorileri</h2>
+        <p class="lead text-muted">İhtiyacınıza göre kategorilerimizi keşfedin</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100 text-center category-card">
+            <div class="card-body p-5">
+              <div class="text-success mb-3" style="font-size: 4rem;">💆‍♀️</div>
+              <h4 class="card-title text-success">Cilt Bakım</h4>
+              <p class="card-text text-muted">Cildinizi doğal yollarla besleyen ve koruyan ürünler</p>
+              <span class="badge bg-success">4 Ürün</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100 text-center category-card">
+            <div class="card-body p-5">
+              <div class="text-success mb-3" style="font-size: 4rem;">💇‍♀️</div>
+              <h4 class="card-title text-success">Saç Bakım</h4>
+              <p class="card-text text-muted">Saçlarınızı güçlendiren ve besleyen doğal ürünler</p>
+              <span class="badge bg-success">5 Ürün</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100 text-center category-card">
+            <div class="card-body p-5">
+              <div class="text-success mb-3" style="font-size: 4rem;">✨</div>
+              <h4 class="card-title text-success">Vücut Bakım</h4>
+              <p class="card-text text-muted">Tüm vücudunuz için doğal bakım çözümleri</p>
+              <span class="badge bg-success">10 Ürün</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tüm Ürünler -->
+  <section id="urunler" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Ürünlerimizin Bazıları</h2>
+        <p class="lead text-muted">Doğanın iyileştirici gücüyle formüle edilmiş ürünlerimiz</p>
+      </div>
+      
+      <div class="row g-4">
+        {company.products.map((product, index) => (
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 product-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                  <span class="badge bg-success">{product.category}</span>
+                  {product.rating && (
+                    <div class="text-warning">
+                      <small>⭐ {product.rating}/5</small>
+                    </div>
+                  )}
+                </div>
+                <h5 class="card-title text-dark mb-3">{product.title}</h5>
+                <p class="card-text text-muted mb-4">{product.description}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="text-success fw-bold">KaphaNatural.com</span>
+                  <span class="text-muted">50 ml</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-5 bg-success text-white">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="display-5 fw-bold mb-4">Doğal Bakımın Keyfini Çıkarın</h2>
+        <p class="lead mb-4">Cildiniz ve saçlarınız için en iyi doğal çözümleri sunuyoruz</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="#satis-kanallari" class="btn btn-light btn-lg text-success">Hemen Satın Al</a>
+          <a href="#urunler" class="btn btn-outline-light btn-lg">Ürünleri İncele</a>
+            
+        </div>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+         <a href="https://kaphanatural.com" target="_blank" class="btn btn-danger mt-3  btn-lg">KaphaNatural.com</a>
+            
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #f8fff8 0%, #e8f5e8 100%);
+    }
+    .category-card:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(46, 139, 87, 0.15) !important;
+    }
+    .hero-image-placeholder {
+      background: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
+    }
+  </style>
+
+</BaseLayout>

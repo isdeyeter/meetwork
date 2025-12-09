@@ -1,0 +1,488 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Win-Win Fırsatları - MeetWork"
+  description="MeetWork üyeleri için özel fiyatlı ürün ve hizmet fırsatları. Kazan-kazan prensibiyle, üyeler birlikte daha fazlasını kazanıyor."
+>
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-4 text-dark">Win-Win Fırsatları</h2>
+        <p class="lead text-muted">
+          MeetWork üyeleri için özel olarak seçilmiş ürün ve hizmet fırsatları. Birlikte alarak, birlikte daha avantajlı fiyatlar elde ediyoruz. Kazan-kazan prensibiyle, herkes kazanıyor!
+        </p>
+      </div>
+
+      <!-- Win-Win Slogan ve Açıklama -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-10 text-center">
+          <h3 class="text-primary">"Birlikte Al, Birlikte Kazan!"</h3>
+          <p class="text-muted">
+            MeetWork olarak, üye firmaların ortak ihtiyaçlarını veya bireysel ihtiyaçlarını toplu alım gücüyle değerlendirdik. Bu sayede üyelerimiz, günlük ihtiyaçları veya özel projeleri için ihtiyaç duydukları ürün ve hizmetleri daha avantajlı fiyatlara elde edebiliyorlar. Sizin için uygun olan fırsatları değerlendirin, birlikte daha fazlasını kazanalım!
+          </p>
+        </div>
+      </div>
+
+      <!-- Win-Win Fırsatları Kartları -->
+      <div class="row g-4 mb-5">
+        <!-- Örnek Fırsat 1 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Casper ABC Model Notebook</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>300</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>55.400₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">49.000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>1000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>30 Kasım 2024</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">15</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">08</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">42</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Yüksek performanslı, dayanıklı ve uygun fiyatlı notebook. Ofis, eğitim ve kişisel kullanım için ideal.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Casper+ABC+Model+Notebook&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 2 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Ofis Kahve Makinesi (Tam Otomatik)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>50</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>12.500₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">9.800₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>500₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>15 Aralık 2024</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">30</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">12</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">15</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Ofisiniz için profesyonel kalitede kahve deneyimi. Kolay kullanım ve düşük bakım maliyeti.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Ofis+Kahve+Makinesi+%28Tam+Otomatik%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 3 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Profesyonel A4 Yazıcı (Tek Renkli)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>100</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>3.200₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">2.600₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>200₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>20 Aralık 2024</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">35</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">06</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">30</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Yüksek baskı kalitesi ve düşük maliyetli yazıcı. Ofis ihtiyaçlarınız için ideal çözüm.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Profesyonel+A4+Yazıcı+%28Tek+Renkli%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 4 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>İş Yeri Mutfağı Buzdolabı (200L)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>40</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>8.900₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">7.200₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>400₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>25 Aralık 2024</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">40</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">18</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">45</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Enerji tasarruflu, sessiz çalışan buzdolabı. İş yerinizin mutfağı için pratik ve dayanıklı bir çözüm.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=İş+Yeri+Mutfağı+Buzdolabı+%28200L%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 5 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Kurumsal Telefon Sistemi (6 Hat)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>25</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>15.000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">12.500₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>600₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>05 Ocak 2025</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">50</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">22</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">10</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Kurumsal iletişim için gelişmiş özelliklere sahip IP telefon santrali sistemi.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Kurumsal+Telefon+Sistemi+%286+Hat%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 6 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Elektrikli El Arabası</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>80</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>4.500₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">3.800₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>200₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>10 Ocak 2025</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">55</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">09</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">25</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Depo, nakliye ve inşaat işlerinde kolaylık sağlayan elektrikli el arabası.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Elektrikli+El+Arabası&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 7 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Profesyonel Dijital Kamera (Mirrorless)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>30</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>22.000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">18.500₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>1000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>15 Ocak 2025</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">60</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">14</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">50</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Yüksek çözünürlüklü, hızlı otomatik netleme özelliğine sahip profesyonel kamera.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Profesyonel+Dijital+Kamera+%28Mirrorless%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 8 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Ofis Koltuğu (Ergonomik)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>150</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>2.800₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">2.200₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>150₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>20 Ocak 2025</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">65</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">07</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">35</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Uzun saatli ofis çalışmalarınız için ergonomik tasarlanmış, rahat ve dayanıklı koltuk.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Ofis+Koltuğu+%28Ergonomik%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 9 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>İş İstasyonu (High-End)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>40</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>45.000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">38.000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>2000₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>25 Ocak 2025</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">70</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">11</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">20</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Grafik tasarım, video düzenleme ve yazılım geliştirme gibi ağır işler için güçlü iş istasyonu.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=İş+İstasyonu+%28High-End%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Örnek Fırsat 10 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-success">Fırsatın Adı: <strong>Profesyonel Ses Sistemi (Bluetooth)</strong></h5>
+              <p class="card-text">
+                <span class="d-inline-block" style="width: 120px;">Adet:</span> <strong>35</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Piyasa Fiyatı:</span> <strong>6.500₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Win-Win Fiyatı:</span> <strong class="text-danger">5.200₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Kaparo:</span> <strong>300₺</strong><br>
+                <span class="d-inline-block" style="width: 120px;">Son Alım Tarihi:</span> <strong>30 Ocak 2025</strong>
+              </p>
+              <div class="countdown-timer text-center mb-3">
+                <small class="text-muted">Kalan Süre:</small>
+                <div class="d-flex justify-content-center gap-2 align-items-center">
+                  <span class="badge bg-danger fs-6">75</span> <span class="fw-bold">GÜN</span>
+                  <span class="badge bg-warning text-dark fs-6">16</span> <span class="fw-bold">SAAT</span>
+                  <span class="badge bg-primary fs-6">05</span> <span class="fw-bold">DAKİKA</span>
+                </div>
+              </div>
+              <p class="text-muted">
+                Toplantı salonları, etkinlik alanları ve ofisler için yüksek kaliteli Bluetooth destekli ses sistemi.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="https://www.google.com/search?q=Profesyonel+Ses+Sistemi+%28Bluetooth%29&tbm=isch" target="_blank" class="btn btn-outline-secondary btn-sm">
+                  <i class="bi bi-image me-1"></i> Ürün Görseli
+                </a>
+                <div>
+                  <a href="https://wa.me/905412465429?text=Merhaba,%20Win-Win%20Birlikte%20Al%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-success btn-sm">
+                    <i class="bi bi-whatsapp me-1"></i> Bilgi Al
+                  </a>
+                  <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#kaporaModal">
+                    <i class="bi bi-credit-card me-1"></i> Kapora Öde
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kapora Bilgilendirme -->
+      <div class="bg-warning bg-opacity-25 p-4 rounded mb-5">
+        <h5 class="text-dark">Kapora Bilgisi</h5>
+        <p class="mb-2"><strong>Toplu Satın Alma yapılmaması halinde:</strong> Kapora bedeli, başvuran kişiye tamamı iade edilir.</p>
+        <p class="mb-3"><strong>Alım yapanın vazgeçmesi halinde:</strong> Kapora bedeli iade edilmez.</p>
+        
+        <ul class="mb-3">
+          <li><small>* Kapora, sipariş verildikten sonra ürün bedelinden düşülecektir.</small></li>
+          <li><small>* Kapora ödemesi, siparişin işleme alınmasını sağlar.</small></li>
+          <li><small>* Minimum alım adedi sağlanmazsa tüm ödemeler iade edilir.</small></li>
+        </ul>
+        
+        <p class="mb-0"><small><strong>* Alım yapılan firmanın ürün/hizmetinin ticari zarara uğratılmaması için alım yapan firmanın rızası dışında Toplu alım yapılamaz. Satılan adetin en fazla %5'i kadarını alabilirsiniz (Örneğin 300 Adet üründe en fazla 15 adet alabilirsiniz gibi).</strong></small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kapora Ödeme Modalı (Örnek) -->
+  <div class="modal fade" id="kaporaModal" tabindex="-1" aria-labelledby="kaporaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="kaporaModalLabel">Kapora Ödeme</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Seçtiğiniz ürün için kapora ödemesi yapmak üzere yönlendiriliyorsunuz...</p>
+          <p><strong>Not:</strong> Gerçek sistemde burada bir ödeme formu veya yönlendirme bağlantısı olacaktır.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+          <a href="#" class="btn btn-primary">Kapora Öde</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>

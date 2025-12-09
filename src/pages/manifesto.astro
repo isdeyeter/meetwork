@@ -1,0 +1,409 @@
+---
+// src/pages/manifesto.astro
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+const pageTitle = "MeetWork Manifestosu - İşin Doğası Değişiyor, Biz Değiştiriyoruz";
+const pageDescription = "MeetWork Manifestosu: Kalite nicelikten üstündür, güven işin temel varlığıdır. İnsanla büyüyen işler, birlikte gelişen ekosistem.";
+const canonicalURL = "https://meetwork.com.tr/manifesto";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonical={canonicalURL}>
+  <div class="container py-5">
+    <!-- Hero Section -->
+    <section class="text-center py-5 mb-5" style="background: linear-gradient(135deg, #1a237e 0%, #283593 100%); color: white; border-radius: 20px;">
+      <div class="container">
+        <h1 class="display-4 fw-bold mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+          📜 MeetWork Manifestosu
+        </h1>
+        <h2 class="h2 mb-5" style="color: rgba(255,255,255,0.9);">
+          İşin Doğası Değişiyor, Biz Değiştiriyoruz
+        </h2>
+        <div class="card bg-white text-dark p-4 mx-auto" style="max-width: 800px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+          <p class="lead fs-4 mb-0">
+            <strong>İnsan, insanla anlam bulur. İş, insanla büyür.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Önsöz -->
+    <section class="mb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card border-primary border-3">
+            <div class="card-body p-5">
+              <h3 class="h2 text-primary mb-4">📖 Önsöz: Neden Varız?</h3>
+              <p class="fs-5 mb-4">
+                Teknoloji dünyayı birbirine bağladı, ama gerçek bağları koparttı. 
+                Ekranlar arttıkça göz göze bakışlar, kartvizitler çoğaldıkça samimi tokalaşmalar azaldı. 
+                <strong class="text-primary">MeetWork olarak inanıyoruz ki: İnsan, insanla anlam bulur. İş, insanla büyür.</strong>
+              </p>
+              <p class="fs-5">
+                Biz, dijital çağda kaybolan insani bağları yeniden kuran, network'ü "ağ" olmaktan çıkarıp 
+                <strong>"yuva" yapan bir hareketiz.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temel İlkelerimiz -->
+    <section class="mb-5">
+      <h2 class="text-center h1 mb-5 text-dark">🌟 Temel İlkelerimiz</h2>
+      
+      <div class="row g-4">
+        <!-- İlke 1 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-success border-2">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-success fs-5 me-3">1</span>
+                <h4 class="mb-0 text-success">Kalite Nicelikten Üstündür</h4>
+              </div>
+              <p class="fs-5">
+                Bir odayı dolduran yüzlerce kartvizit değil, bir masada derinleşen birkaç samimi sohbet değer yaratır. 
+                <strong>Biz, derin bağların gücüne inanıyoruz.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- İlke 2 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-warning border-2">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-warning fs-5 me-3">2</span>
+                <h4 class="mb-0 text-warning">Vermeden Almak Yoktur</h4>
+              </div>
+              <p class="fs-5">
+                Gerçek network, "benden ne alabilirsin?" değil, "sana nasıl katkı sağlayabilirim?" sorusuyla başlar. 
+                <strong>Karşılıksız vermenin, en nihayetinde en çok kazandıran yatırım olduğunu biliyoruz.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- İlke 3 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-info border-2">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-info fs-5 me-3">3</span>
+                <h4 class="mb-0 text-info">Güven, İşin Temel Varlığıdır</h4>
+              </div>
+              <p class="fs-5">
+                Sözleşmeler kağıtta, güven kalpte büyür. 
+                <strong>Biz, sözünüzün sizden daha hızlı yayıldığı bir ekosistem inşa ediyoruz.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- İlke 4 -->
+        <div class="col-md-6">
+          <div class="card h-100 border-purple border-2">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-purple fs-5 me-3">4</span>
+                <h4 class="mb-0 text-purple">Çeşitlilik, İnovasyonun Anahtarıdır</h4>
+              </div>
+              <p class="fs-5">
+                Aynı sektörden insanlar problemleri tanımlar, farklı sektörlerden insanlar çözümleri yaratır. 
+                <strong>Farklılıklarımız, gücümüzdür.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Özel İlke 5 -->
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card border-danger border-3">
+            <div class="card-body p-5">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-danger fs-5 me-3">5</span>
+                <h4 class="mb-0 text-danger">Özgün Bir Model: Katılımın Doğal Hali</h4>
+              </div>
+              <p class="fs-5">
+                İş dünyasında sayısız değerli kuruluş, üyelik aidatları, eğitim ücretleri veya hizmet bedelleri ile faaliyetlerini sürdürürken, biz farklı bir yol izliyoruz. 
+                <strong class="text-danger">MeetWork olarak inanıyoruz ki:</strong> Gerçek katılım, maddi bariyerlerin ötesinde, gönüllü angajmanla başlar. Amacımız, finansal katkı toplamak değil, insani ve mesleki katkıları bir araya getirmektir. 
+                <strong>Her kuruluşun kendine özgü bir iş modeli ve değer üretme biçimi vardır; bizimki, tamamen gönüllü enerji, karşılıklı fayda ve kolektif büyüme üzerine kuruludur.</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ne Yapmıyoruz? -->
+    <section class="mb-5 py-5" style="background: #f8f9fa; border-radius: 20px;">
+      <div class="container">
+        <h2 class="text-center h1 mb-5 text-dark">🚫 Ne Yapmıyoruz? <br><small class="text-muted">(Anti-Tezlerimiz)</small></h2>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="d-flex mb-4">
+              <span class="text-danger fs-3 me-3">❌</span>
+              <div>
+                <h5 class="fw-bold">"Network'leme" oyunları oynamıyoruz</h5>
+                <p class="mb-0">İş kartı avcılığı yapmıyoruz.</p>
+              </div>
+            </div>
+            <div class="d-flex mb-4">
+              <span class="text-danger fs-3 me-3">❌</span>
+              <div>
+                <h5 class="fw-bold">Yüzeysel bağlantılar biriktirmiyoruz</h5>
+                <p class="mb-0">Bağlantı sayısıyla değil, bağın kalitesiyle övünüyoruz.</p>
+              </div>
+            </div>
+            <div class="d-flex mb-4">
+              <span class="text-danger fs-3 me-3">❌</span>
+              <div>
+                <h5 class="fw-bold">Tek yönlü fayda peşinde koşmuyoruz</h5>
+                <p class="mb-0"><strong class="text-success">Kazan-kazan dışındaki her şey kayıptır.</strong></p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="d-flex mb-4">
+              <span class="text-danger fs-3 me-3">❌</span>
+              <div>
+                <h5 class="fw-bold">Finansal bariyerler koymuyoruz</h5>
+                <p class="mb-0">Katılımı para ile ölçmüyor, katkıyı samimiyetle değerlendiriyoruz.</p>
+              </div>
+            </div>
+            <div class="d-flex">
+              <span class="text-danger fs-3 me-3">❌</span>
+              <div>
+                <h5 class="fw-bold">Rekabet değil, tamamlayıcılık esasımızdır</h5>
+                <p class="mb-0">
+                  İş dünyasındaki diğer değerli oluşumları rakip olarak görmüyor, 
+                  <strong>onların da bu ekosistemin bir parçası olduğuna inanıyoruz.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ekosistem Anlayışımız -->
+    <section class="mb-5">
+      <div class="card border-info border-3">
+        <div class="card-body p-5">
+          <h3 class="h2 text-info mb-4">🌐 Ekosistem Anlayışımız: Tamamlayıcılık</h3>
+          <p class="fs-5 mb-4">
+            İş dünyası, farklı renkleri ve tonlarıyla bütünü oluşturan bir ekosistemdir. 
+            <strong>STK'lar, meslek odaları, dernekler, vakıflar ve diğer ticari platformlar, bu ekosistemin vazgeçilmez parçalarıdır.</strong>
+          </p>
+          <p class="fs-5 mb-4">
+            <strong class="text-info">Biz kimsenin yerine geçmeye değil, boşlukları doldurmaya geldik.</strong>
+          </p>
+          
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <h5 class="fw-bold text-info">MeetWork olarak amacımız:</h5>
+              <ul class="fs-5">
+                <li class="mb-2"><strong>✓ Var olan kuruluşların yaptıklarını tekrarlamak değil</strong></li>
+                <li class="mb-2"><strong>✓ Onların ulaşamadığı bağları kurmak</strong></li>
+                <li class="mb-2"><strong>✓ Sektörel ve kurumsal sınırları aşan köprüler inşa etmek</strong></li>
+                <li class="mb-2"><strong>✓ Enformel bağlantıları, formel fırsatlara dönüştürmek</strong></li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="card bg-light">
+                <div class="card-body">
+                  <h6 class="fw-bold text-info">İş Birliği Hedefimiz:</h6>
+                  <p class="mb-0">
+                    <strong>Diğer kuruluşlarla rekabet etmek yerine, onlarla iş birliği yapmayı, 
+                    üyelerimizi onlara yönlendirmeyi ve ekosistemi birlikte güçlendirmeyi hedefliyoruz.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vizyonumuz -->
+    <section class="mb-5 py-5" style="background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%); color: white; border-radius: 20px;">
+      <div class="container">
+        <h2 class="text-center h1 mb-5">🔮 Vizyonumuz: MeetWork'te Bir Gün</h2>
+        <p class="lead text-center mb-5" style="color: rgba(255,255,255,0.9);">
+          Sabah uyandığınızda, sadece işinizi değil, "ekosisteminizi" düşündüğünüz bir dünya hayal edin:
+        </p>
+        
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card bg-dark text-white h-100">
+              <div class="card-body text-center p-4">
+                <div class="mb-3" style="font-size: 2.5rem;">☕</div>
+                <h5>Kahvaltı</h5>
+                <p>Bir startup kurucusu, tecrübeli bir yatırımcıyla fikrini tartışıyor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-dark text-white h-100">
+              <div class="card-body text-center p-4">
+                <div class="mb-3" style="font-size: 2.5rem;">🍽️</div>
+                <h5>Öğle Yemeği</h5>
+                <p>Bir ihracatçı, yeni pazar keşfini bir lojistik uzmanıyla planlıyor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-dark text-white h-100">
+              <div class="card-body text-center p-4">
+                <div class="mb-3" style="font-size: 2.5rem;">🌙</div>
+                <h5>Akşam</h5>
+                <p>Genç bir profesyonel, kariyer yolculuğunu 20 yıllık bir CEO'dan dinliyor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-5 text-center">
+          <div class="card bg-white text-dark p-4 mx-auto" style="max-width: 800px; border-radius: 15px;">
+            <p class="fs-5 mb-0">
+              <strong>Herkesin herkese öğretecek bir şeyi olduğu, her sorunun mutlaka çözümünün olduğu, 
+              yalnız olmadığınızı hissettiğiniz bir dünya.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Davetimiz -->
+    <section class="mb-5">
+      <div class="card border-success border-3">
+        <div class="card-body p-5">
+          <h3 class="h2 text-success mb-4">🤝 Davetimiz</h3>
+          <p class="fs-5 mb-4">
+            <strong class="text-success">MeetWork sadece bir organizasyon değil, bir zihin değişimidir.</strong>
+          </p>
+          
+          <div class="row">
+            <div class="col-md-6">
+              <p class="fs-5 mb-4">
+                <strong>İş dünyasında yalnız olmadığınızı hatırlamak,</strong> başarının paylaşıldıkça çoğaldığını görmek, 
+                rekabetin değil iş birliğinin asıl güç olduğunu deneyimlemek istiyorsanız;
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="fs-5 mb-4">
+                <strong>Sadece "ne yaptığınızla" değil, "kim olduğunuzla" değer görmek,</strong> 
+                sadece kazançlarınızla değil, katkılarınızla anılmak istiyorsanız;
+              </p>
+            </div>
+          </div>
+          
+          <div class="text-center mt-4">
+            <div class="alert alert-success fs-4">
+              <strong>Kapımız açık, koltuğunuz hazır.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sözümüz -->
+    <section class="mb-5">
+      <h2 class="text-center h1 mb-5 text-primary">🤲 Sözümüz</h2>
+      
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 border-primary">
+            <div class="card-body p-4">
+              <h5 class="text-primary fw-bold mb-3">📈 Size söz veriyoruz:</h5>
+              <ul class="fs-5">
+                <li class="mb-2"><strong>Her buluşmada en az bir fikir, bir bağlantı, bir ilham vermek için çabalayacağız</strong></li>
+                <li class="mb-2"><strong>Sadece "iş odaklı" değil, "insan değerler" olarak da gelişiminize alan açacağız</strong></li>
+                <li class="mb-2"><strong>Güveni, her şeyin üzerinde tutacağız</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card h-100 border-primary">
+            <div class="card-body p-4">
+              <h5 class="text-primary fw-bold mb-3">🌉 Ekosistem Sözümüz:</h5>
+              <ul class="fs-5">
+                <li class="mb-2"><strong>Ekosistemimizde herkesin bir sesi, her sesin bir değeri olacak</strong></li>
+                <li class="mb-2"><strong>İş dünyasındaki tüm değerli aktörlerle köprüler kurarak, tamamlayıcı bir rol üstleneceğiz</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Son Söz -->
+    <section class="mb-5">
+      <div class="card bg-dark text-white">
+        <div class="card-body text-center p-5">
+          <h3 class="h1 mb-4">💬 Son Söz</h3>
+          <blockquote class="blockquote fs-2">
+            <p class="mb-0">"Eskiler 'İş, insanı tanımakla başlar' derdi.</p>
+            <p class="mb-4">Biz diyoruz ki: <strong>'İnsanı tanımak, işin ta kendisidir.'</strong>"</p>
+          </blockquote>
+          
+          <div class="mt-4">
+            <h4 class="fw-bold">MeetWork - İnsanla Büyüyen İşler, Birlikte Gelişen Ekosistem</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Not -->
+    <section class="mb-5">
+      <div class="alert alert-info">
+        <h5 class="alert-heading">📝 Not</h5>
+        <p class="mb-0">
+          <strong>Bu manifesto yaşayan bir belgedir.</strong> Her yeni üye, her yeni deneyimle büyür ve gelişir. 
+          İş dünyasındaki tüm kuruluşları iş birliğine, tüm profesyonelleri bu harekete katkı sunmaya davet ediyoruz.
+        </p>
+      </div>
+      
+      <!-- CTA -->
+      <div class="text-center mt-5">
+        <a href="https://panel.meetwork.net" target="_blank" class="btn btn-primary btn-lg px-5 py-3 fw-bold fs-4">
+          🚀 MeetWork Ekosistemine Katıl
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .border-purple {
+      border-color: #6f42c1 !important;
+    }
+    .bg-purple {
+      background-color: #6f42c1 !important;
+    }
+    .text-purple {
+      color: #6f42c1 !important;
+    }
+    .card {
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    blockquote {
+      border-left: 5px solid #4CAF50;
+      padding-left: 20px;
+      font-style: italic;
+    }
+    .lead {
+      line-height: 1.6;
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,529 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// WhatsApp mesajı
+const whatsappMessage = "İSO Konusunda bilgi ve eğitim almak istiyorum";
+const whatsappNumber = "905412465429"; // +90 kaldırıldı
+---
+
+<BaseLayout title="ISO Belgelendirme Rehberi | MeetWork" description="ISO belgelendirme süreçleri, çeşitleri ve faydaları hakkında kapsamlı rehber. MeetWork ile ISO eğitim ve danışmanlık hizmetleri.">
+
+<div class="container-fluid bg-light py-5">
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="text-center mb-5">
+      <h1 class="display-4 fw-bold text-primary mb-3">ISO Belgelendirme Rehberi</h1>
+      <p class="lead text-muted mb-4">Uluslararası standartlarda kalite ve güvenlik için kapsamlı ISO çözümleri</p>
+      <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} 
+         class="btn btn-success btn-lg px-4 me-3" target="_blank">
+        <i class="bi bi-whatsapp me-2"></i>WhatsApp'tan Bilgi Al
+      </a>
+      <a href="#egitimler" class="btn btn-outline-primary btn-lg px-4">
+        <i class="bi bi-calendar-event me-2"></i>Eğitimlere Katıl
+      </a>
+    </section>
+
+    <!-- Hızlı Navigasyon -->
+    <section class="row g-4 mb-5" id="hizli-navigasyon">
+      <div class="col-12">
+        <h2 class="h4 mb-4">Hızlı Erişim</h2>
+        <div class="row g-3">
+          <div class="col-md-3 col-6">
+            <a href="#temel-bilgiler" class="btn btn-outline-primary w-100 d-flex align-items-center">
+              <i class="bi bi-info-circle me-2"></i>Temel Bilgiler
+            </a>
+          </div>
+          <div class="col-md-3 col-6">
+            <a href="#surec-adimlari" class="btn btn-outline-primary w-100 d-flex align-items-center">
+              <i class="bi bi-list-check me-2"></i>Süreç Adımları
+            </a>
+          </div>
+          <div class="col-md-3 col-6">
+            <a href="#iso-cesitleri" class="btn btn-outline-primary w-100 d-flex align-items-center">
+              <i class="bi bi-award me-2"></i>ISO Çeşitleri
+            </a>
+          </div>
+          <div class="col-md-3 col-6">
+            <a href="#egitimler" class="btn btn-outline-primary w-100 d-flex align-items-center">
+              <i class="bi bi-mortarboard me-2"></i>Eğitimler
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temel Bilgiler -->
+    <section class="row g-4 mb-5" id="temel-bilgiler">
+      <div class="col-12">
+        <h2 class="h3 text-primary mb-4">Temel Bilgiler</h2>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm fade-in">
+              <div class="card-body text-center">
+                <i class="bi bi-question-circle display-4 text-primary mb-3"></i>
+                <h5 class="card-title">ISO Nedir?</h5>
+                <p class="card-text text-muted">Uluslararası Standardizasyon Örgütü, işletmeler için kalite, güvenlik ve verimlilik standartları belirler.</p>
+                <a href="#iso-nedir" class="btn btn-sm btn-outline-primary">Detaylı Bilgi</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm fade-in">
+              <div class="card-body text-center">
+                <i class="bi bi-check-circle display-4 text-success mb-3"></i>
+                <h5 class="card-title">Neden Gereklidir?</h5>
+                <p class="card-text text-muted">Rekabet avantajı, müşteri güveni, uluslararası tanınırlık ve süreç iyileştirme sağlar.</p>
+                <a href="#neden-gerekli" class="btn btn-sm btn-outline-primary">Detaylı Bilgi</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 shadow-sm fade-in">
+              <div class="card-body text-center">
+                <i class="bi bi-graph-up display-4 text-warning mb-3"></i>
+                <h5 class="card-title">Faydaları Nelerdir?</h5>
+                <p class="card-text text-muted">Verimlilik artışı, maliyet düşüşü, risk yönetimi ve pazar payı artışı sağlar.</p>
+                <a href="#faydalar" class="btn btn-sm btn-outline-primary">Detaylı Bilgi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detaylı İçerik -->
+    <section class="row g-4 mb-5">
+      <!-- ISO Nedir -->
+      <div class="col-12" id="iso-nedir">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-primary">
+              <i class="bi bi-question-circle me-2"></i>ISO Nedir?
+            </h3>
+            <p class="card-text">
+              ISO (International Organization for Standardization), işletmelerin ürün ve hizmet kalitesini, 
+              güvenliğini ve verimliliğini artırmak için uluslararası standartlar geliştiren bağımsız bir kuruluştur. 
+              ISO belgeleri, bir işletmenin belirli standartlara uygun şekilde çalıştığını gösteren resmi belgelerdir.
+            </p>
+            <div class="text-end">
+              <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('ISO standartları hakkında detaylı bilgi almak istiyorum')}`} 
+                 class="btn btn-success btn-sm" target="_blank">
+                <i class="bi bi-whatsapp me-1"></i>Detaylı Bilgi Al
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ISO Türleri -->
+<section class="row g-4 mb-5" id="iso-turleri">
+  <div class="col-12">
+    <h2 class="h3 mb-4" style="color: #dc3545;">
+      <i class="bi bi-grid-3x3-gap me-2"></i>ISO Standart Türleri
+    </h2>
+    <div class="row g-3">
+      <!-- Kalite Yönetim -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #dc3545;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #dc3545, #fd7e14);">
+            <h6 class="mb-0"><i class="bi bi-award me-2"></i>Kalite Yönetim</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 9001</strong> - Kalite Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 10002</strong> - Müşteri Memnuniyeti Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 10004</strong> - Müşteri Memnuniyeti İzleme ve Ölçme</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 10012</strong> - Ölçme Yönetim Sistemleri</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 10019</strong> - Kalite Yönetim Sistemi Danışmanlığı</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Çevre & Enerji -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #fd7e14;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #fd7e14, #e8590c);">
+            <h6 class="mb-0"><i class="bi bi-tree me-2"></i>Çevre & Enerji</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 14001</strong> - Çevre Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 50001</strong> - Enerji Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 14046</strong> - Su Ayak İzi Belgelendirme</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 14067</strong> - Karbon Ayak İzi Belgelendirme</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 14064</strong> - Sera Gazı Yönetim Sistemi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- İş Sağlığı & Güvenlik -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #c82333;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #c82333, #dc3545);">
+            <h6 class="mb-0"><i class="bi bi-shield-check me-2"></i>İş Sağlığı & Güvenlik</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 45001</strong> - İş Sağlığı ve Güvenliği Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 45003</strong> - İş Yerinde Psikolojik Sağlık ve Güvenlik</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 31000</strong> - Kurumsal Risk Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 22301</strong> - İş Sürekliliği Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 22320</strong> - Acil Durum Yönetim Sistemi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Gıda Güvenliği -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #e8590c;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #e8590c, #fd7e14);">
+            <h6 class="mb-0"><i class="bi bi-egg-fried me-2"></i>Gıda Güvenliği</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 22000</strong> - Gıda Güvenliği Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>FSSC 22000</strong> - Gıda Güvenliği Sertifikasyon Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO TS 13027</strong> - Hijyen ve Sanitasyon</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 15378</strong> - Tıbbi Ürünler İçin Birincil Ambalaj</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 22716</strong> - GMP (İyi Üretim Uygulamaları) Belgesi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bilgi Güvenliği -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #dc3545;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #dc3545, #c82333);">
+            <h6 class="mb-0"><i class="bi bi-lock me-2"></i>Bilgi Güvenliği</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 27001</strong> - Bilgi Güvenliği Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 20000</strong> - Bilgi Teknolojileri Hizmet Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 27034</strong> - Uygulama Yönetim Sistemleri</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 37301</strong> - Uyumluluk Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 37001</strong> - Yolsuzlukla Mücadele Yönetim Sistemi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Teknoloji & Yazılım -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #fd7e14;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #fd7e14, #e8590c);">
+            <h6 class="mb-0"><i class="bi bi-cpu me-2"></i>Teknoloji & Yazılım</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 12207</strong> - Yazılım Yaşam Döngüsü Süreçleri</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 15504</strong> - Yazılım Süreç Değerlendirme Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 25001</strong> - Yazılım Ürünleri Kalite Belgesi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 25021</strong> - Yazılım ve Hizmet Kalitesi Ölçüm Standardı</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 42001</strong> - Yapay Zekâ Yönetim Sistemi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Sektörel Standartlar -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #c82333;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #c82333, #dc3545);">
+            <h6 class="mb-0"><i class="bi bi-building me-2"></i>Sektörel Standartlar</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 13485</strong> - Tıbbi Cihazlar Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 15189</strong> - Tıbbi Laboratuvarların Akreditasyonu</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 21001</strong> - Eğitim Kuruluşları Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 22483</strong> - Turizm ve İlgili Hizmetler</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>ISO 28000</strong> - Tedarik Zinciri Güvenlik Sistemi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- İnovasyon & Sürdürülebilirlik -->
+      <div class="col-lg-3 col-md-6">
+        <div class="card h-100 border-0 shadow-sm" style="border-left: 4px solid #e8590c;">
+          <div class="card-header text-white" style="background: linear-gradient(135deg, #e8590c, #fd7e14);">
+            <h6 class="mb-0"><i class="bi bi-lightbulb me-2"></i>İnovasyon & Sürdürülebilirlik</h6>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 56002</strong> - İnovasyon Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 14091</strong> - İklim Değişikliğine Uyum ve Risk Yönetimi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 46001</strong> - Su Verimliliği Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 53001</strong> - Sürdürülebilir Kalkınma Hedefleri Yönetim Sistemi</li>
+              <li class="mb-2"><i class="bi bi-check-circle text-warning me-2"></i><strong>ISO 21401</strong> - Konaklama Tesisleri Sürdürülebilirlik Yönetim Sistemi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-4">
+      <a href={`https://wa.me/905412465429?text=${encodeURIComponent('Hangi ISO standardı bana uygun? Danışmanlık almak istiyorum')}`} 
+         class="btn btn-danger btn-lg px-5" target="_blank" style="background: linear-gradient(135deg, #dc3545, #fd7e14); border: none;">
+        <i class="bi bi-whatsapp me-2"></i>Hangi ISO Standardı Bana Uygun?
+      </a>
+    </div>
+  </div>
+</section>
+
+      <!-- Neden Gerekli -->
+      <div class="col-12" id="neden-gerekli">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-primary">
+              <i class="bi bi-check-circle me-2"></i>ISO Neden Gereklidir?
+            </h3>
+            <ul class="list-unstyled">
+              <li class="mb-2"><i class="bi bi-arrow-right-circle text-success me-2"></i>Rekabet avantajı sağlar</li>
+              <li class="mb-2"><i class="bi bi-arrow-right-circle text-success me-2"></i>Müşteri memnuniyetini artırır</li>
+              <li class="mb-2"><i class="bi bi-arrow-right-circle text-success me-2"></i>Uluslararası pazarlara erişim kolaylaşır</li>
+              <li class="mb-2"><i class="bi bi-arrow-right-circle text-success me-2"></i>Süreç verimliliğini artırır</li>
+              <li class="mb-2"><i class="bi bi-arrow-right-circle text-success me-2"></i>Yasal uyumluluğu sağlar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faydalar -->
+      <div class="col-12" id="faydalar">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h3 class="card-title text-primary">
+              <i class="bi bi-graph-up me-2"></i>ISO Belgesi Faydaları
+            </h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-cash-coin text-success me-3 mt-1"></i>
+                  <div>
+                    <h6 class="fw-bold">Maliyet Azaltma</h6>
+                    <p class="text-muted small">Verimlilik artışı ile maliyetler düşer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-shield-check text-primary me-3 mt-1"></i>
+                  <div>
+                    <h6 class="fw-bold">Risk Yönetimi</h6>
+                    <p class="text-muted small">Proaktif risk yönetimi sağlar</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-globe text-info me-3 mt-1"></i>
+                  <div>
+                    <h6 class="fw-bold">Global Tanınırlık</h6>
+                    <p class="text-muted small">Uluslararası pazarlarda güven oluşturur</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-start">
+                  <i class="bi bi-people text-warning me-3 mt-1"></i>
+                  <div>
+                    <h6 class="fw-bold">Müşteri Güveni</h6>
+                    <p class="text-muted small">Müşteri sadakati ve güveni artar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Süreç Adımları -->
+    <section class="row g-4 mb-5" id="surec-adimlari">
+      <div class="col-12">
+        <h2 class="h3 text-primary mb-4">ISO Belgesi Alma Süreci</h2>
+        <div class="row g-4">
+          <!-- Adım 1 -->
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center">
+              <div class="card-body">
+                <div class="bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                  <span class="h4 mb-0">1</span>
+                </div>
+                <h6 class="card-title">Hazırlık ve Organizasyon</h6>
+                <p class="card-text small text-muted">Proje planı ve ekip oluşturma</p>
+              </div>
+            </div>
+          </div>
+          <!-- Adım 2 -->
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center">
+              <div class="card-body">
+                <div class="bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                  <span class="h4 mb-0">2</span>
+                </div>
+                <h6 class="card-title">Stratejik Planlama</h6>
+                <p class="card-text small text-muted">Mevcut durum analizi ve planlama</p>
+              </div>
+            </div>
+          </div>
+          <!-- Adım 3 -->
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center">
+              <div class="card-body">
+                <div class="bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                  <span class="h4 mb-0">3</span>
+                </div>
+                <h6 class="card-title">Eğitim</h6>
+                <p class="card-text small text-muted">Personel eğitimleri ve bilgilendirme</p>
+              </div>
+            </div>
+          </div>
+          <!-- Adım 4 -->
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center">
+              <div class="card-body">
+                <div class="bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                  <span class="h4 mb-0">4</span>
+                </div>
+                <h6 class="card-title">Sistem Kurulumu</h6>
+                <p class="card-text small text-muted">Sistem tasarımı ve dokümantasyon</p>
+              </div>
+            </div>
+          </div>
+          <!-- Adım 5 -->
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center">
+              <div class="card-body">
+                <div class="bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                  <span class="h4 mb-0">5</span>
+                </div>
+                <h6 class="card-title">Uygulama</h6>
+                <p class="card-text small text-muted">Pilot uygulama ve test süreçleri</p>
+              </div>
+            </div>
+          </div>
+          <!-- Adım 6 -->
+          <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class="card h-100 border-0 shadow-sm text-center">
+              <div class="card-body">
+                <div class="bg-primary text-white rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                  <span class="h4 mb-0">6</span>
+                </div>
+                <h6 class="card-title">Belgelendirme</h6>
+                <p class="card-text small text-muted">Denetim ve sertifika alma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-4">
+          <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('ISO belgesi alma süreci hakkında danışmanlık almak istiyorum')}`} 
+             class="btn btn-success btn-lg" target="_blank">
+            <i class="bi bi-whatsapp me-2"></i>Ücretsiz Danışmanlık Al
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eğitim ve Etkinlikler -->
+    <section class="row g-4 mb-5" id="egitimler">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm bg-gradient-primary text-white">
+          <div class="card-body text-center py-5">
+            <h2 class="h1 mb-4">MeetWork ISO Eğitimleri</h2>
+            <p class="lead mb-4">Uzman eğitmenlerimizle ISO standartları konusunda kapsamlı eğitim programları</p>
+            <div class="row g-4 justify-content-center">
+              <div class="col-lg-4 col-md-6">
+                <div class="bg-white text-dark rounded p-4">
+                  <i class="bi bi-laptop display-6 text-primary mb-3"></i>
+                  <h5>Online Eğitimler</h5>
+                  <p class="text-muted">İnteraktif canlı dersler ve kayıtlı eğitim içerikleri</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="bg-white text-dark rounded p-4">
+                  <i class="bi bi-building display-6 text-primary mb-3"></i>
+                  <h5>Kurumsal Eğitimler</h5>
+                  <p class="text-muted">Firmanıza özel yüz yüze eğitim programları</p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <div class="bg-white text-dark rounded p-4">
+                  <i class="bi bi-award display-6 text-primary mb-3"></i>
+                  <h5>Sertifika Programları</h5>
+                  <p class="text-muted">Uluslararası geçerli ISO sertifikasyonları</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} 
+                 class="btn btn-light btn-lg px-5 me-3" target="_blank">
+                <i class="bi bi-whatsapp me-2"></i>Eğitim Bilgisi Al
+              </a>
+              <a href="/etkinlikler" class="btn btn-outline-light btn-lg px-5">
+                <i class="bi bi-calendar-event me-2"></i>Etkinliklere Katıl
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="row g-4">
+      <div class="col-12">
+        <div class="card border-0 shadow-sm bg-dark text-white">
+          <div class="card-body text-center py-5">
+            <h3 class="h2 mb-3">ISO Belgelendirme Sürecinizi Başlatın</h3>
+            <p class="lead mb-4">MeetWork uzmanları ile ISO standartlarına uygun süreçlerinizi oluşturun</p>
+            <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} 
+               class="btn btn-success btn-lg px-5 me-3" target="_blank">
+              <i class="bi bi-whatsapp me-2"></i>WhatsApp'tan Başvur
+            </a>
+            <a href="tel:+905412465429" class="btn btn-outline-light btn-lg px-5">
+              <i class="bi bi-telephone me-2"></i>Hemen Ara
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<style>
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+  }
+  
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
+
+</BaseLayout>

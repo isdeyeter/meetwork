@@ -1,0 +1,128 @@
+---
+import { menuItems } from '../../data/menu';
+const currentPath = Astro.url.pathname;
+// Move the external globe (MeetWork) out of the main menu and render it as an icon-only link
+const globeItem = menuItems.find((i) => i.icon === 'bi-globe' && i.target);
+const filteredMenu = menuItems.filter((i) => i !== globeItem);
+---
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="/" aria-label="Ana Sayfa">
+      <span class="brand-meet">Meet</span><span class="brand-work">Work</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {filteredMenu.map((item) => (
+          <li class={`nav-item ${item.subItems ? 'dropdown' : ''}`}>
+            {item.subItems ? (
+              <>
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  {item.icon && <i class={item.icon}></i>} {item.title}
+                </a>
+                <ul class="dropdown-menu">
+                  {item.subItems.map((subItem) => (
+                    <li>
+                      <a class="dropdown-item" href={subItem.url}>
+                        {subItem.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <a
+                class={`nav-link ${currentPath === item.url ? 'active' : ''}`}
+                href={item.url}
+                target={item.target}
+                rel={item.target ? 'noopener noreferrer' : null}
+                aria-label={(item.target || (typeof item.url === 'string' && item.url.startsWith('http'))) ? item.title : null}
+              >
+                {item.icon && <i class={item.icon}></i>}
+                {!(item.target || (typeof item.url === 'string' && item.url.startsWith('http'))) && ` ${item.title}`}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Globe (external MeetWork) icon-only link, then login button -->
+    {globeItem && (
+      <a class="nav-globe ms-2" href={globeItem.url} target={globeItem.target} rel="noopener noreferrer" aria-label={globeItem.title}>
+        <i class={globeItem.icon}></i>
+      </a>
+    )}
+
+    <a class="login-btn" href="https://panel.meetwork.net" target="_blank" rel="noopener noreferrer">
+      <i class="bi-box-arrow-in-right"></i>
+      Giriş
+    </a>
+
+  </div>
+</nav>
+
+
+
+
+<style>
+  .navbar-brand {
+    font-weight: bold;
+  }
+
+  .nav-link i {
+    margin-right: 5px;
+  }
+
+  .login-btn {
+    background-color: #dc3545;
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    margin-left: 10px;
+    display: inline-block;
+  }
+
+  .brand-meet { color: #dc3545; font-weight: 700; }
+  .brand-work { color: #ffffff; font-weight: 700; margin-left: 4px; }
+
+  .nav-globe { display: inline-flex; align-items: center; justify-content: center; padding: 6px; border-radius: 6px; text-decoration: none; }
+  .nav-globe i { color: white; font-size: 1.15rem; }
+
+  .login-btn:hover {
+    background-color: #c82333;
+    color: white !important;
+  }
+
+  @media (max-width: 991px) {
+    .navbar-nav {
+      padding-top: 1rem;
+    }
+
+    .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+  }
+</style>

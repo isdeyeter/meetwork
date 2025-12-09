@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// 14 aşamanın verisi - düzenli yapı
+const yolHaritasiAsamalari = [
+  {
+    
+    alan: "Ücretsiz",
+    slug: "web-sitesi-paketleri",
+    baslik: "Web Sitesi Paketleri",
+    icon: "bi-globe",
+    aciklama: "Markanızın dijital yüzünü oluşturun"
+  },
+  {
+    alan: "Ücretsiz",
+    slug: "e-ticaret-ve-internetten-satis",
+    baslik: "E-Ticaret ve Online Satış",
+    icon: "bi-cart",
+    aciklama: "Online cironuzu katlayın"
+  },
+  {
+    alan: "Ücretsiz",
+    slug: "on-muhasebe-magazacilik-edonusum-erp",
+    baslik: "Ön Muhasebe, Mağazaclık, E-Dönüşüm ve ERP",
+    icon: "bi-graph-up",
+    aciklama: "TAMAMEN ÜCRETSİZ KULLAN"
+  },
+  {
+    alan: "Ücretsiz",
+    slug: "siber-guvenlik-ve-kvkk-uyum",
+    baslik: "Siber Güvenlik ve KVKK Uyum",
+    icon: "bi-shield-lock",
+    aciklama: "İş sürekliliğinizin garantisi"
+  },
+  {
+    alan: "İndirimli Hizmet",
+    slug: "donanim-ve-ekipman",
+    baslik: "Donanım ve Ekipman",
+    icon: "bi-pc-display",
+    aciklama: "Teknolojik altyapınızı kurun"
+  },
+  {
+    alan: "Ücretsiz",
+    slug: "dijital-kurumsal-kimlik",
+    baslik: "Dijital Kurumsal Kimlik",
+    icon: "bi-palette",
+    aciklama: "Markanızın profesyonel kimliği"
+  },
+  {
+    alan: "Ücretsiz",
+    slug: "is-surecleri-otomasyonu",
+    baslik: "İş Süreçleri Otomasyonu",
+    icon: "bi-gear",
+    aciklama: "CRM/ERP/İK çözümleri"
+  },
+  {
+    alan: "İndirimli  Hizmet",
+    slug: "finans-yonetimi-ve-mali-cozumler",
+    baslik: "Finans Yönetimi",
+    icon: "bi-graph-up",
+    aciklama: "Mali süreçlerin tam kontrolü"
+  },
+  {
+    alan: "Ücretsiz",
+    slug: "hibe-destek-kredi",
+    baslik: "Hibe Destek ve Kredi",
+    icon: "bi-cash-coin",
+    aciklama: "Hibe ve Teşvik Danışmanlığı Devlet desteklerinden maksimum faydalanın! KOSGEB, TÜBİTAK Ar-Ge fonları, AB hibe programları. %95 Başarı"
+  },
+  {
+    alan: "İndirimli  Hizmet",
+    slug: "lojistik-ve-tedarik-zinciri",
+    baslik: "Lojistik ve Tedarik Zinciri",
+    icon: "bi-truck",
+    aciklama: "Operasyonel verimlilik"
+  },
+  {
+    alan: "İndirimli  Hizmet",
+    slug: "bulut-cozumleri-ve-barindirma",
+    baslik: "Bulut Çözümleri",
+    icon: "bi-cloud",
+    aciklama: "Esnek ve güvenli bulut ortamı"
+  },
+  {
+    alan: "İndirimli  Hizmet",
+    slug: "yapay-zeka-ve-akilli-cozumler",
+    baslik: "Yapay Zeka ve Akıllı Çözümler",
+    icon: "bi-cpu",
+    aciklama: "Geleceğin teknolojileri"
+  }
+];
+---
+
+<BaseLayout title="Dijital Dönüşüm Yol Haritası - MeetWork">
+  <!-- Hero Section -->
+  <section class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold mb-3"><strong>Ücretsiz</strong><br>Dijital Dönüşüm</h1>
+          <p class="lead mb-4 text-warning  "><strong>MeetWork ile global dünyada yerinizi alın.</strong> <br>Bir çok adımda işletmenizi dijital çağa <strong>Ücretsiz</strong> taşıyın.</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <span class="badge bg-warning text-dark">🏗️ Temel Dijital Ürünler</span>
+            <span class="badge bg-danger">⚡ Operasyonel Verimlilik Arttırıcı Ürünler</span>
+            <span class="badge bg-success">🚀 Stratejik Büyüme ve Gelişim Ürünleri</span>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <i class="bi bi-signpost-split display-1 text-warning"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Özel Not -->
+  <div class="text-center mt-5">
+    <div class="alert alert-info">
+      <h5 class="alert-heading"><strong>💡 Pro Üye Olun</strong></h5>
+      <p class="mb-0">
+      MeetWork PRO Paket sahipleri burada yer alan bazı ürün ve hizmetleri <br><strong>Ücretsiz</strong> bazılarını da belirli oranda indirim ile rahatlıkla kullanabilir.
+      <br>Ürün detaylarına tıklayarak <strong>Ücretsiz</strong> ürünleri ve diğer ürünleri inceleyebilrsiniz. 
+      <br><strong>İndirimli</strong> ürünler içerisinde %20 ile %80'e varan indirimler oranlarından yararlanabilirsiniz.
+    </div>
+
+  <!-- CTA Section -->
+  <section class="bg-light py-5">
+    <div class="container text-center">
+      <h3 class="fw-bold mb-3">Dijital Dönüşüm Yolculuğunuza Başlayın</h3>
+      <p class="text-muted mb-4">Aşağıdaki hizmlerin bazıları PRO üyelere ücretsizdir sizde üye olun, tüm bu aşamalarda özel avantajlardan yararlanın</p>
+      <a href="/uye-ol-pro" class="btn btn-warning btn-lg px-4">
+        <i class="bi bi-star-fill me-2"></i>
+        Ücretsiz Kullanmak için PRO Üye Olun
+      </a>
+    </div>
+  </section>
+
+  <!-- Yol Haritası Grid -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        {yolHaritasiAsamalari.map((asama, index) => (
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            
+            <a 
+              href={`/dijital-donusum/${asama.slug}`}
+              class="card h-100 text-decoration-none border border-2 shadow-sm hover-shadow transition-all"
+              style="--bs-transition: all 0.3s ease;"
+            >
+              <div class="card-body text-center p-4">
+                
+
+                
+                <!-- İkon -->
+                <div class="mb-3">
+                  <i class={`${asama.icon} text-warning display-6`}></i>
+                </div>
+                
+                <!-- Alan -->
+                <div class="position-absolute top-0 start-0 m-3">
+                  <span class="badge bg-success rounded-pill">
+                    {asama.alan}
+                  </span>
+                </div>
+                
+
+                <!-- Başlık -->
+                <h5 class="card-title fw-bold text-dark mb-2">{asama.baslik}</h5>
+                
+                <!-- Kısa Açıklama -->
+                <p class="card-text text-muted small">{asama.aciklama}</p>
+                
+                <!-- Detay Butonu -->
+                <div class="mt-3">
+                  <span class="btn btn-sm btn-outline-danger bi-star-fill me-2">Detayları Gör</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  
+
+  <style>
+    .hover-shadow:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    }
+    .transition-all {
+      transition: var(--bs-transition);
+    }
+  </style>
+</BaseLayout>

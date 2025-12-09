@@ -1,0 +1,293 @@
+---
+const { company } = Astro.props;
+const color = company?.color ?? '#fd7e14';
+const websiteLabel = company?.contact?.website ? company.contact.website.replace(/^https?:\/\//, '').replace(/\/$/, '') : null;
+---
+
+<style is:scoped>
+  .company-profile {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #111;
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, rgba(253, 126, 20, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--company-accent);
+  }
+
+  .company-icon {
+    width: 100px;
+    height: 100px;
+    background: color-mix(in srgb, var(--company-accent) 15%, white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border: 2px solid color-mix(in srgb, var(--company-accent) 30%, white);
+  }
+
+  .company-icon img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .service-card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    height: 100%;
+    border-left: 4px solid var(--card-color);
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .contact-info {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border-top: 4px solid var(--company-accent);
+  }
+
+  .membership-badge {
+    background: linear-gradient(135deg, var(--company-accent) 0%, color-mix(in srgb, var(--company-accent) 70%, black) 100%);
+    color: white;
+  }
+
+  .pro-btn {
+    background: linear-gradient(135deg, #ff6b35, #fd7e14);
+    border: none;
+    color: white;
+    font-weight: 600;
+  }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+</style>
+
+<article class="company-profile" style={`--company-accent: ${color}`}>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="row align-items-center">
+      <div class="col-md-2 text-center text-md-start">
+        <div class="company-icon mx-auto mx-md-0">
+          {company?.heroIcon ? (
+            <img src={company.heroIcon} alt={`${company.title} ikon`} loading="lazy" />
+          ) : (
+            <i class="bi bi-building display-6" style={`color: ${color}`}></i>
+          )}
+        </div>
+      </div>
+      <div class="col-md-8 text-center text-md-start">
+        <h1 class="display-5 fw-bold mb-2">{company?.title ?? 'Firma Adı'}</h1>
+        <p class="lead text-muted mb-3">{company?.description ?? ''}</p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+          {company?.location && (
+            <span class="badge bg-light text-dark border">
+              <i class="bi bi-geo-alt me-1"></i>{company.location}
+            </span>
+          )}
+          {company?.sector && (
+            <span class="badge bg-light text-dark border">
+              <i class="bi bi-tags me-1"></i>{company.sector}
+            </span>
+          )}
+        </div>
+      </div>
+      <div class="col-md-2 text-center mt-3 mt-md-0">
+        <a href="https://panel.meetwork.net/register" class="btn pro-btn btn-lg px-4 w-100 mb-2">
+          <i class="bi bi-star-fill me-2"></i>PRO Üyemiz
+        </a>
+        <a href="/dijital-donusum" class="btn btn-outline-warning btn-sm w-100">
+          <i class="bi bi-gift me-1"></i>Pro üye faydaları
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="row g-4">
+    <!-- Sol Kolon -->
+    <div class="col-lg-8">
+      <!-- Hakkında -->
+      {company?.longDescription && (
+        <section class="mb-5">
+          <h2 class="h3 mb-4 border-bottom pb-2">
+            <i class="bi bi-info-circle me-2" style={`color: ${color}`}></i>Hakkımızda
+          </h2>
+          <div class="card border-0 bg-light">
+            <div class="card-body">
+              <p class="card-text mb-0">{company.longDescription}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Hizmetler -->
+      {company?.services && company.services.length > 0 && (
+        <section class="mb-5">
+          <h2 class="h3 mb-4 border-bottom pb-2">
+            <i class="bi bi-stack me-2" style={`color: ${color}`}></i>Hizmetler
+          </h2>
+          <div class="service-grid">
+            {company.services.map((service, index) => {
+              const colors = ['#fd7e14', '#0d6efd', '#198754', '#6f42c1', '#dc3545', '#ffc107', '#20c997', '#e83e8c'];
+              const cardColor = colors[index % colors.length];
+              return (
+                <div class="card service-card" style={`--card-color: ${cardColor}`}>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="me-3" style={`color: ${cardColor}`}>
+                        {service.icon ? (
+                          <i class={`bi bi-${service.icon} fs-4`}></i>
+                        ) : (
+                          <i class="bi bi-check-circle fs-4"></i>
+                        )}
+                      </div>
+                      <h5 class="card-title mb-0">{service.title}</h5>
+                    </div>
+                    {service.description && (
+                      <p class="card-text text-muted small mb-0">
+                        {service.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      <!-- Ürünler -->
+      {company?.products && company.products.length > 0 && (
+        <section class="mb-5">
+          <h2 class="h3 mb-4 border-bottom pb-2">
+            <i class="bi bi-box-seam me-2" style={`color: ${color}`}></i>Ürünler
+          </h2>
+          <div class="service-grid">
+            {company.products.map((product, index) => {
+              const colors = ['#0d6efd', '#198754', '#6f42c1', '#fd7e14', '#dc3545', '#ffc107', '#20c997', '#e83e8c'];
+              const cardColor = colors[index % colors.length];
+              return (
+                <div class="card service-card" style={`--card-color: ${cardColor}`}>
+                  <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                      <div class="me-3" style={`color: ${cardColor}`}>
+                        {product.icon ? (
+                          <i class={`bi bi-${product.icon} fs-4`}></i>
+                        ) : (
+                          <i class="bi bi-box fs-4"></i>
+                        )}
+                      </div>
+                      <h5 class="card-title mb-0">{product.title}</h5>
+                    </div>
+                    {product.description && (
+                      <p class="card-text text-muted small mb-0">
+                        {product.description}
+                      </p>
+                    )}
+                    {product.price && (
+                      <div class="mt-2">
+                        <span class="badge bg-success">{product.price}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      <!-- Uzmanlık Alanları -->
+      {company?.expertise && company.expertise.length > 0 && (
+        <section class="mb-5">
+          <h2 class="h3 mb-4 border-bottom pb-2">
+            <i class="bi bi-award me-2" style={`color: ${color}`}></i>Uzmanlık Alanları
+          </h2>
+          <div class="row g-2">
+            {company.expertise.map((area, index) => {
+              const colors = ['#fd7e14', '#0d6efd', '#198754', '#6f42c1', '#dc3545', '#ffc107'];
+              const badgeColor = colors[index % colors.length];
+              return (
+                <div class="col-auto">
+                  <span class="badge" style={`background-color: ${badgeColor}; color: white;`}>
+                    {area}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+    </div>
+
+    <!-- Sağ Kolon -->
+    <div class="col-lg-4">
+      <!-- İletişim Bilgileri -->
+      <section class="mb-4">
+        <div class="contact-info">
+          <h3 class="h5 mb-3">
+            <i class="bi bi-telephone me-2" style={`color: ${color}`}></i>İletişim
+          </h3>
+          {company?.contact?.phone && (
+            <p class="mb-2">
+              <i class="bi bi-phone me-2 text-muted"></i>
+              <a href={`tel:${company.contact.phone}`} class="text-decoration-none">{company.contact.phone}</a>
+            </p>
+          )}
+          {company?.contact?.email && (
+            <p class="mb-2">
+              <i class="bi bi-envelope me-2 text-muted"></i>
+              <a href={`mailto:${company.contact.email}`} class="text-decoration-none">{company.contact.email}</a>
+            </p>
+          )}
+          {company?.contact?.website && (
+            <p class="mb-3">
+              <i class="bi bi-globe me-2 text-muted"></i>
+              <a href={company.contact.website} class="text-decoration-none" target="_blank">{websiteLabel}</a>
+            </p>
+          )}
+          
+          <div class="d-grid gap-2">
+            <a href="https://panel.meetwork.net/register" class="btn pro-btn">
+              <i class="bi bi-star-fill me-1"></i>PRO Üyemiz
+            </a>
+            <a href="/dijital-donusum" class="btn btn-outline-warning btn-sm">
+              <i class="bi bi-gift me-1"></i>Pro üye faydaları
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hızlı İletişim -->
+      <section class="mb-4">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-lightning me-2 text-warning"></i>Hızlı İletişim
+            </h5>
+            <div class="d-grid gap-2">
+              <a href={`https://wa.me/${company?.contact?.phone?.replace(/[^\d]/g, '')}`} 
+                 class="btn btn-success btn-sm" target="_blank">
+                <i class="bi bi-whatsapp me-1"></i>WhatsApp
+              </a>
+              <a href={`tel:${company?.contact?.phone}`} class="btn btn-primary btn-sm">
+                <i class="bi bi-telephone me-1"></i>Hemen Ara
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</article>

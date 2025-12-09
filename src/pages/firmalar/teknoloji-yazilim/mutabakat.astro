@@ -1,0 +1,222 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CompanyProfile from '@components/company/CompanyProfile.astro';
+
+
+const company = {
+  title: 'MUTABAKAT.COM',
+  description: 'E-Mutabakat, Alacak Yönetimi ve Finansal Süreç Çözümleri',
+  slug: 'mutabakat-com',
+  sector: 'finans-teknolojileri',
+  color: '#2a5caa',
+  heroIcon: '/images/icons/finans-teknolojileri.svg',
+  location: 'Ataşehir/İstanbul, Türkiye',
+  
+  services: [
+    { 
+      title: 'MUTABAKAT YÖNETİMİ', 
+      description: 'Cari hesap ve BA-BS mutabakatlarını bulut teknoloji ile verimli bir şekilde yürütebildikleri bir çözümdür.',
+      icon: '📊'
+    },
+    { 
+      title: 'ALACAK YÖNETİMİ', 
+      description: 'Order to Cash sürecinizi SAAS uygulamamız ile kolay bir şekilde yönetebilirsiniz.',
+      icon: '💰'
+    },
+    { 
+      title: 'ÇAĞRI MERKEZİ', 
+      description: 'Bilgi güncelleme, satış-pazarlama, anket ve müşteri hizmetleri için çağrı merkezi hizmeti.',
+      icon: '📞'
+    },
+    { 
+      title: 'OUTSOURCING', 
+      description: 'Müşterilerimizin muhasebe ve finans alanında ihtiyaç duydukları geçici personellerin sağlanması hizmetidir.',
+      icon: '👥'
+    },
+    { 
+      title: 'İNSAN KAYNAKLARI', 
+      description: 'Profesyonel insan kaynakları çözümleri ve danışmanlık hizmetleri.',
+      icon: '👨‍💼'
+    },
+    { 
+      title: 'DİĞER FİNANSAL HİZMETLER', 
+      description: 'Kapsamlı finansal süreç yönetimi ve danışmanlık hizmetleri.',
+      icon: '📈'
+    }
+  ],
+  
+  products: [
+    { 
+      title: 'E-Mutabakat Programı', 
+      description: 'Cari hesap ve BA-BS mutabakatlarınızı bulut teknoloji ile verimli bir şekilde yürütebileceğiniz bir çözümdür.' 
+    },
+    { 
+      title: 'Entegrasyon Hizmeti', 
+      description: 'Bilinen tüm muhasebe ve ERP programları ile entegrasyon sağlanabilmektedir.' 
+    },
+    { 
+      title: 'Yükleme Hizmeti', 
+      description: 'Entegrasyonsuz çalışan müşterilerde verilerin yükleme hizmetlerinin verilmesidir.' 
+    },
+    { 
+      title: 'E-Mail Tamamlama', 
+      description: 'E-mail adresleri eksik olan ya da güncel olmayan müşterilerin bu bilgilerinin güncellenmesi hizmetidir.' 
+    },
+    { 
+      title: 'Onay Hızlandırma', 
+      description: 'Onay alınamayan mutabakat mektupları için ilgili firmaların tek tek aranarak hızlandırılması.' 
+    },
+    { 
+      title: 'Ekstre Karşılaştırma', 
+      description: 'Mutabakat sürecinde karşılaşılan 2 firmanın ekstresi arasındaki farkların tespiti ve yorumlanması.' 
+    }
+  ],
+  
+  stats: [
+    { label: 'Mutabakatını Yönettiğimiz Firma', value: '250+' },
+    { label: 'Alacaklarını Yönettiğimiz Firma', value: '70+' },
+    { label: 'Çağrı Merkezi Sayımız', value: '56+' },
+    { label: 'Outsourcing Hizmet Sayımız', value: '65+' }
+  ],
+  
+  expertise: [
+    'E-Mutabakat', 
+    'Alacak Yönetimi', 
+    'Finansal Süreç Otomasyonu', 
+    'E-Fatura Entegrasyonu',
+    'E-Defter Uygulamaları',
+    'Bulut Teknoloji Çözümleri'
+  ],
+  
+  contact: {
+    phone: '0216 606 14 25',
+    email: 'bilgi@mutabakat.com',
+    website: 'https://mutabakat.com',
+    address: 'Brandium Rezidans R2 Blok K:8 D:78 Ataşehir/İstanbul'
+  },
+  
+  longDescription: `MUTABAKAT.COM, 2012 yılında E-Mutabakat ürünü ile sektörde ilk kez ortaya çıkmış ve bugün sektöre ismini vermenin onurunu yaşamaktadır. İstanbul Ataşehir'de, güçlü yerli sermayesi, 65 uzman personeli ve profesyonel çözüm ortaklıkları ile hizmet veren kuruluşumuz, yazılım ekibini de kendi bünyesinde istihdam etmektedir.
+  
+2000 ve 2008 krizleri tüm dünyaya bir kez daha göstermiştir ki; bir şirketin alacaklarının kalitesi en az satış rakamları kadar önemlidir. Alacakların yönetimi ise sadece tahsilattan ibaret olmayıp satış öncesinden, tahsil edilene, hatta raporlanana kadar uzanan bir süreci kapsamaktadır.
+
+Mutabakat.com bu süreçte ihtiyaç duyulabilecek tüm sistem altyapısı ve profesyonel kaynak kullanımını en son teknoloji ile yasalara uygun olarak ve bilgi güvenliği içerisinde sağlamayı hedeflemektedir. Müşterilerine, zaman ve direk operasyon maliyetlerinde tasarruf sağlamaktadır. Süreçleri; hukuki geçerliliğini kaybetmeden kağıda ihtiyaç duyulmayacak hale getirmektedir.`,
+  
+  mission: `Mutabakat.com Müşterilerini yüzde yüz memnun eden çözümler sunmayı, sunduğu çözümlerde son teknolojiler kullanmayı ve her zaman inovatif yaklaşımlar sergilemeyi, oluşturduğu ürünler ile Türkiye'ye ve insana değer katmayı kendisine misyon edinmiştir.`,
+  
+  vision: `Bilişim sektöründe etkin çözümler üreten, iş ortaklarımızın beklentilerini karşılayan, güvenilir ve güçlü bir hizmet sunan, konusunda aranan bir kurum olmaktır. Sektörde öncü, hizmetinde örnek ve müşterinin ilk tercih ettiği bilişim firması olarak edindiği başarıyı kalıcı kılmaktır.`,
+  
+  seo: { 
+    title: 'MUTABAKAT.COM | E-Mutabakat ve Finansal Süreç Yönetimi', 
+    description: 'MUTABAKAT.COM - E-Mutabakat, Alacak Yönetimi, Çağrı Merkezi ve Outsourcing hizmetleri ile finansal süreçlerinizi profesyonelce yönetin.' 
+  }
+};
+---
+
+<BaseLayout title={`${company.title} - Firma Profili`} description={company.seo?.description ?? company.description}>
+  <CompanyProfile company={company} />
+  
+  <!-- E-MUTABAKAT DEMO TALEBİ BÖLÜMÜ -->
+  <section style="background: linear-gradient(135deg, #2a5caa 0%, #1e3a8a 100%); color: white; padding: 4rem 2rem; margin-top: 3rem; border-radius: 12px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+        
+        <!-- Sol Taraf: Açıklama -->
+        <div>
+          <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: white;">
+            📊 E-Mutabakat Demo Talebi
+          </h2>
+          <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+            <strong>E-Mutabakat;</strong> firmaların cari hesap ve BA-BS mutabakatlarını bulut teknoloji ile verimli bir şekilde yürütebildikleri bir çözümdür. On-line ve On-Premise olmak üzere 2 farklı çalışma şekli sunulabilmektedir. Tüm muhasebe ve ERP programları ile tam entegre çalışabilmektedir.
+          </p>
+          <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid #60a5fa;">
+            <p style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.5rem;">🚀</span>
+              <span><strong>30 gün ücretsiz deneme fırsatı!</strong> E-Mutabakat programını hiçbir taahhüt altında kalmadan deneyin.</span>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Sağ Taraf: Demo Butonu -->
+        <div style="text-align: center;">
+          <div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">📋</div>
+            <h3 style="color: #2a5caa; margin-bottom: 1rem; font-size: 1.8rem;">
+              Ücretsiz Demo Talep Edin
+            </h3>
+            <p style="color: #4b5563; margin-bottom: 2rem;">
+              Size özel demo oluşturulması için formu doldurun, uzman ekibimiz sizinle iletişime geçsin.
+            </p>
+            <a 
+              href="https://www.mutabakat.com/mutabakat-yonetimi/demo-talebi" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style="
+                display: inline-block;
+                background: linear-gradient(135deg, #2a5caa 0%, #1e3a8a 100%);
+                color: white;
+                padding: 1rem 2.5rem;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: bold;
+                font-size: 1.1rem;
+                transition: all 0.3s ease;
+                border: 2px solid white;
+                box-shadow: 0 4px 15px rgba(42, 92, 170, 0.3);
+              "
+              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(42, 92, 170, 0.4)';"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(42, 92, 170, 0.3)';"
+            >
+              Demo Talep Formu
+              <span style="margin-left: 8px;">→</span>
+            </a>
+            <p style="margin-top: 1rem; color: #6b7280; font-size: 0.9rem;">
+              <span style="font-size: 1.2rem;">🔗</span> 
+              Form yeni sekmede açılacaktır
+            </p>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Ek Bilgiler -->
+      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+          <div style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+            <h4 style="margin-bottom: 0.5rem; color: #93c5fd;">Hızlı Kurulum</h4>
+            <p style="font-size: 0.9rem; opacity: 0.9;">15 dakikada sisteminizi aktif edin</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔒</div>
+            <h4 style="margin-bottom: 0.5rem; color: #93c5fd;">Güvenli</h4>
+            <p style="font-size: 0.9rem; opacity: 0.9;">Bankalar seviyesinde güvenlik</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔄</div>
+            <h4 style="margin-bottom: 0.5rem; color: #93c5fd;">Entegre</h4>
+            <p style="font-size: 0.9rem; opacity: 0.9;">Tüm ERP ve muhasebe yazılımları ile uyumlu</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Responsive için CSS -->
+  <style>
+    @media (max-width: 768px) {
+      section > div > div {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      
+      .demo-info {
+        grid-template-columns: 1fr !important;
+      }
+      
+      h2 {
+        font-size: 2rem !important;
+      }
+    }
+  </style>
+</BaseLayout>

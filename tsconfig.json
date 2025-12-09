@@ -1,0 +1,26 @@
+{
+  // Astro'nun önerdiği sıkı (strict) yapılandırmayı kullanıyoruz
+  "extends": "astro/tsconfigs/strict",
+  
+  // TypeScript'in hangi dosyaları derleyeceğini belirtiyoruz
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+, ".astro/netlify/functions/price-query.js"  ],
+  
+  "compilerOptions": {
+    // Bu, projenin kaynak klasörü (genellikle 'src')
+    "baseUrl": ".",
+    
+    // Yol Takma Adlarını (Path Aliases) burada tanımlıyoruz
+    "paths": {
+      // Artık @layouts/BasicLayout.astro olarak içe aktarabileceksiniz
+      "@layouts/*": ["src/layouts/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"]
+    }
+  },
+  
+  // Derleme çıktılarını dışarıda bırakıyoruz
+  "exclude": ["dist"]
+}

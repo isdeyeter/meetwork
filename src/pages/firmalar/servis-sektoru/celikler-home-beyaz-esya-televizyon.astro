@@ -1,0 +1,183 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CompanyProfile from '@components/company/CompanyProfile.astro';
+
+const company = {
+  title: 'Çelikler Home',
+  description: 'Evlerinizin konforunu artırmak, yaşam alanlarınızı daha işlevsel hale getirmek için buradayız. Beyaz eşya ve elektronik ürünlerde kaliteyi uygun fiyatlarla buluşturan güvenilir alışveriş adresi.',
+  slug: 'celikler-home',
+  sector: 'beyaz-esya-elektronik',
+  color: '#2c5aa0',
+  heroIcon: '/images/icons/beyaz-esya.svg',
+  location: 'Pendik, İstanbul, Türkiye',
+  services: [
+    { title: '🥶 Buzdolapları', description: 'Modern ve enerji tasarruflu buzdolabı modelleri' },
+    { title: '🧼 Çamaşır Makineleri', description: 'Yüksek performanslı çamaşır makineleri' },
+    { title: '🍽️ Bulaşık Makineleri', description: 'Hijyenik ve ekonomik bulaşık makineleri' },
+    { title: '☕ Kahve Makineleri', description: 'Profesyonel ve ev tipi kahve makineleri' },
+    { title: '🌡️ Klimalar', description: 'İklimlendirme ve ev konfor sistemleri' },
+    { title: '❄️ Derin Dondurucular', description: 'Geniş hacimli derin dondurucu modelleri' },
+    { title: '🔌 Küçük Ev Aletleri', description: 'Mutfak robotları, blenderlar, tost makineleri' },
+    { title: '📺 Elektronik Ürünler', description: 'Televizyonlar ve diğer elektronik cihazlar' },
+    { title: '🏠 Ankastre Ürünler', description: 'Mutfak için ankastre çözümler' },
+    { title: '🧹 Elektrikli Süpürgeler', description: 'Güçlü temizlik performansı' }
+  ],
+  products: [
+    { title: 'Buzdolapları', description: 'Modern tasarımlı, enerji tasarruflu buzdolabı modelleri ile tazelik garantisi' },
+    { title: 'Çamaşır Makineleri', description: 'Yüksek performanslı, sessiz çalışan çamaşır makineleri' },
+    { title: 'Bulaşık Makineleri', description: 'Hijyenik temizlik, ekonomik su ve enerji tüketimi' },
+    { title: 'Kahve Makineleri', description: 'Espresso, filtre kahve makineleri ile barista deneyimi' },
+    { title: 'Klimalar & Isıtıcılar', description: 'İklimlendirme sistemleri ile ev konforu' },
+    { title: 'Derin Dondurucular', description: 'Geniş hacimli derin dondurucular ile gıda saklama çözümleri' },
+    { title: 'Küçük Ev Aletleri', description: 'Mutfak robotları, blenderlar, tost makineleri, su ısıtıcıları' },
+    { title: 'Elektrikli Süpürgeler', description: 'Derinlemesine temizlik için güçlü elektrikli süpürgeler' },
+    { title: 'Televizyonlar', description: 'Yüksek çözünürlüklü akıllı televizyonlar' },
+    { title: 'Ankastre Setler', description: 'Modern mutfaklar için ankastre fırın, ocak setleri' }
+  ],
+  expertise: ['Beyaz Eşya', 'Küçük Ev Aletleri', 'Elektronik', 'Klimalar', 'Ankastre Ürünler', 'Ev Konfor Sistemleri'],
+  contact: {
+    phone: '+90 553 830 04 75',
+    email: 'info@celiklerhome.com.tr',
+    website: 'https://celiklerhome.com.tr',
+    address: 'Hızır Resi Cad. Blk:A Güzelyalı Mah. No:26 Pendik/İstanbul'
+  },
+  features: [
+    { title: 'Hızlı ve Güvenli Teslimat', description: 'Siparişleriniz hızlı ve güvenli şekilde teslim edilir' },
+    { title: 'Para İade Garantisi', description: 'Memnun kalmazsanız para iade garantisi' },
+    { title: 'İptal ve İade Politikası', description: 'Kolay iptal ve iade imkanı' },
+    { title: '7/24 Servis Desteği', description: 'Kesintisiz servis ve teknik destek' }
+  ],
+  brands: ['Bosch', 'Philips', 'Hoover', 'Altus', 'Arçelik', 'Beko', 'Siemens', 'Samsung', 'LG', 'Profilo', 'Vestel', 'Regal'],
+  longDescription: `ÇELİKLER D.T.M. MOBİLYA İNŞAAT SAN. VE TİC. LTD. ŞTİ., 1985 yılından bu yana sektörde faaliyet gösteren köklü bir kuruluştur. Çelikler Home olarak, Türkiye'nin önde gelen teknoloji markalarını bünyesinde bulundurarak müşterilerine kaliteli ve güvenilir alışveriş deneyimi sunmaktadır.
+
+Başlıca faaliyet alanları arasında inşaat, elektronik eşyalar, beyaz eşyalar ve elektrikli ev aletleri bulunmaktadır. Kendi yetkili servis ağı ile müşterilerine kapsamlı hizmet sunmaktadır.
+
+Alman mühendislik kalitesiyle tanınan Bosch, Türkiye'nin önde gelen markalarından Arçelik ve diğer güvenilir markaların ürünlerini uygun fiyat politikasıyla müşterilerine ulaştırmaktadır.`,
+  mission: `Müşterilerimizin talep ve beklentilerine en iyi şekilde cevap verecek bir mükemmellik anlayışını benimseyerek; fark yaratan, kaliteli, güvenilir ürün ve hizmetler sunmak; ÇELİKLER HOME'nin saygınlığını ve değerini artırmak.`,
+  vision: `Doğru kalite/fiyat oranını sağlayarak geniş ürün yelpazesi ile tüketici beklentilerini en üst düzeyde karşılamak.`,
+  seo: { 
+    title: 'Çelikler Home | Beyaz Eşya & Elektronik Ürünler | Teknik Servis', 
+    description: 'Çelikler Home - Beyaz eşya, küçük ev aletleri satışı ve teknik servis hizmeti. Bosch, Arçelik, Samsung markalarında uzman servis. İstanbul Anadolu Yakası servis.' 
+  }
+};
+---
+
+<BaseLayout title={company.seo.title} description={company.seo.description}>
+  <CompanyProfile company={company} />
+  
+  <!-- SERVİS BÖLÜMÜ - DOĞRUDAN SAYFAYA EKLENDİ -->
+  <section style="padding: 80px 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      
+      <!-- Ana Başlık -->
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h2 style="font-size: 2.5rem; color: #2c5aa0; margin-bottom: 20px;">🔧 TEKNİK SERVİS HİZMETLERİMİZ</h2>
+        <p style="font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto;">
+          25+ yıllık deneyimimiz ile tüm markaların beyaz eşya tamirini profesyonel ekibimizle gerçekleştiriyoruz.
+        </p>
+      </div>
+
+      <!-- Arıza, Bakım & Onarım -->
+      <div style="background: white; padding: 40px; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <h3 style="color: #2c5aa0; font-size: 1.8rem; margin-bottom: 20px; border-left: 4px solid #2c5aa0; padding-left: 15px;">
+          🔩 Arıza, Bakım & Onarım
+        </h3>
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; color: #555;">
+          Garantiniz bitti ve arıza, onarım ihtiyacınız var. Doğru adrestesiniz. Garantisi bitmiş ürünlere hizmet veren firmamız ile servis kaydı oluşturabilirsiniz.
+        </p>
+        <div style="display: grid; gap: 15px;">
+          <div style="display: flex; align-items: flex-start; gap: 15px;">
+            <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+            <div>
+              <strong style="color: #2c5aa0;">Buzdolabı Servisi</strong>
+              <p style="margin: 5px 0 0 0; color: #666;">En yakın buzdolabı servisi için bizi arayıp servis fişi yazdırabilirsiniz.</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 15px;">
+            <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+            <div>
+              <strong style="color: #2c5aa0;">Çamaşır Makinesi Servisi</strong>
+              <p style="margin: 5px 0 0 0; color: #666;">En yakın çamaşır makinesi servisi için bizi arayıp servis fişi yazdırabilirsiniz.</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 15px;">
+            <span style="color: #28a745; font-size: 1.2rem;">✅</span>
+            <div>
+              <strong style="color: #2c5aa0;">Ankastre Servisi</strong>
+              <p style="margin: 5px 0 0 0; color: #666;">En yakın ankastre servisi için bizi arayıp servis fişi yazdırabilirsiniz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beyaz Eşya Servisi -->
+      <div style="background: white; padding: 40px; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <h3 style="color: #2c5aa0; font-size: 1.8rem; margin-bottom: 20px; border-left: 4px solid #2c5aa0; padding-left: 15px;">
+          🏠 BEYAZ EŞYA SERVİSİ
+        </h3>
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; color: #555;">
+          Bakım, Onarım, Montaj ve Periyodik Takip - İstanbul ve Bursa bölgelerine hizmet veren firmamız profesyonel kadrosuyla sizlere hizmet vermeye hazır.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center;">
+            <h4 style="color: #2c5aa0; margin-bottom: 10px;">🧊 Beyaz Eşya Servisi</h4>
+            <p style="color: #666; margin: 0;">Beyaz eşya cihazlarınızın arıza, onarım ve bakım ihtiyaçlarını karşılıyoruz.</p>
+          </div>
+          <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center;">
+            <h4 style="color: #2c5aa0; margin-bottom: 10px;">❄️ Klima Servisi</h4>
+            <p style="color: #666; margin: 0;">Klima cihazlarınızın arıza, onarım ve bakım ihtiyaçlarını karşılıyoruz.</p>
+          </div>
+          <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center;">
+            <h4 style="color: #2c5aa0; margin-bottom: 10px;">🔥 Kombi Servisi</h4>
+            <p style="color: #666; margin: 0;">Kombi cihazlarınızın arıza, onarım ve bakım ihtiyaçlarını karşılıyoruz.</p>
+          </div>
+          <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center;">
+            <h4 style="color: #2c5aa0; margin-bottom: 10px;">🏭 Endüstriyel Servisi</h4>
+            <p style="color: #666; margin: 0;">Endüstriyel mutfaklarınızdaki cihazlarınızın arıza, onarım ve bakım ihtiyaçlarını karşılıyoruz.</p>
+          </div>
+          <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center;">
+            <h4 style="color: #2c5aa0; margin-bottom: 10px;">Televizyon Servisi</h4>
+            <p style="color: #666; margin: 0;">Televizyonlarınızın arıza, onarım ve bakım ihtiyaçlarını karşılıyoruz.</p>
+          </div>
+          <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; text-align: center;">
+            <h4 style="color: #2c5aa0; margin-bottom: 10px;">Küçük Ev Aletleri Servisi</h4>
+            <p style="color: #666; margin: 0;">Küçük ev aletlerinizin arıza, onarım ve bakım ihtiyaçlarını karşılıyoruz.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servis Bölgeleri -->
+      <div style="background: white; padding: 40px; border-radius: 15px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <h3 style="color: #2c5aa0; font-size: 1.8rem; margin-bottom: 20px;">📍 İstanbul Anadolu Yakası Servis Bölgelerimiz</h3>
+        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; color: #555;">
+          İstanbul Anadolu Yakası'nda buzdolabı servisi hizmeti veren uzman ekipler, cihazdaki arızaları yerinde ve hızlı müdahalelerle çözüme kavuşturur.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Ataşehir</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Kadıköy</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Üsküdar</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Maltepe</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Kartal</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Pendik</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Tuzla</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Sancaktepe</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Sultanbeyli</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Çekmeköy</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Beykoz</span>
+          <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px; text-align: center; font-size: 0.9rem;">📍 Gebze</span>
+        </div>
+      </div>
+
+      <!-- Acil Servis -->
+      <div style="background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%); color: white; padding: 60px 40px; border-radius: 20px; text-align: center;">
+        <h3 style="font-size: 2rem; margin-bottom: 20px;">🚨 ACİL SERVİS İÇİN HEMEN ARAYIN!</h3>
+        <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">7/24 acil servis hizmeti - Aynı gün müdahale garantisi</p>
+        <a href="tel:+905538300475" style="display: inline-block; background: #ff6b35; color: white; padding: 20px 40px; border-radius: 50px; text-decoration: none; font-size: 1.5rem; font-weight: bold; transition: all 0.3s;">
+          📞 +90 553 830 04 75
+        </a>
+        <p style="margin-top: 20px; opacity: 0.8;">En yakın servis ekibimiz 30 dakika içinde adresinizde!</p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
