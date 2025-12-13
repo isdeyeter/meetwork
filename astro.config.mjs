@@ -11,37 +11,24 @@ export default defineConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          // Bootstrap gibi bağımlılıklardan gelen Sass uyarılarını bastır
           quietDeps: true,
           silenceDeprecations: [
-            'import',           // @import kullanımı
-            'global-builtin',   // global fonksiyonlar (örn. red(), green())
-            'color-functions'   // eski color.xxx() fonksiyonları
+            'import',
+            'global-builtin',
+            'color-functions'
           ]
         }
       }
     },
-    build: {
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          warnings: false,
-          unsafe: true,
-          unsafe_math: true,
-          unsafe_methods: true
-        }
-      }
-    },
+    // `build.minify` kısmını kaldırıyoruz
+    // esbuild ile minification yeterlidir
     esbuild: {
       legalComments: 'none',
       minifySyntax: true,
       minifyIdentifiers: true,
       minifyWhitespace: true,
       charset: 'utf8',
-      keepNames: true,
-      logOverride: {
-        'unterminated-string-literal': 'warning'
-      }
+      keepNames: true
     }
   },
 
